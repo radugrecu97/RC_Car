@@ -5,11 +5,18 @@ def repo_url = 'https://github.com/radugrecu97/RC_Car.git'
 def repo_branch = 'master'
 
 node {
-    def server = Artifactory.server artifactory_name
-    def client = Artifactory.newConanClient()
+   def server
+   def client
+   def serverName
 
     stage("Get project"){
         git branch: repo_branch, url: repo_url
+    }
+
+    stage("Configure Artifactory/Conan"){
+        server = Artifactory.server artifactory_name
+        client = Artifactory.newConanClient()
+        serverName = client.remote.add server: server, repo: artifactory_repo
     }
 
     stage("Get dependencies and publish build info"){
