@@ -14,7 +14,7 @@ node {
         git branch: repo_branch, url: repo_url
     }
 
-    def dockerfile = "Dockerfile"
+    checkout scm
     def buildImage = docker.build("mconanio/gcc9-armv7hf", "-f $dockerfile .")
     buildImage.inside {
 
