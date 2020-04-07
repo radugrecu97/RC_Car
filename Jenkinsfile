@@ -5,11 +5,12 @@ def repo_url = 'https://github.com/radugrecu97/RC_Car.git'
 def repo_branch = 'master'
 
 node {
-    agent {
-        docker {
-            image 'conanio/gcc9-armv7hf'
-        }
+
+    docker {
+        image 'conanio/gcc9-armv7hf'
+        dockerfile true
     }
+
 
    def server
    def client
