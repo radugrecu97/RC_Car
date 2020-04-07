@@ -6,12 +6,6 @@ def repo_branch = 'master'
 
 node {
 
-    docker {
-        image 'conanio/gcc9-armv7hf'
-        dockerfile true
-    }
-
-
    def server
    def client
    def serverName
