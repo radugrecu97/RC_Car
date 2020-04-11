@@ -13,7 +13,7 @@ node {
     stage("Get project"){
         git branch: repo_branch, url: repo_url
     }
-/*
+
     checkout scm
     def buildImage = docker.build("conanio/gcc9-armv7hf","Dockerfiles/conan_gcc9_armv7hf/")
     buildImage.inside {
@@ -37,5 +37,5 @@ node {
           sh "cmake ../ && cmake --build ."
         }
     }
-*/
+
 }
