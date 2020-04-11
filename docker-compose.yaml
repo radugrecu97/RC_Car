@@ -48,7 +48,9 @@ services:
         max-size: "50m"
         max-file: "10"
   jenkins:
+    build: Dockerfiles/jenkins
     image: jenkins/jenkins:lts
+    user: root
     container_name: jenkins
     environment:
       "JAVA_OPTS": "-Dorg.apache.commons.jelly.tags.fmt.timeZone=Europe/Copenhagen"
@@ -59,7 +61,7 @@ services:
     privileged: true
     volumes:
       # enable persistent volume (warning: make sure that the local jenkins_home folder is created)
-     - /var/wisestep/data/jenkins_home:/var/jenkins_home
+     - ${ROOT_DATA_DIR}/var/wisestep/data/jenkins_home:/var/jenkins_home
      # mount docker sock and binary for docker in docker (only works on linux)
      - /var/run/docker.sock:/var/run/docker.sock
      - /usr/local/bin/docker:/usr/local/bin/docker
