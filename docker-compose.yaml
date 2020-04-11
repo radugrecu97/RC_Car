@@ -1,0 +1,66 @@
+version: '3'
+services:
+  postgres:
+    image: ${DOCKER_REGISTRY}/postgres:9.6.11
+    container_name: postgresql
+    environment:
+     - POSTGRES_DB=artifactory
+     - POSTGRES_USER=artifactory
+     - POSTGRES_PASSWORD=password
+    ports:
+      - 5432:5432
+    volumes:
+     - ${ROOT_DATA_DIR}/var/data/postgres/data:/var/lib/postgresql/data
+     - /etc/localtime:/etc/localtime:ro
+    restart: always
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+        max-file: "10"
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 32000
+        hard: 40000
+  artifactory:
+    image: ${DOCKER_REGISTRY}/jfrog/artifactory-cpp-ce:${ARTIFACTORY_VERSION}
+    container_name: artifactory
+    volumes:
+     - ${ROOT_DATA_DIR}/var:/var/opt/jfrog/artifactory
+     - /etc/localtime:/etc/localtime:ro
+    restart: always
+    depends_on:
+    - postgres
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 32000
+        hard: 40000
+    environment:
+     - JF_ROUTER_ENTRYPOINTS_EXTERNALPORT=${JF_ROUTER_ENTRYPOINTS_EXTERNALPORT}
+    ports:
+      - ${JF_ROUTER_ENTRYPOINTS_EXTERNALPORT}:${JF_ROUTER_ENTRYPOINTS_EXTERNALPORT} # for router communication
+      - 8081:8081 # for artifactory communication
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+        max-file: "10"
+  jenkins:
+    build: Dockerfiles/jenkins
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    environment:
+      "JAVA_OPTS": "-Dorg.apache.commons.jelly.tags.fmt.timeZone=Europe/Copenhagen"
+    ports:
+     - 8080:8080
+     - 50000:50000
+    # uncomment for docker in docker
+    privileged: true
+    volumes:
+      # enable persistent volume (warning: make sure that the local jenkins_home folder is created)
+     - /var/wisestep/data/jenkins_home:/var/jenkins_home
+     # mount docker sock and binary for docker in docker (only works on linux)
+     - /var/run/docker.sock:/var/run/docker.sock
+     - /usr/local/bin/docker:/usr/local/bin/docker
