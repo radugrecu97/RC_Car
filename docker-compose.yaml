@@ -48,7 +48,6 @@ services:
         max-size: "50m"
         max-file: "10"
   jenkins:
-    build: Dockerfiles/jenkins
     image: jenkins/jenkins:lts
     container_name: jenkins
     environment:
