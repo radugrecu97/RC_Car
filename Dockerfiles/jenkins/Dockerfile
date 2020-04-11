@@ -1,4 +1,4 @@
-FROM jenkinsci/jenkins:lts
+FROM jenkins/jenkins:lts
  
 USER root
 RUN apt-get update -qq \
@@ -9,5 +9,5 @@ RUN add-apt-repository \
    $(lsb_release -cs) \
    stable"
 RUN apt-get update  -qq \
-    && apt-get install docker-ce=19.03.8~3-0~ubuntu-bionic -y
+    && apt-get install docker-ce -y
 RUN usermod -aG docker jenkins

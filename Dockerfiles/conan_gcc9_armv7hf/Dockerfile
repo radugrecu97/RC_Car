@@ -1,5 +1,5 @@
 FROM conanio/gcc9
-#dsad
+
 LABEL maintainer="Luis Martinez de Bartolome <luism@jfrog.com>"
 
 ENV CC=arm-linux-gnueabihf-gcc-9 \
@@ -13,7 +13,7 @@ ENV CC=arm-linux-gnueabihf-gcc-9 \
     LD=arm-linux-gnueabihf-ld \
     FC=arm-linux-gnueabihf-gfortran-9
 
-COPY ../../armhf.list /etc/apt/sources.list.d/armhf.list
+COPY armhf.list /etc/apt/sources.list.d/armhf.list
 
 RUN sudo dpkg --add-architecture armhf \
     && sudo sed -i 's/deb\s/deb \[arch=amd64,i386\] /' /etc/apt/sources.list \

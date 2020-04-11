@@ -48,7 +48,7 @@ services:
         max-size: "50m"
         max-file: "10"
   jenkins:
-    build: Dockerfiles/jenkins
+    build: ./Dockerfiles/jenkins
     image: jenkins/jenkins:lts
     user: root
     container_name: jenkins
