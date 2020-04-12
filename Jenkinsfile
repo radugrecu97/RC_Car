@@ -20,7 +20,7 @@ node {
     buildImage.inside {
 
         stage("Configure Artifactory/Conan"){
-            server = Artifactory.newServer url: 'http://localhost:8081/artifactory', username: 'admin', password: 'F3lixsima94!'
+            server = Artifactory.server artifactory_name
             echo server.toString()
             client = Artifactory.newConanClient()
             serverName = client.remote.add server: server, repo: artifactory_repo
