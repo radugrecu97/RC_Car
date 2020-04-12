@@ -5,6 +5,7 @@ def repo_url = 'https://github.com/radugrecu97/RC_Car.git'
 def repo_branch = 'master'
 
 node {
+   checkout scm
    env.WORKSPACE = pwd()
    def server
    def client
@@ -14,15 +15,15 @@ node {
         git branch: repo_branch, url: repo_url
     }
 
-    checkout scm
+
     def buildImage = docker.build("conanio/gcc9-armv7hf","Dockerfiles/conan_gcc9_armv7hf/")
-    buildImage.inside {
+    buildImage.('-u root') {
 
         stage("Configure Artifactory/Conan"){
             server = Artifactory.server artifactory_name
             echo server.toString()
             client = Artifactory.newConanClient()
-            serverName = client.remote.add server: server, repo: artifactory_repo, force: true
+            serverName = client.remote.add server: server, repo: artifactory_repo
         }
 
         stage("Get dependencies and publish build info"){
