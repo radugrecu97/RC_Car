@@ -8,7 +8,7 @@ node {
    env.WORKSPACE = pwd()
    def server
    def client
-   def serverName
+   String serverName
 
     stage("Get project"){
         git branch: repo_branch, url: repo_url
@@ -20,7 +20,7 @@ node {
 
         stage("Configure Artifactory/Conan"){
             server = Artifactory.server artifactory_name
-            client = Artifactory.newConanClient userHome: "${env.WORKSPACE}/conan/my-conan-user-home".toString()
+            client = Artifactory.newConanClient()
             serverName = client.remote.add server: server, repo: artifactory_repo
         }
 
