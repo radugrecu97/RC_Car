@@ -1,5 +1,5 @@
 //Adjust your artifactory instance name/repository and your source code repository
-def artifactory_name = "art-03"
+def artifactory_name = "art-01"
 def artifactory_repo = "conan-local"
 def repo_url = 'https://github.com/radugrecu97/RC_Car.git'
 def repo_branch = 'master'
