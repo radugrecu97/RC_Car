@@ -17,6 +17,9 @@ node {
     checkout scm
     def buildImage = docker.build("conanio/gcc9-armv7hf","Dockerfiles/conan_gcc9_armv7hf/")
     buildImage.inside {
+        bash '''#!/bin/bash
+                         conan remote add conan-repo http://localhost:8081/artifactory/api/conan/conan-local
+                 '''
 
         stage("Configure Artifactory/Conan"){
             server = Artifactory.server artifactory_name
