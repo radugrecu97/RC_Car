@@ -18,7 +18,7 @@ node {
 
 
     def buildImage = docker.image("conanio/gcc7")
-    buildImage.inside {
+    buildImage.inside("--ip=\"172.22.0.104\"") {
 
         stage("Configure Artifactory/Conan"){
             server = Artifactory.server artifactory_name

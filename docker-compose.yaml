@@ -23,6 +23,9 @@ services:
       nofile:
         soft: 32000
         hard: 40000
+    networks:
+      mynet:
+        ipv4_address: 172.22.0.103
   artifactory:
     image: ${DOCKER_REGISTRY}/jfrog/artifactory-cpp-ce:${ARTIFACTORY_VERSION}
     container_name: artifactory
@@ -47,6 +50,9 @@ services:
       options:
         max-size: "50m"
         max-file: "10"
+    networks:
+      mynet:
+        ipv4_address: 172.22.0.102
   jenkins:
     build: ./Dockerfiles/jenkins
     image: jenkins/jenkins:lts
@@ -64,3 +70,12 @@ services:
      # mount docker sock and binary for docker in docker (only works on linux)
      - /var/run/docker.sock:/var/run/docker.sock
      - /usr/local/bin/docker:/usr/local/bin/docker
+    networks:
+      mynet:
+        ipv4_address: 172.22.0.101
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.22.0.0/24
