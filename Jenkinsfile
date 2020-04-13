@@ -9,6 +9,7 @@ node {
    env.WORKSPACE = pwd()
    def server
    def client
+   def buildInfo
    String serverName
 
     stage("Get project"){
@@ -21,9 +22,12 @@ node {
 
         stage("Configure Artifactory/Conan"){
             server = Artifactory.server artifactory_name
-            echo server.toString()
+
+             // Create a local build-info instance:
+            buildInfo = Artifactory.newBuildInfo()
+            buildInfo.name = "Conan-pipeline"
             client = Artifactory.newConanClient()
-            serverName = client.remote.add server: server, repo: artifactory_repo
+            serverName = client.remote.add server: server, repo: "conan-local"
         }
 
         stage("Get dependencies and publish build info"){
