@@ -17,7 +17,7 @@ node {
     }
 
 
-    def buildImage = docker.image("conanio/gcc49-armv7hf")
+    def buildImage = docker.image("conanio/gcc7")
     buildImage.inside {
 
         stage("Configure Artifactory/Conan"){
