@@ -1,0 +1,282 @@
+[frontends]
+
+  
+  
+      [frontends.jfac_01e5pxqny0js8918xvkxp40ec3-0-jfac_01e5pxqny0js8918xvkxp40ec3-radu]
+        entryPoints = ["internal","external"]
+        backend = "jfac_01e5pxqny0js8918xvkxp40ec3-radu"
+        priority = 2023
+        [frontends.jfac_01e5pxqny0js8918xvkxp40ec3-0-jfac_01e5pxqny0js8918xvkxp40ec3-radu.routes.match]
+          rule = "Path: /{part0:com\\.jfrog\\.access\\..*}"
+        [frontends.jfac_01e5pxqny0js8918xvkxp40ec3-0-jfac_01e5pxqny0js8918xvkxp40ec3-radu.routes.route_to]
+          rule = "Headers: X-JFrog-Route-To,radu"
+        [frontends.jfac_01e5pxqny0js8918xvkxp40ec3-0-jfac_01e5pxqny0js8918xvkxp40ec3-radu.headers.customrequestheaders]
+          X-JFrog-Route-To = ""
+    [frontends.jfac_01e5pxqny0js8918xvkxp40ec3-0-blackhole]
+      entryPoints = ["internal","external"]
+      backend = "blackhole"
+      priority = 1023
+      [frontends.jfac_01e5pxqny0js8918xvkxp40ec3-0-blackhole.routes.match]
+        rule = "Path: /{part0:com\\.jfrog\\.access\\..*}"
+      [frontends.jfac_01e5pxqny0js8918xvkxp40ec3-0-blackhole.routes.route_to]
+        rule = "HeadersRegexp: X-JFrog-Route-To,.*"
+
+    
+
+    
+  
+      [frontends.jfac_01e5pxqny0js8918xvkxp40ec3-1-jfac_01e5pxqny0js8918xvkxp40ec3-radu]
+        entryPoints = ["internal","external"]
+        backend = "jfac_01e5pxqny0js8918xvkxp40ec3-radu"
+        priority = 2009
+        [frontends.jfac_01e5pxqny0js8918xvkxp40ec3-1-jfac_01e5pxqny0js8918xvkxp40ec3-radu.routes.match]
+          rule = "Path: /{part0:access}/{part1:.*}"
+        [frontends.jfac_01e5pxqny0js8918xvkxp40ec3-1-jfac_01e5pxqny0js8918xvkxp40ec3-radu.routes.route_to]
+          rule = "Headers: X-JFrog-Route-To,radu"
+        [frontends.jfac_01e5pxqny0js8918xvkxp40ec3-1-jfac_01e5pxqny0js8918xvkxp40ec3-radu.headers.customrequestheaders]
+          X-JFrog-Route-To = ""
+    [frontends.jfac_01e5pxqny0js8918xvkxp40ec3-1-blackhole]
+      entryPoints = ["internal","external"]
+      backend = "blackhole"
+      priority = 1009
+      [frontends.jfac_01e5pxqny0js8918xvkxp40ec3-1-blackhole.routes.match]
+        rule = "Path: /{part0:access}/{part1:.*}"
+      [frontends.jfac_01e5pxqny0js8918xvkxp40ec3-1-blackhole.routes.route_to]
+        rule = "HeadersRegexp: X-JFrog-Route-To,.*"
+
+    
+
+    
+  
+
+  
+  
+      [frontends.jffe_000-0-jffe_000-radu]
+        entryPoints = ["internal","external"]
+        backend = "jffe_000-radu"
+        priority = 2001
+        [frontends.jffe_000-0-jffe_000-radu.routes.match]
+          rule = "Path: /"
+        [frontends.jffe_000-0-jffe_000-radu.routes.route_to]
+          rule = "Headers: X-JFrog-Route-To,radu"
+        [frontends.jffe_000-0-jffe_000-radu.headers.customrequestheaders]
+          X-JFrog-Route-To = ""
+    [frontends.jffe_000-0-blackhole]
+      entryPoints = ["internal","external"]
+      backend = "blackhole"
+      priority = 1001
+      [frontends.jffe_000-0-blackhole.routes.match]
+        rule = "Path: /"
+      [frontends.jffe_000-0-blackhole.routes.route_to]
+        rule = "HeadersRegexp: X-JFrog-Route-To,.*"
+
+    
+
+    
+  
+      [frontends.jffe_000-1-jffe_000-radu]
+        entryPoints = ["internal","external"]
+        backend = "jffe_000-radu"
+        priority = 2003
+        [frontends.jffe_000-1-jffe_000-radu.routes.match]
+          rule = "Path: /{part0:ui}"
+        [frontends.jffe_000-1-jffe_000-radu.routes.route_to]
+          rule = "Headers: X-JFrog-Route-To,radu"
+        [frontends.jffe_000-1-jffe_000-radu.headers.customrequestheaders]
+          X-JFrog-Route-To = ""
+    [frontends.jffe_000-1-blackhole]
+      entryPoints = ["internal","external"]
+      backend = "blackhole"
+      priority = 1003
+      [frontends.jffe_000-1-blackhole.routes.match]
+        rule = "Path: /{part0:ui}"
+      [frontends.jffe_000-1-blackhole.routes.route_to]
+        rule = "HeadersRegexp: X-JFrog-Route-To,.*"
+
+    
+
+    
+  
+      [frontends.jffe_000-2-jffe_000-radu]
+        entryPoints = ["internal","external"]
+        backend = "jffe_000-radu"
+        priority = 2008
+        [frontends.jffe_000-2-jffe_000-radu.routes.match]
+          rule = "Path: /{part0:ui}/{part1:(.*)}"
+        [frontends.jffe_000-2-jffe_000-radu.routes.route_to]
+          rule = "Headers: X-JFrog-Route-To,radu"
+        [frontends.jffe_000-2-jffe_000-radu.headers.customrequestheaders]
+          X-JFrog-Route-To = ""
+    [frontends.jffe_000-2-blackhole]
+      entryPoints = ["internal","external"]
+      backend = "blackhole"
+      priority = 1008
+      [frontends.jffe_000-2-blackhole.routes.match]
+        rule = "Path: /{part0:ui}/{part1:(.*)}"
+      [frontends.jffe_000-2-blackhole.routes.route_to]
+        rule = "HeadersRegexp: X-JFrog-Route-To,.*"
+
+    
+
+    
+  
+
+  
+  
+      [frontends.jfmd_01e5pxqs4fax7jpfw7tj2rgydt-0-jfmd_01e5pxqs4fax7jpfw7tj2rgydt-radu]
+        entryPoints = ["internal","external"]
+        backend = "jfmd_01e5pxqs4fax7jpfw7tj2rgydt-radu"
+        priority = 2014
+        [frontends.jfmd_01e5pxqs4fax7jpfw7tj2rgydt-0-jfmd_01e5pxqs4fax7jpfw7tj2rgydt-radu.routes.match]
+          rule = "Path: /{part0:metadata}/{part1:(.*)}"
+        [frontends.jfmd_01e5pxqs4fax7jpfw7tj2rgydt-0-jfmd_01e5pxqs4fax7jpfw7tj2rgydt-radu.routes.route_to]
+          rule = "Headers: X-JFrog-Route-To,radu"
+        [frontends.jfmd_01e5pxqs4fax7jpfw7tj2rgydt-0-jfmd_01e5pxqs4fax7jpfw7tj2rgydt-radu.headers.customrequestheaders]
+          X-JFrog-Route-To = ""
+    [frontends.jfmd_01e5pxqs4fax7jpfw7tj2rgydt-0-blackhole]
+      entryPoints = ["internal","external"]
+      backend = "blackhole"
+      priority = 1014
+      [frontends.jfmd_01e5pxqs4fax7jpfw7tj2rgydt-0-blackhole.routes.match]
+        rule = "Path: /{part0:metadata}/{part1:(.*)}"
+      [frontends.jfmd_01e5pxqs4fax7jpfw7tj2rgydt-0-blackhole.routes.route_to]
+        rule = "HeadersRegexp: X-JFrog-Route-To,.*"
+
+    
+
+    
+  
+
+  
+  
+      [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-0-jfrt_01e5pxqvzkwc0t130mk2bw0mxb-radu]
+        entryPoints = ["internal","external"]
+        backend = "jfrt_01e5pxqvzkwc0t130mk2bw0mxb-radu"
+        priority = 2012
+        [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-0-jfrt_01e5pxqvzkwc0t130mk2bw0mxb-radu.routes.match]
+          rule = "Path: /{part0:artifactory}"
+        [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-0-jfrt_01e5pxqvzkwc0t130mk2bw0mxb-radu.routes.route_to]
+          rule = "Headers: X-JFrog-Route-To,radu"
+        [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-0-jfrt_01e5pxqvzkwc0t130mk2bw0mxb-radu.headers.customrequestheaders]
+          X-JFrog-Route-To = ""
+    [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-0-blackhole]
+      entryPoints = ["internal","external"]
+      backend = "blackhole"
+      priority = 1012
+      [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-0-blackhole.routes.match]
+        rule = "Path: /{part0:artifactory}"
+      [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-0-blackhole.routes.route_to]
+        rule = "HeadersRegexp: X-JFrog-Route-To,.*"
+
+    
+
+    
+  
+      [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-1-jfrt_01e5pxqvzkwc0t130mk2bw0mxb-radu]
+        entryPoints = ["internal","external"]
+        backend = "jfrt_01e5pxqvzkwc0t130mk2bw0mxb-radu"
+        priority = 2017
+        [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-1-jfrt_01e5pxqvzkwc0t130mk2bw0mxb-radu.routes.match]
+          rule = "Path: /{part0:artifactory}/{part1:(.*)}"
+        [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-1-jfrt_01e5pxqvzkwc0t130mk2bw0mxb-radu.routes.route_to]
+          rule = "Headers: X-JFrog-Route-To,radu"
+        [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-1-jfrt_01e5pxqvzkwc0t130mk2bw0mxb-radu.headers.customrequestheaders]
+          X-JFrog-Route-To = ""
+    [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-1-blackhole]
+      entryPoints = ["internal","external"]
+      backend = "blackhole"
+      priority = 1017
+      [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-1-blackhole.routes.match]
+        rule = "Path: /{part0:artifactory}/{part1:(.*)}"
+      [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-1-blackhole.routes.route_to]
+        rule = "HeadersRegexp: X-JFrog-Route-To,.*"
+
+    
+
+    
+  
+      [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-2-jfrt_01e5pxqvzkwc0t130mk2bw0mxb-radu]
+        entryPoints = ["internal","external"]
+        backend = "jfrt_01e5pxqvzkwc0t130mk2bw0mxb-radu"
+        priority = 2008
+        [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-2-jfrt_01e5pxqvzkwc0t130mk2bw0mxb-radu.routes.match]
+          rule = "Path: /{part0:v2}/{part1:(.*)}"
+        [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-2-jfrt_01e5pxqvzkwc0t130mk2bw0mxb-radu.routes.route_to]
+          rule = "Headers: X-JFrog-Route-To,radu"
+        [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-2-jfrt_01e5pxqvzkwc0t130mk2bw0mxb-radu.headers.customrequestheaders]
+          X-JFrog-Route-To = ""
+    [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-2-blackhole]
+      entryPoints = ["internal","external"]
+      backend = "blackhole"
+      priority = 1008
+      [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-2-blackhole.routes.match]
+        rule = "Path: /{part0:v2}/{part1:(.*)}"
+      [frontends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-2-blackhole.routes.route_to]
+        rule = "HeadersRegexp: X-JFrog-Route-To,.*"
+
+    
+
+    
+  
+
+
+[backends]
+
+  
+    
+    
+  
+    
+    
+  
+    [backends.jfac_01e5pxqny0js8918xvkxp40ec3-radu]
+      [backends.jfac_01e5pxqny0js8918xvkxp40ec3-radu.servers.server]
+          url = "http://172.17.0.1:8082"
+          weight = 1
+  
+
+
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    [backends.jffe_000-radu]
+      [backends.jffe_000-radu.servers.server]
+          url = "http://172.17.0.1:8082"
+          weight = 1
+  
+
+
+  
+    
+    
+  
+    [backends.jfmd_01e5pxqs4fax7jpfw7tj2rgydt-radu]
+      [backends.jfmd_01e5pxqs4fax7jpfw7tj2rgydt-radu.servers.server]
+          url = "http://172.17.0.1:8082"
+          weight = 1
+  
+
+
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    [backends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-radu]
+      [backends.jfrt_01e5pxqvzkwc0t130mk2bw0mxb-radu.servers.server]
+          url = "http://172.17.0.1:8082"
+          weight = 1
+  
+

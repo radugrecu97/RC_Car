@@ -1,0 +1,17 @@
+Started on Apr 13, 2020 11:51:00 AM
+Using strategy: Default
+[poll] Last Built Revision: Revision c0c4a908343282541783cfaa55978ac225a6e83f (refs/remotes/origin/master)
+No credentials specified
+ > git --version # timeout=10
+ > git ls-remote -h -- https://github.com/radugrecu97/RC_Car.git # timeout=10
+Found 1 remote heads on https://github.com/radugrecu97/RC_Car.git
+[poll] Latest remote head revision on refs/heads/master is: e099d5bdade0446b48db1e4b0146ff6a36f58a82
+Using strategy: Default
+[poll] Last Built Revision: Revision c0c4a908343282541783cfaa55978ac225a6e83f (refs/remotes/origin/master)
+No credentials specified
+ > git --version # timeout=10
+ > git ls-remote -h -- https://github.com/radugrecu97/RC_Car.git # timeout=10
+Found 1 remote heads on https://github.com/radugrecu97/RC_Car.git
+[poll] Latest remote head revision on refs/heads/master is: e099d5bdade0446b48db1e4b0146ff6a36f58a82
+Done. Took 1.4 sec
+Changes found

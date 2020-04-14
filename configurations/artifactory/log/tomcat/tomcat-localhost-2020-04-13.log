@@ -1,0 +1,414 @@
+13-Apr-2020 10:17:03.162 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+13-Apr-2020 10:17:03.956 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Marking servlet [Binary Store] as unavailable
+13-Apr-2020 10:17:03.956 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.loadOnStartup Servlet [Binary Store] in web application [/artifactory] threw load() exception
+	java.lang.ClassNotFoundException: org.jfrog.storage.binstore.servlet.BinaryStoreServlet
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1180)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClass(DefaultInstanceManager.java:546)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClassMaybePrivileged(DefaultInstanceManager.java:527)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1044)
+		at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:985)
+		at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4885)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5199)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:614)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1823)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+13-Apr-2020 10:17:05.681 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+13-Apr-2020 10:22:07.505 INFO [localhost-startStop-3] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+13-Apr-2020 10:22:54.336 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+13-Apr-2020 10:22:55.413 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Marking servlet [Binary Store] as unavailable
+13-Apr-2020 10:22:55.414 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.loadOnStartup Servlet [Binary Store] in web application [/artifactory] threw load() exception
+	java.lang.ClassNotFoundException: org.jfrog.storage.binstore.servlet.BinaryStoreServlet
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1180)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClass(DefaultInstanceManager.java:546)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClassMaybePrivileged(DefaultInstanceManager.java:527)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1044)
+		at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:985)
+		at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4885)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5199)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:614)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1823)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+13-Apr-2020 10:22:56.927 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+13-Apr-2020 10:23:08.495 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+13-Apr-2020 10:24:25.913 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+13-Apr-2020 10:24:26.733 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Marking servlet [Binary Store] as unavailable
+13-Apr-2020 10:24:26.734 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.loadOnStartup Servlet [Binary Store] in web application [/artifactory] threw load() exception
+	java.lang.ClassNotFoundException: org.jfrog.storage.binstore.servlet.BinaryStoreServlet
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1180)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClass(DefaultInstanceManager.java:546)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClassMaybePrivileged(DefaultInstanceManager.java:527)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1044)
+		at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:985)
+		at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4885)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5199)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:614)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1823)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+13-Apr-2020 10:24:28.259 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+13-Apr-2020 11:55:53.498 INFO [localhost-startStop-3] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+13-Apr-2020 11:56:52.279 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+13-Apr-2020 11:56:53.328 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Marking servlet [Binary Store] as unavailable
+13-Apr-2020 11:56:53.332 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.loadOnStartup Servlet [Binary Store] in web application [/artifactory] threw load() exception
+	java.lang.ClassNotFoundException: org.jfrog.storage.binstore.servlet.BinaryStoreServlet
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1180)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClass(DefaultInstanceManager.java:546)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClassMaybePrivileged(DefaultInstanceManager.java:527)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1044)
+		at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:985)
+		at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4885)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5199)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:614)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1823)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+13-Apr-2020 11:56:54.746 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+13-Apr-2020 12:10:26.924 INFO [localhost-startStop-3] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+13-Apr-2020 12:11:12.014 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+13-Apr-2020 12:11:13.116 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Marking servlet [Binary Store] as unavailable
+13-Apr-2020 12:11:13.116 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.loadOnStartup Servlet [Binary Store] in web application [/artifactory] threw load() exception
+	java.lang.ClassNotFoundException: org.jfrog.storage.binstore.servlet.BinaryStoreServlet
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1180)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClass(DefaultInstanceManager.java:546)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClassMaybePrivileged(DefaultInstanceManager.java:527)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1044)
+		at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:985)
+		at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4885)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5199)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:614)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1823)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+13-Apr-2020 12:11:14.712 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+13-Apr-2020 12:51:28.595 INFO [localhost-startStop-3] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+13-Apr-2020 12:52:15.255 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+13-Apr-2020 12:52:17.188 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.listenerStart Exception sending context initialized event to listener instance of class [org.artifactory.webapp.servlet.ArtifactoryHomeConfigListener]
+	java.lang.RuntimeException: Could't establish connection with db: jdbc:postgresql://172.22.0.103:5432/artifactory
+		at org.jfrog.config.db.TemporaryDBChannel.<init>(TemporaryDBChannel.java:47)
+		at org.artifactory.common.config.adapter.ArtifactoryConfigurationAdapter.getDbChannel(ArtifactoryConfigurationAdapter.java:206)
+		at org.jfrog.config.wrappers.ConfigurationManagerImpl.getDBChannel(ConfigurationManagerImpl.java:419)
+		at org.artifactory.config.MasterKeyBootstrapUtil.dbChannel(MasterKeyBootstrapUtil.java:196)
+		at org.artifactory.config.MasterKeyBootstrapUtil.tryToCreateTable(MasterKeyBootstrapUtil.java:117)
+		at org.artifactory.config.MasterKeyBootstrapUtil.validateOrInsertKeyInformation(MasterKeyBootstrapUtil.java:87)
+		at org.artifactory.config.MasterKeyBootstrapUtil.handleMasterKey(MasterKeyBootstrapUtil.java:68)
+		at org.artifactory.webapp.servlet.BasicConfigManagers.initHomes(BasicConfigManagers.java:127)
+		at org.artifactory.webapp.servlet.BasicConfigManagers.initialize(BasicConfigManagers.java:112)
+		at org.artifactory.webapp.servlet.ArtifactoryHomeConfigListener.contextInitialized(ArtifactoryHomeConfigListener.java:53)
+		at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4699)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5165)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:614)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1823)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+	Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+		at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:272)
+		at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:52)
+		at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:216)
+		at org.postgresql.Driver.makeConnection(Driver.java:404)
+		at org.postgresql.Driver.connect(Driver.java:272)
+		at org.jfrog.config.db.TemporaryDBChannel.<init>(TemporaryDBChannel.java:40)
+		... 22 more
+	Caused by: java.net.NoRouteToHostException: No route to host (Host unreachable)
+		at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+		at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+		at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+		at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+		at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+		at java.base/java.net.Socket.connect(Socket.java:591)
+		at org.postgresql.core.PGStream.<init>(PGStream.java:61)
+		at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:144)
+		... 27 more
+13-Apr-2020 12:52:17.189 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.listenerStart Exception sending context initialized event to listener instance of class [org.artifactory.webapp.servlet.ArtifactoryContextConfigListener]
+	java.lang.IllegalStateException: Artifactory home not initialized.
+		at org.artifactory.webapp.servlet.ArtifactoryContextConfigListener.getArtifactoryHome(ArtifactoryContextConfigListener.java:185)
+		at org.artifactory.webapp.servlet.ArtifactoryContextConfigListener.setSessionTrackingMode(ArtifactoryContextConfigListener.java:167)
+		at org.artifactory.webapp.servlet.ArtifactoryContextConfigListener.init(ArtifactoryContextConfigListener.java:91)
+		at org.artifactory.webapp.servlet.ArtifactoryContextConfigListener.contextInitialized(ArtifactoryContextConfigListener.java:79)
+		at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4699)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5165)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:614)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1823)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+13-Apr-2020 12:52:17.483 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+13-Apr-2020 13:01:44.037 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+13-Apr-2020 13:01:46.164 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+13-Apr-2020 13:01:54.580 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.listenerStart Exception sending context initialized event to listener instance of class [org.artifactory.webapp.servlet.ArtifactoryHomeConfigListener]
+	java.lang.RuntimeException: Could't establish connection with db: jdbc:postgresql://172.22.0.103:5432/artifactory
+		at org.jfrog.config.db.TemporaryDBChannel.<init>(TemporaryDBChannel.java:47)
+		at org.artifactory.common.config.adapter.ArtifactoryConfigurationAdapter.getDbChannel(ArtifactoryConfigurationAdapter.java:206)
+		at org.jfrog.config.wrappers.ConfigurationManagerImpl.getDBChannel(ConfigurationManagerImpl.java:419)
+		at org.artifactory.config.MasterKeyBootstrapUtil.dbChannel(MasterKeyBootstrapUtil.java:196)
+		at org.artifactory.config.MasterKeyBootstrapUtil.tryToCreateTable(MasterKeyBootstrapUtil.java:117)
+		at org.artifactory.config.MasterKeyBootstrapUtil.validateOrInsertKeyInformation(MasterKeyBootstrapUtil.java:87)
+		at org.artifactory.config.MasterKeyBootstrapUtil.handleMasterKey(MasterKeyBootstrapUtil.java:68)
+		at org.artifactory.webapp.servlet.BasicConfigManagers.initHomes(BasicConfigManagers.java:127)
+		at org.artifactory.webapp.servlet.BasicConfigManagers.initialize(BasicConfigManagers.java:112)
+		at org.artifactory.webapp.servlet.ArtifactoryHomeConfigListener.contextInitialized(ArtifactoryHomeConfigListener.java:53)
+		at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4699)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5165)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:614)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1823)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+	Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+		at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:272)
+		at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:52)
+		at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:216)
+		at org.postgresql.Driver.makeConnection(Driver.java:404)
+		at org.postgresql.Driver.connect(Driver.java:272)
+		at org.jfrog.config.db.TemporaryDBChannel.<init>(TemporaryDBChannel.java:40)
+		... 22 more
+	Caused by: java.net.SocketTimeoutException: connect timed out
+		at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+		at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+		at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+		at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+		at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+		at java.base/java.net.Socket.connect(Socket.java:591)
+		at org.postgresql.core.PGStream.<init>(PGStream.java:61)
+		at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:144)
+		... 27 more
+13-Apr-2020 13:01:54.581 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.listenerStart Exception sending context initialized event to listener instance of class [org.artifactory.webapp.servlet.ArtifactoryContextConfigListener]
+	java.lang.IllegalStateException: Artifactory home not initialized.
+		at org.artifactory.webapp.servlet.ArtifactoryContextConfigListener.getArtifactoryHome(ArtifactoryContextConfigListener.java:185)
+		at org.artifactory.webapp.servlet.ArtifactoryContextConfigListener.setSessionTrackingMode(ArtifactoryContextConfigListener.java:167)
+		at org.artifactory.webapp.servlet.ArtifactoryContextConfigListener.init(ArtifactoryContextConfigListener.java:91)
+		at org.artifactory.webapp.servlet.ArtifactoryContextConfigListener.contextInitialized(ArtifactoryContextConfigListener.java:79)
+		at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4699)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5165)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:614)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1823)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+13-Apr-2020 13:22:55.729 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+13-Apr-2020 13:22:56.678 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Marking servlet [Binary Store] as unavailable
+13-Apr-2020 13:22:56.679 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.loadOnStartup Servlet [Binary Store] in web application [/artifactory] threw load() exception
+	java.lang.ClassNotFoundException: org.jfrog.storage.binstore.servlet.BinaryStoreServlet
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1180)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClass(DefaultInstanceManager.java:546)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClassMaybePrivileged(DefaultInstanceManager.java:527)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1044)
+		at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:985)
+		at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4885)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5199)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:614)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1823)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+13-Apr-2020 13:22:57.984 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+13-Apr-2020 17:20:16.832 INFO [localhost-startStop-3] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+13-Apr-2020 17:25:12.966 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+13-Apr-2020 17:25:13.845 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Marking servlet [Binary Store] as unavailable
+13-Apr-2020 17:25:13.846 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.loadOnStartup Servlet [Binary Store] in web application [/artifactory] threw load() exception
+	java.lang.ClassNotFoundException: org.jfrog.storage.binstore.servlet.BinaryStoreServlet
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1180)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClass(DefaultInstanceManager.java:546)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClassMaybePrivileged(DefaultInstanceManager.java:527)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1044)
+		at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:985)
+		at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4885)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5199)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:614)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1823)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+13-Apr-2020 17:25:15.174 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+13-Apr-2020 17:33:29.208 INFO [localhost-startStop-3] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+13-Apr-2020 17:34:15.377 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+13-Apr-2020 17:34:16.338 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Marking servlet [Binary Store] as unavailable
+13-Apr-2020 17:34:16.339 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.loadOnStartup Servlet [Binary Store] in web application [/artifactory] threw load() exception
+	java.lang.ClassNotFoundException: org.jfrog.storage.binstore.servlet.BinaryStoreServlet
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1180)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClass(DefaultInstanceManager.java:546)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClassMaybePrivileged(DefaultInstanceManager.java:527)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1044)
+		at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:985)
+		at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4885)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5199)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:614)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1823)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+13-Apr-2020 17:34:17.709 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+13-Apr-2020 17:35:01.845 INFO [localhost-startStop-3] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+13-Apr-2020 17:35:42.603 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+13-Apr-2020 17:35:43.472 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Marking servlet [Binary Store] as unavailable
+13-Apr-2020 17:35:43.472 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.loadOnStartup Servlet [Binary Store] in web application [/artifactory] threw load() exception
+	java.lang.ClassNotFoundException: org.jfrog.storage.binstore.servlet.BinaryStoreServlet
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1180)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClass(DefaultInstanceManager.java:546)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClassMaybePrivileged(DefaultInstanceManager.java:527)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1044)
+		at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:985)
+		at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4885)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5199)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:614)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1823)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+13-Apr-2020 17:35:45.041 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+13-Apr-2020 17:35:57.837 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+13-Apr-2020 17:36:44.332 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+13-Apr-2020 17:36:45.364 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Marking servlet [Binary Store] as unavailable
+13-Apr-2020 17:36:45.365 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.loadOnStartup Servlet [Binary Store] in web application [/artifactory] threw load() exception
+	java.lang.ClassNotFoundException: org.jfrog.storage.binstore.servlet.BinaryStoreServlet
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1180)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClass(DefaultInstanceManager.java:546)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClassMaybePrivileged(DefaultInstanceManager.java:527)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1044)
+		at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:985)
+		at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4885)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5199)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:614)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1823)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+13-Apr-2020 17:36:46.661 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+13-Apr-2020 19:10:56.320 INFO [localhost-startStop-3] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+13-Apr-2020 19:11:42.474 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+13-Apr-2020 19:11:43.449 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Marking servlet [Binary Store] as unavailable
+13-Apr-2020 19:11:43.450 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.loadOnStartup Servlet [Binary Store] in web application [/artifactory] threw load() exception
+	java.lang.ClassNotFoundException: org.jfrog.storage.binstore.servlet.BinaryStoreServlet
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1180)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClass(DefaultInstanceManager.java:546)
+		at org.apache.catalina.core.DefaultInstanceManager.loadClassMaybePrivileged(DefaultInstanceManager.java:527)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1044)
+		at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:985)
+		at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4885)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5199)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:614)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1823)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+13-Apr-2020 19:11:44.810 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+13-Apr-2020 21:26:44.093 INFO [localhost-startStop-3] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext

@@ -9,5 +9,7 @@ RUN add-apt-repository \
    $(lsb_release -cs) \
    stable"
 RUN apt-get update  -qq \
-    && apt-get install docker-ce -y
+    && apt-get install docker-ce -y \
+    && apt-get install cmake -y \
+    && apt-get install g++ -y
 RUN usermod -aG docker jenkins

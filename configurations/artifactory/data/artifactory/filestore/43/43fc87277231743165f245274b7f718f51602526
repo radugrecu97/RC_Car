@@ -1,0 +1,91 @@
+{
+  "version" : "1.0.1",
+  "name" : "RC_Car",
+  "number" : "8",
+  "type" : "GENERIC",
+  "buildAgent" : {
+    "name" : "Pipeline",
+    "version" : ""
+  },
+  "agent" : {
+    "name" : "Jenkins",
+    "version" : "2.222.1"
+  },
+  "started" : "2020-04-13T17:54:28.024+0000",
+  "durationMillis" : 19935,
+  "principal" : "radugrecu97",
+  "artifactoryPrincipal" : "admin",
+  "artifactoryPluginVersion" : "3.6.1",
+  "url" : "http://jenkins:8080/job/RC_Car/8/",
+  "vcs" : [ {
+    "revision" : "7194196ae3fe1d338088a08b9e564b235fdb63ea",
+    "url" : "https://github.com/radugrecu97/RC_Car.git"
+  } ],
+  "vcsRevision" : "7194196ae3fe1d338088a08b9e564b235fdb63ea",
+  "vcsUrl" : "https://github.com/radugrecu97/RC_Car.git",
+  "modules" : [ {
+    "id" : "DownloadOnly",
+    "artifacts" : [ ],
+    "dependencies" : [ {
+      "type" : "TXT",
+      "sha1" : "7921a906e68c7484e38d197cabf8652095b77ade",
+      "md5" : "6e8d4db59359a55adf5f0fb6301bb0a5",
+      "id" : "conanmanifest.txt"
+    }, {
+      "type" : "PY",
+      "sha1" : "d79f7fc3ea2133bee6f5ffc6cf9e8f275e543759",
+      "md5" : "3e2978f5ec8987443c9d9de7ba756d24",
+      "id" : "conanfile.py"
+    }, {
+      "type" : "TGZ",
+      "sha1" : "e7062311d9f68a090dd5c80280d389930f73cb93",
+      "md5" : "6734380e202005e227997bd22a86ae79",
+      "id" : "conan_export.tgz"
+    }, {
+      "type" : "TXT",
+      "sha1" : "d74ece270b37e01341e6fa5dcc24ed2209993969",
+      "md5" : "227d73846c0f9b2d87cd797459762d13",
+      "id" : "conanmanifest.txt"
+    }, {
+      "type" : "PY",
+      "sha1" : "5eb32e205ba94595902ce37b2a31c0f161bfeaab",
+      "md5" : "a7f0df9782d84837a496da35da721580",
+      "id" : "conanfile.py"
+    }, {
+      "type" : "TGZ",
+      "sha1" : "4105300cf1e5b36a971c17cbfecfa743cbca9727",
+      "md5" : "a6e246336bd43f50cd81a6f2a87a01f3",
+      "id" : "conan_export.tgz"
+    }, {
+      "type" : "TXT",
+      "sha1" : "532f8d02d76b5e44360a8bac3db05550e5d006d0",
+      "md5" : "c21575e51eaa136e143589d7f617d04b",
+      "id" : "conanmanifest.txt"
+    }, {
+      "type" : "TXT",
+      "sha1" : "80c954f73910b385771c4af66212d82d47f08c0a",
+      "md5" : "b2dcd5409a059cafe2ac8fbb2addf8e1",
+      "id" : "conaninfo.txt"
+    }, {
+      "type" : "TGZ",
+      "sha1" : "c31daa325110597eb416183bdb10031cbbd7c4ee",
+      "md5" : "1ef421612aa0774d48ea8a2fa9084e1b",
+      "id" : "conan_package.tgz"
+    }, {
+      "type" : "TXT",
+      "sha1" : "e0439885c7b721821f858a9be7abcb977e4eaa05",
+      "md5" : "1abb597cff89986f26bdf0c948936856",
+      "id" : "conanmanifest.txt"
+    }, {
+      "type" : "TXT",
+      "sha1" : "9db76410c524d106ce19f2eb9809c0ada2122bd8",
+      "md5" : "c57ce83f0eebfb3d4ca53634aabe038c",
+      "id" : "conaninfo.txt"
+    }, {
+      "type" : "TGZ",
+      "sha1" : "d71f80f83fe7ffec75dd5ecad3cb3f75bbaa5d7f",
+      "md5" : "51c47f1a16e21a57d21a427e3e01c58d",
+      "id" : "conan_package.tgz"
+    } ]
+  } ]
+}

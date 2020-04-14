@@ -1,0 +1,14 @@
+{
+ "remotes": [
+  {
+   "name": "conan-center",
+   "url": "https://conan.bintray.com",
+   "verify_ssl": true
+  },
+  {
+   "name": "b962f9bf-4f68-4376-a6c6-0dfba0988368",
+   "url": "http://localhost:8081/artifactory/api/conan/conan-local",
+   "verify_ssl": true
+  }
+ ]
+}

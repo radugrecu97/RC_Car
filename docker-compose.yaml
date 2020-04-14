@@ -1,6 +1,7 @@
 version: '3.7'
 services:
   postgres:
+    user: "1000"
     networks:
       cont_int:
         aliases:
@@ -15,7 +16,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ${ROOT_DATA_DIR}/var/data/postgres/data:/var/lib/postgresql/data
+      - ${ROOT_DATA_DIR}/../configurations/postgres:/var/lib/postgresql/data
       - /etc/localtime:/etc/localtime:ro
     restart: always
     logging:
@@ -29,15 +30,16 @@ services:
         soft: 32000
         hard: 40000
   artifactory:
+    user: "1000"
     networks:
       cont_int:
         aliases:
-          - artifactory
+          - jfrog-art
     image: ${DOCKER_REGISTRY}/jfrog/artifactory-cpp-ce:${ARTIFACTORY_VERSION}
     container_name: artifactory
-    hostname: jfrog
+    hostname: jfrog-art
     volumes:
-      - ${ROOT_DATA_DIR}/var:/var/opt/jfrog/artifactory
+      - ${ROOT_DATA_DIR}/../configurations/artifactory:/var/opt/jfrog/artifactory
       - /etc/localtime:/etc/localtime:ro
     restart: always
     depends_on:
@@ -58,6 +60,7 @@ services:
         max-size: "50m"
         max-file: "10"
   jenkins:
+    user: "0"
     build: ./Dockerfiles/jenkins
     networks:
       cont_int:
@@ -75,9 +78,24 @@ services:
     privileged: true
     volumes:
       # enable persistent volume (warning: make sure that the local jenkins_home folder is created)
-      - ${ROOT_DATA_DIR}/var/wisestep/data/jenkins_home:/var/jenkins_home
+      - ${ROOT_DATA_DIR}/../configurations/jenkins_home:/var/jenkins_home
       # mount docker sock and binary for docker in docker (only works on linux)
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/local/bin/docker:/usr/local/bin/docker
+  dns-proxy-server:
+    networks:
+      cont_int:
+        aliases:
+          - dns.mageddo
+    image: defreitas/dns-proxy-server
+    container_name: dns.mageddo
+    hostname: dns.mageddo
+    restart: always
+    ports:
+      - 5830:5830
+    volumes:
+      # mount docker sock and binary for docker in docker (only works on linux)
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/resolv.conf:/etc/resolv.conf
 networks:
   cont_int:

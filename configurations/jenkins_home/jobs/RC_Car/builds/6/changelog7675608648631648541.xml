@@ -1,0 +1,11 @@
+commit 4c24f5326815b6d8a83c5d51aa632746caec6412
+tree c87249f7daa13d915e57cff1174a9aacc144ab74
+parent e099d5bdade0446b48db1e4b0146ff6a36f58a82
+author radugrecu97 <radugrecu97@gmail.com> 2020-04-13 14:39:43 +0200
+committer radugrecu97 <radugrecu97@gmail.com> 2020-04-13 14:39:43 +0200
+
+    Continuous integration test
+
+
+:100644 100644 31e13450e0a10a3a726d95d957401002cfbe0e42 91decf722bf9428def183f5691bd822e9610822e M	Jenkinsfile
+:100644 100644 5ce5f46f9a84eb547adad89e94e2ebf33f0b5f52 dcad195cbfe96f029649fc77720ac08d954fcc21 M	docker-compose.yaml

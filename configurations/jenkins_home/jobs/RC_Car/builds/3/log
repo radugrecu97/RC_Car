@@ -1,0 +1,203 @@
+Started by an SCM change
+Obtained Jenkinsfile from git https://github.com/radugrecu97/RC_Car.git
+Running in Durability level: MAX_SURVIVABILITY
+[8mha:////4HUuKsW/EYA8w2P6fcL95/7Ft5kRMlFZKe1OBsd75TwDAAAAoh+LCAAAAAAAAP9tjTEOwjAQBM8BClpKHuFItIiK1krDC0x8GCfWnbEdkooX8TX+gCESFVvtrLSa5wtWKcKBo5UdUu8otU4GP9jS5Mixv3geZcdn2TIl9igbHBs2eJyx4YwwR1SwULBGaj0nRzbDRnX6rmuvydanHMu2V1A5c4MHCFXMWcf8hSnC9jqYxPTz/BXAFEIGsfuclm8zQVqFvQAAAA==[0m[Pipeline] Start of Pipeline
+[8mha:////4CmGsTs7kt1z1dF3brSYZdI2+Nci7xMNEBqCJvcdIt+wAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[0m[Pipeline] node
+Running on [8mha:////4ATEiprKpAdiiEHJzcZjWXEEkX5kQc7hB8C5P1VxlrKqAAAAnh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZh/eT83ILSktQifY3cxGIgrakPAHib2iPIAAAA[0mJenkins in /var/jenkins_home/workspace/RC_Car
+[8mha:////4NnSnyutgZ0D/Sd9sVn1SsEmfPde7WOr8AlEr1gRiGp2AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[0m[Pipeline] {
+[8mha:////4PZ6Xbad3RQDGx5njTayEEG4WOo5H2luWqyDEOR2h+GAAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbaGWsbAmNJ0AWEZb8zwLrbuWJvJp3kLiJlZNMMm+a93rDOic4UbLcG+wdZu14DKOti0+U+lugiXu6ck2YKRguzSSpM+cFJRUDS1gDKwEbgzpQdmgLbIVXD9UGhba9lFS/o4DGdQM8gYlqLiqVL8wJdvexy4Q/z18BzLEA29ce4gdpL1fxvAAAAA==[0m[Pipeline] checkout
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/radugrecu97/RC_Car.git # timeout=10
+Fetching upstream changes from https://github.com/radugrecu97/RC_Car.git
+ > git --version # timeout=10
+ > git fetch --tags --progress -- https://github.com/radugrecu97/RC_Car.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision e099d5bdade0446b48db1e4b0146ff6a36f58a82 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f e099d5bdade0446b48db1e4b0146ff6a36f58a82 # timeout=10
+Commit message: "Continuous integration test"
+ > git rev-list --no-walk c0c4a908343282541783cfaa55978ac225a6e83f # timeout=10
+[8mha:////4DQKlWcxCjZlEN4wI8M9uNqGPS30eg79bL+gQGqDrEfLAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbGBtjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI4F2L72ED+qfHravAAAAA==[0m[Pipeline] pwd
+[8mha:////4BuGmITpoLRJKgVOUfDczFhUqpZN7qiSlaZIvEI3q9pdAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0QWJATKxRFk4QkhDSRv+3SUo7cSKuxh0IVGLCkiXbkvWeL6hThCNFx1uLncekPe/D6EriE8XuGmjiLV24JkwULJd2kmTsaamSsoVFrIKVgLVFHSh5dBk2olV31QSFrjnnWLaDgMqbAR7ARCFnFfO3zBG2t9Ekwh/nLwDmPgPbFe8/v/oNP1aWNcAAAAA=[0m[Pipeline] stage
+[8mha:////4F3r9fbVFxfzfvnqSeT6pOunLEzpAoYvGXCv1rN7UeRwAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0BAkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfpX/cvwAAAAA==[0m[Pipeline] { (Get project)
+[8mha:////4NnDwoRTyubv8Jrd6O9zCsHgqW6vip1BpLHe8UO/ZD0EAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbaoyVLaHxBMgiwpL/WWDdrTyRV/MOEjexcpJJ5k3zXm9Y5wQnSpZ7g73DrB2PYbR18YlSfws0cU9XrgkzBcOlmSR15rygpGJgCWtgJWBjUAfKDm2BrfDqodqg0LaXkup3FNC4boAnMFHNRaXyhTnB7j52mfDn+SuAORZg+9pD/AAeoCAqvAAAAA==[0m[Pipeline] git
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/radugrecu97/RC_Car.git # timeout=10
+Fetching upstream changes from https://github.com/radugrecu97/RC_Car.git
+ > git --version # timeout=10
+ > git fetch --tags --progress -- https://github.com/radugrecu97/RC_Car.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision e099d5bdade0446b48db1e4b0146ff6a36f58a82 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f e099d5bdade0446b48db1e4b0146ff6a36f58a82 # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D master # timeout=10
+ > git checkout -b master e099d5bdade0446b48db1e4b0146ff6a36f58a82 # timeout=10
+Commit message: "Continuous integration test"
+[8mha:////4C6cP4lhH3S5+AnroJanpmzAd+E+dRYnjCiRLAXxVcqOAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMKBDglR0VppeIFJjHFi3QX7QlLxIr7GH4iIRMVWO9PM641lijhydKqx1HpKlVdd6N301MCxvQYeVMMXVTElDlaVdii5tqcZSxaLeVmOhcbKUhU4eXKCtW7MwxTBkCvOEid30Mh9fccTmZ7KYqJ8YYzY3Po6Mf06fwMYu06Q77aCbP8Brmfz270AAAA=[0m[Pipeline] }
+[8mha:////4LN5+ceC2aXTQdeQ7n4NLbuuU98Skx8fnU57WUOfd6AZAAAAox+LCAAAAAAAAP9tjTESgjAQRT84FraWHiIMlYVjZZuh8QQRYgxkdjFZhMoTeTXvICMzVv7qv9e81xvrFHHk6FRrqfOUaq/6MLj5qZFjdw08qpYvqmZKHKyq7FhxY08LViwWy7IcK42NpTpw8uQEW92ahymCIVecJc7uoJH75o4nMj2XxUT5whSxuw1NYvp1/gYw9b0gL0tBtv8Aj1Msdr0AAAA=[0m[Pipeline] // stage
+[8mha:////4NkZTMHM1mxfTHWNihwJadvRdt6P+ul1hXDrVkaJDfclAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRiA5R0VppeIFJjHFi3QX7QlLxIr7GH4iIRMVWO9PM641lijhydKqx1HpKlVdd6N301MCxvQYeVMMXVTElDlaVdii5tqcZSxaLeVmOhcbKUhU4eXKCtW7MwxTBkCvOEid30Mh9fccTmZ7KYqJ8YYzY3Po6Mf06fwMYO0G2F+TbXfcB1zprYb0AAAA=[0m[Pipeline] isUnix
+[8mha:////4JNvK+lJ9y6hr9Kgd3Sd80D/WkNgskz9jseWh3y4kRvPAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRgg5R0VppeIFJjHFi3QX7QlLxIr7GH4iIRMVWO9PM641lijhydKqx1HpKlVdd6N301MCxvQYeVMMXVTElDlaVdii5tqcZSxaLeVmOhcbKUhU4eXKCtW7MwxTBkCvOEid30Mh9fccTmZ7KYqJ8YYzY3Po6Mf06fwMYO0G2F+TbXfcBlgtweL0AAAA=[0m[Pipeline] sh
++ docker inspect -f . conanio/gcc7
+
+Error: No such object: conanio/gcc7
+[8mha:////4GFrlkldFeSI5OZuxiploLBCzGZMjt9SRBUNpf/RUZTdAAAAox+LCAAAAAAAAP9tjbEOgjAURS8YB1dHP6LEhM04uTYsfkGFWgvNe9g+hMkv8tf8B4kkTt7pnrOc1xvrFHHk6FRrqfOUaq/6MLj5qZFjdw08qpYvqmZKHKyq7FhxY08LViwWy7IcK42NpTpw8uQEW92ahymCIVecJc7uoJH75o4nMj2XxUT5whSxuw1NYvp1/gYw9YKsFOT7sv8AUZ0xN70AAAA=[0m[Pipeline] isUnix
+[8mha:////4O9xR21Q7S+gAUIWci9jPpNiZ+yM6SipRQP8+dLbNJDcAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRElSIitZKwwtMYowT6y7YF5KKF/E1/kBEJCq22plmXm8sU8SRo1ONpdZTqrzqQu+mpwaO7TXwoBq+qIopcbCqtEPJtT3NWLJYzMtyLDRWlqrAyZMTrHVjHqYIhlxxlji5g0bu6zueyPRUFhPlC2PE5tbXienX+RvA2AmynSDf7rsPEKwqLr0AAAA=[0m[Pipeline] sh
++ docker pull conanio/gcc7
+Using default tag: latest
+latest: Pulling from conanio/gcc7
+4ccdce43d1e0: Pulling fs layer
+c95f13c88d92: Pulling fs layer
+82656eee95ad: Pulling fs layer
+78ff727be57a: Pulling fs layer
+448bb314afa5: Pulling fs layer
+4d987cda79e3: Pulling fs layer
+7d117fa5da96: Pulling fs layer
+46cbd1eeea3b: Pulling fs layer
+78ff727be57a: Waiting
+4d987cda79e3: Waiting
+448bb314afa5: Waiting
+7d117fa5da96: Waiting
+46cbd1eeea3b: Waiting
+c95f13c88d92: Download complete
+82656eee95ad: Verifying Checksum
+82656eee95ad: Download complete
+448bb314afa5: Download complete
+78ff727be57a: Verifying Checksum
+78ff727be57a: Download complete
+4d987cda79e3: Verifying Checksum
+4d987cda79e3: Download complete
+46cbd1eeea3b: Verifying Checksum
+46cbd1eeea3b: Download complete
+4ccdce43d1e0: Verifying Checksum
+4ccdce43d1e0: Download complete
+4ccdce43d1e0: Pull complete
+c95f13c88d92: Pull complete
+82656eee95ad: Pull complete
+78ff727be57a: Pull complete
+448bb314afa5: Pull complete
+4d987cda79e3: Pull complete
+7d117fa5da96: Verifying Checksum
+7d117fa5da96: Download complete
+7d117fa5da96: Pull complete
+46cbd1eeea3b: Pull complete
+Digest: sha256:4ec3a2b3770f0789e816463b569176b7239426ce65cfea3b7dbd5c00e862b8b7
+Status: Downloaded newer image for conanio/gcc7:latest
+docker.io/conanio/gcc7:latest
+[8mha:////4Ey+8vWStiybnxgGaXBcqBTodPltUahYwAYDep0A+aMRAAAApx+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQjJESDqGgtN7zAxMY4se6CfSGpeBFf4w8EIlGx1c5Kq3m+oMwJDpS8bBy2AXMdZBd7PzU5UGovkQbZ0FnWhJmik9oNmqw7zqiJHcwRBSwULB3WkXJAz7BSjbmbKhr01YnTtO0VFMHe4AFCTWY2ib8wJlhfe5sJf56/Ahg7BrFlKDa7z7F8A6sHc4fBAAAA[0m[Pipeline] withDockerContainer
+Jenkins seems to be running inside container 1a891eb97ecdf5713c983f79cade062fb07b6841b3e087c4bd36b5384bfe0d18
+$ docker run -t -d -u 0:0 -w /var/jenkins_home/workspace/RC_Car --volumes-from 1a891eb97ecdf5713c983f79cade062fb07b6841b3e087c4bd36b5384bfe0d18 -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** conanio/gcc7 cat
+$ docker top 224dca3977693a42df1943de48214468175d7ada8cb1b64f78c98388386bce01 -eo pid,comm
+[8mha:////4PEOftsIxBybKFt19G0/sOm3I4ei8ogiz2zexkI+s6G1AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohULDAgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD1+IXOLCAAAA[0m[Pipeline] {
+[8mha:////4DOzPMiwZ1Mm2JOceuV6e6KbChlK9EGhmFSRcMTdmAjnAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUTCAhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD0rlhNLCAAAA[0m[Pipeline] stage
+[8mha:////4IBGivHuE1r3JdeoSjD3dVwuLlKhFKJRnMYzuwVH9XbBAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUbCDE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5Dv9rMd5mfxASnCIIrCAAAA[0m[Pipeline] { (Configure Artifactory/Conan)
+[8mha:////4Df29RRZOtzL7yMm07EJIf57ENu9jQHndyRR2GQ826fUAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICdAilorXc8AKTGOPEugu2g1PxIr7GH7CIRMUWq51t5vWGZfBQszfYaeothcbi4EaTFyb2/dVxwo4v2DAFdhqlTpJbfZpRctQwpyhhIWClqXEcLJkIa9Gph6qcIlOdo8/fUUBp2zs8oRDZHJWPX5g8bG5jG5h+nr8CmIYI5e6Qa78dPhmQ9Da+AAAA[0m[Pipeline] getArtifactoryServer
+[8mha:////4E7s8c4nPCrH32LxJcc3+iFN8NWpAEF5xd18evn36wUGAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKi0CFEldZKwwtMbIwT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYPBXtNgKXYWvRtNXjhxGK6OJ+z5gh1TZKex1VPLSjcLtpw0LClKWAnYaOocR0smwVb08iErJ8lU5xTydxRQWnWHJxQim5MM6QtzgN1tVJHp5/krgNknKOtDrn3tP1ih7y++AAAA[0m[Pipeline] newBuildInfo
+[8mha:////4BD+jGxs2xtVTMSwb2Xd/+7DDqIk8XhS4uNbByyvQXiEAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMIR6RCiSmul4QUmPowT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYMRPdJgKXZWeDeavMTEYbg6nkTPF9ExRXYoWpxa1tgs2HJCWFKUsJKwQeocR0smwVb26qEqp8hU5xTyd5RQWn2HJxQym5MK6QtzgN1t1JHp5/krgNknKPeHXHXtP5vywgS+AAAA[0m[Pipeline] initConanClient
+[RC_Car] $ docker exec --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** 224dca3977693a42df1943de48214468175d7ada8cb1b64f78c98388386bce01 sh -c 'conan config set log.trace_file=\"/var/jenkins_home/workspace/RC_Car@tmp/artifactory/conan.tmp3899412910183519317/conan_log.log\" '
+[8mha:////4L188oXlv5FjQSKnOLfBzVLpkxhrJ+08r10XjQvb7oUbAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIioEIoFa3lhheYxBgn1l2wHZyKF/E1/oBFJCq2WO1sM683LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDREKLeHXLv98AHaw9kdvgAAAA==[0m[Pipeline] conanAddRemote
+[RC_Car] $ docker exec --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** 224dca3977693a42df1943de48214468175d7ada8cb1b64f78c98388386bce01 sh -c "conan remote add 4d809cec-64d2-4332-9ad1-e1b41cfc8c31 http://172.22.0.4:8081/artifactory/api/conan/conan-local True "
+WARN: Remotes registry file missing, creating default one in /var/jenkins_home/workspace/RC_Car@tmp/artifactory/conan.tmp3899412910183519317/.conan/remotes.json
+[8mha:////4F0Phq+IZYQYOtlCNvG49Z891JyC2djLRcJti+sIf5cyAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiEA1CqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKYhQrk95Nrthw8dVZhSvgAAAA==[0m[Pipeline] conanAddUser
+Adding conan user '', server '4d809cec-64d2-4332-9ad1-e1b41cfc8c31'
+[RC_Car] $ docker exec --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** --env ******** 224dca3977693a42df1943de48214468175d7ada8cb1b64f78c98388386bce01 sh -c ********
+Remote '4d809cec-64d2-4332-9ad1-e1b41cfc8c31' username: ERROR: EOF when reading a line
+Traceback (most recent call last):
+  File "/opt/pyenv/versions/3.7.5/lib/python3.7/site-packages/conans/client/command.py", line 2002, in run
+    method(args[0][1:])
+  File "/opt/pyenv/versions/3.7.5/lib/python3.7/site-packages/conans/client/command.py", line 1198, in user
+    skip_auth=args.skip_auth)
+  File "/opt/pyenv/versions/3.7.5/lib/python3.7/site-packages/conans/client/conan_api.py", line 89, in wrapper
+    return f(api, *args, **kwargs)
+  File "/opt/pyenv/versions/3.7.5/lib/python3.7/site-packages/conans/client/conan_api.py", line 805, in authenticate
+    name, password = self.app.user_io.request_login(remote_name=remote_name, username=name)
+  File "/opt/pyenv/versions/3.7.5/lib/python3.7/site-packages/conans/client/userio.py", line 48, in request_login
+    username = self.get_username(remote_name)
+  File "/opt/pyenv/versions/3.7.5/lib/python3.7/site-packages/conans/client/userio.py", line 62, in get_username
+    return self._get_env_username(remote_name) or self.raw_input()
+  File "/opt/pyenv/versions/3.7.5/lib/python3.7/site-packages/conans/client/userio.py", line 35, in raw_input
+    return raw_input()
+EOFError: EOF when reading a line
+
+[8mha:////4NgYyBoLfRylqrfSrFsjNhK7JLdziOT4WeCL265D6WGdAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIikCgQSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryt8+1PXwAM5QTDr4AAAA=[0m[Pipeline] }
+[8mha:////4KMkJBz12TAayFGyESZIWUWuZCeiXGDM1+i5Hy5qxG+dAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiKBASSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryt8+1PXwAC9aA/74AAAA=[0m[Pipeline] // stage
+[8mha:////4IPf9MKYJanui8ziMCkmtgLy6beQsS4H/6gtUEMUOD1sAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiaFIgqrRWGl5gYmOcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThwM9poGS7Gz6N1o8sKJw3B1PGHPF+yYIjuNrZ5aVrpZsOWkYUlRwkrARlPnOFoyCbailw9ZOUmmOqeQv6OA0qo7PKEQ2ZxkSF+YA+xuo4pMP89fAczeJygPda59/QE/GGOkvgAAAA==[0m[Pipeline] }
+$ docker stop --time=1 224dca3977693a42df1943de48214468175d7ada8cb1b64f78c98388386bce01
+$ docker rm -f 224dca3977693a42df1943de48214468175d7ada8cb1b64f78c98388386bce01
+[8mha:////4JQ4UjSMw6TaJBYpNBGUcuga3Tqc3E7yFYar38Um6hqYAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiKBASSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryd8i13X8AfJoyIr4AAAA=[0m[Pipeline] // withDockerContainer
+[8mha:////4NaKFezccMLkmmLJP2Snp4r67TgsKS5D622VkG8V1QP6AAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMKREA1CVLRWGl5gEmOcWHfBvpBUvIiv8QciIlGx1c4083pjmSKOHJ1qLLWeUuVVF3o3PTVwbK+BB9XwRVVMiYNVpR1Kru1pxpLFYl6WY6GxslQFTp6cYK0b8zBFMOSKs8TJHTRyX9/xRKanspgoXxgjNre+Tky/zt8Axq4T5Nu9INt9AFo7wVm9AAAA[0m[Pipeline] }
+[8mha:////4CX9vFYyes7UWQcw+yNtt62nmlmDdGG/D30+x97oane8AAAAoh+LCAAAAAAAAP9tjbEOgjAURS8YB1dHP6KYMBon14bFL6hQa6F5D9uHMPlF/pr/IJHEyTvdc5bzemOdIo4cnWotdZ5S7VUfBjc/NXLsroFH1fJF1UyJg1WVHStu7GnBisViWZZjpbGxVAdOnpxgq1vzMEUw5IqzxNkdNHLf3PFEpueymChfmCJ2t6FJTL/O3wCmvhfk5V6QlR8tH+kBvQAAAA==[0m[Pipeline] // node
+[8mha:////4B01vfT9dlAxAnk9guzPkGK9v4jVlAn7XzQMGsIxpI5sAAAAoh+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRUCIqWisNLzCJMU6su2BfSCpexNf4AxGRqNhqZ5p5vbFMEUeOTjWWWk+p8qoLvZueGji218CDaviiKqbEwarSDiXX9jRjyWIxL8ux0FhZqgInT06w1o15mCIYcsVZ4uQOGrmv73gi01NZTJQvjBGbW18npl/nbwBj1wny/VaQ7T4LBo5LvQAAAA==[0m[Pipeline] End of Pipeline
+java.lang.RuntimeException: Conan build failed
+	at org.jfrog.hudson.pipeline.common.Utils.launch(Utils.java:274)
+	at org.jfrog.hudson.pipeline.common.Utils.exeConan(Utils.java:251)
+	at org.jfrog.hudson.pipeline.scripted.steps.conan.AddUserStep$Execution.run(AddUserStep.java:84)
+	at org.jfrog.hudson.pipeline.scripted.steps.conan.AddUserStep$Execution.run(AddUserStep.java:46)
+	at org.jenkinsci.plugins.workflow.steps.AbstractSynchronousStepExecution.start(AbstractSynchronousStepExecution.java:42)
+	at org.jenkinsci.plugins.workflow.cps.DSL.invokeStep(DSL.java:286)
+	at org.jenkinsci.plugins.workflow.cps.DSL.invokeMethod(DSL.java:179)
+	at org.jenkinsci.plugins.workflow.cps.CpsScript.invokeMethod(CpsScript.java:122)
+	at org.jfrog.hudson.pipeline.common.types.ConanRemote.add(ConanRemote.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1213)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaClassSite.call(PojoMetaClassSite.java:47)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:163)
+	at org.kohsuke.groovy.sandbox.GroovyInterceptor.onMethodCall(GroovyInterceptor.java:23)
+	at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:157)
+	at org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:161)
+	at org.kohsuke.groovy.sandbox.impl.Checker.checkedCall(Checker.java:165)
+	at com.cloudbees.groovy.cps.sandbox.SandboxInvoker.methodCall(SandboxInvoker.java:17)
+	at WorkflowScript.run(WorkflowScript:30)
+	at ___cps.transform___(Native Method)
+	at com.cloudbees.groovy.cps.impl.ContinuationGroup.methodCall(ContinuationGroup.java:86)
+	at com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.dispatchOrArg(FunctionCallBlock.java:113)
+	at com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.fixArg(FunctionCallBlock.java:83)
+	at sun.reflect.GeneratedMethodAccessor161.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)
+	at com.cloudbees.groovy.cps.impl.CollectionLiteralBlock$ContinuationImpl.dispatch(CollectionLiteralBlock.java:55)
+	at com.cloudbees.groovy.cps.impl.CollectionLiteralBlock$ContinuationImpl.item(CollectionLiteralBlock.java:45)
+	at sun.reflect.GeneratedMethodAccessor170.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)
+	at com.cloudbees.groovy.cps.impl.ConstantBlock.eval(ConstantBlock.java:21)
+	at com.cloudbees.groovy.cps.Next.step(Next.java:83)
+	at com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:174)
+	at com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:163)
+	at org.codehaus.groovy.runtime.GroovyCategorySupport$ThreadCategoryInfo.use(GroovyCategorySupport.java:129)
+	at org.codehaus.groovy.runtime.GroovyCategorySupport.use(GroovyCategorySupport.java:268)
+	at com.cloudbees.groovy.cps.Continuable.run0(Continuable.java:163)
+	at org.jenkinsci.plugins.workflow.cps.SandboxContinuable.access$001(SandboxContinuable.java:18)
+	at org.jenkinsci.plugins.workflow.cps.SandboxContinuable.run0(SandboxContinuable.java:51)
+	at org.jenkinsci.plugins.workflow.cps.CpsThread.runNextChunk(CpsThread.java:185)
+	at org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.run(CpsThreadGroup.java:400)
+	at org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.access$400(CpsThreadGroup.java:96)
+	at org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:312)
+	at org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:276)
+	at org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService$2.call(CpsVmExecutorService.java:67)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at hudson.remoting.SingleLaneExecutorService$1.run(SingleLaneExecutorService.java:131)
+	at jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)
+	at jenkins.security.ImpersonatingExecutorService$1.run(ImpersonatingExecutorService.java:59)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Finished: FAILURE

@@ -1,0 +1,18 @@
+[filesystem "0f8378cc606b|Oracle Corporation|1.8.0_242|/dev/sda8"]
+	timestampResolution = 1001 microseconds
+	minRacyThreshold = 5992 microseconds
+[filesystem "df83a61e725d|Oracle Corporation|1.8.0_242|/dev/sda8"]
+	timestampResolution = 1001 microseconds
+	minRacyThreshold = 7531 microseconds
+[filesystem "9f8a1ddd842c|Oracle Corporation|1.8.0_242|/dev/sda8"]
+	timestampResolution = 1001 microseconds
+	minRacyThreshold = 5457 microseconds
+[filesystem "1a891eb97ecd|Oracle Corporation|1.8.0_242|/dev/sda8"]
+	timestampResolution = 1001 microseconds
+	minRacyThreshold = 7467 microseconds
+[filesystem "3de805cdb843|Oracle Corporation|1.8.0_242|/dev/sda8"]
+	timestampResolution = 1001 microseconds
+	minRacyThreshold = 4918 microseconds
+[filesystem "jenkins|Oracle Corporation|1.8.0_242|/dev/sda8"]
+	timestampResolution = 1001 microseconds
+	minRacyThreshold = 6055 microseconds

@@ -1,0 +1,15 @@
+shared:
+    node:
+        ip: 172.17.0.1
+        id: radu
+        name: radu
+        contextUrl: http://172.17.0.1:8082/artifactory
+    database:
+        type: postgresql
+        driver: org.postgresql.Driver
+        username: artifactory
+        password: 37fa1f.aesgcm128.NbFS2_IAwkDRHL_yqbHGGAF4vitWmHSE6DHLvhIX1mgWgqAA
+        url: jdbc:postgresql://172.17.0.1:5432/artifactory
+router:
+    entrypoints:
+        externalPort: 8082

@@ -1,0 +1,10 @@
+commit c0c4a908343282541783cfaa55978ac225a6e83f
+tree cf4aa5ad6f8833afe7495aee16192d1c4a8ff8e0
+parent 0e946353800050e8be4aff957d3e50f85594dc4a
+author radugrecu97 <radugrecu97@gmail.com> 2020-04-13 13:40:41 +0200
+committer radugrecu97 <radugrecu97@gmail.com> 2020-04-13 13:40:41 +0200
+
+    Continuous integration test
+
+
+:100644 100644 01fbad84452c9b53e3f70adaef0aff76b720b40b dc53c340c5b97dc8f0dfa1f84870a698aaf4db7e M	Jenkinsfile
