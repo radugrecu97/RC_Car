@@ -1,6 +1,0 @@
-1583162424
-conandata.yml: b994a11e2255274e624ddfb6169ccb73
-conanfile.py: 3e2978f5ec8987443c9d9de7ba756d24
-export_source/CMakeLists.txt: f10e3e40d64a3fbc90bfe6de7cad5c7e
-export_source/patches/0001-header-only.patch: 9dbb9d8fe8b4d61c7440888b920216cd
-export_source/patches/0002-header-only.patch: 06e2baf917272e6107e1a1cb6df6bcbe

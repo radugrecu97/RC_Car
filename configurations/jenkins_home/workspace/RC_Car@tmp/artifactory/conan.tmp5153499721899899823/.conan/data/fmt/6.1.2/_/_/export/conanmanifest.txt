@@ -1,7 +1,0 @@
-1586287152
-conandata.yml: 3a2d803f282d384c02a06bf186286f72
-conanfile.py: a7f0df9782d84837a496da35da721580
-export_source/CMakeLists.txt: 817f190f3f6cec2c1d32154e25bedd7d
-export_source/patches/fix-install-5.3.0.patch: bcf5e5ae85ee35bf0bbf6a156b47f670
-export_source/patches/fix-install-6.0.0.patch: e877f4dbd8efd4418dcf5751ee659dbb
-export_source/patches/fix-mingw-msvc2015-export-assert-fail-6.1.0.patch: 496955c1ad2f82c22770883b3639b17e

@@ -1,4 +1,0 @@
-sources:
-  6.1.2:
-    sha256: 1cafc80701b746085dddf41bd9193e6d35089e1c6ec1940e037fcb9c98f62365
-    url: https://github.com/fmtlib/fmt/archive/6.1.2.tar.gz
