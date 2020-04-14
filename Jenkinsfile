@@ -17,7 +17,7 @@ node {
     }
 
 
-    def buildImage = docker.image("conanio/gcc7")
+    def buildImage = docker.image("conanio/gcc6")
     buildImage.inside("--network rt_cont_int") {
 
         stage("Configure Artifactory/Conan"){
