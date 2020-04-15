@@ -1,7 +1,7 @@
-#include <iostream>
-#include <spdlog/
+#include "spdlog/spdlog.h"
+
 bool print(bool x) {
-    std::cout << "Hello, World!" << std::endl;
+    spdlog::info("Hello, {}!", "World");
     return x;
 }
 
