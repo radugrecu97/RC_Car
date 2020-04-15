@@ -37,11 +37,13 @@ node {
               server.publishBuildInfo b
             }
         }
+
+            stage("Build/Test project"){
+                dir ('build') {
+                  sh "cmake ../ && cmake --build ."
+                }
+            }
     }
 
-    stage("Build/Test project"){
-        dir ('build') {
-          sh "cmake ../ && cmake --build ."
-        }
-    }
+
 }

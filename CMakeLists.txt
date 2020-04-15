@@ -13,8 +13,8 @@ endif()
 include(${CMAKE_BINARY_DIR}/conan.cmake)
 
 conan_cmake_run(REQUIRES spdlog/1.5.0
-        BASIC_SETUP
-        BUILD missing)
+                BASIC_SETUP
+                BUILD missing)
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 
