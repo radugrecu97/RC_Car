@@ -59,7 +59,7 @@ services:
         max-file: "10"
   jenkins:
     user: "0"
-    build: ./Dockerfiles/jenkins
+    build: Dockerfiles/jenkins
     networks:
       cont_int:
         aliases:

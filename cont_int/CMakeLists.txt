@@ -19,5 +19,5 @@ conan_cmake_run(REQUIRES spdlog/1.5.0
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 
-add_executable(RC_Car main.cpp)
+add_executable(RC_Car ../src/main.cpp)
 target_link_libraries(RC_Car ${CONAN_LIBS})
