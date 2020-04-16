@@ -13,6 +13,7 @@ endif()
 include(${CMAKE_BINARY_DIR}/conan.cmake)
 
 conan_cmake_run(REQUIRES spdlog/1.5.0
+                REQUIRES gtest/1.10.0
                 BASIC_SETUP
                 BUILD missing)
 

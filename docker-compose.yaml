@@ -18,7 +18,6 @@ services:
     volumes:
       - ${ROOT_DATA_DIR}/../configurations/postgres:/var/lib/postgresql/data
       - /etc/localtime:/etc/localtime:ro
-    restart: always
     logging:
       driver: json-file
       options:
@@ -41,7 +40,6 @@ services:
     volumes:
       - ${ROOT_DATA_DIR}/../configurations/artifactory:/var/opt/jfrog/artifactory
       - /etc/localtime:/etc/localtime:ro
-    restart: always
     depends_on:
       - postgres
     ulimits:
@@ -90,7 +88,6 @@ services:
     image: defreitas/dns-proxy-server
     container_name: dns.mageddo
     hostname: dns.mageddo
-    restart: always
     ports:
       - 5830:5830
     volumes:
