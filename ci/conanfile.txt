@@ -10,6 +10,5 @@ spdlog:shared=True
 gtest:shared=True
 
 [imports]
-bin, *.dll -> ./../lib # Copies all dll files from packages bin folder to my "bin" folder
-lib, *.dylib* -> ./../lib # Copies all dylib files from packages lib folder to my "bin" folder
-lib, *.so* -> ./../lib # Copies all dylib files from packages lib folder to my "bin" folder
+include, *.h -> ./../external/include/
+lib, *.so* -> ./../external/lib @ folder=True
