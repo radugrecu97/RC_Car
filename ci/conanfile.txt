@@ -6,9 +6,17 @@ gtest/1.10.0
 cmake
 
 [options]
+# shared option set to True for shared library (.so) or False for static(.a)
 spdlog:shared=True
 gtest:shared=True
 
 [imports]
-include, *.h -> ./../external/include/
-lib, *.so* -> ./../external/lib @ folder=True
+# import functional libraries
+# include, *.h -> ./../external/include/ @ root_package=spdlog
+# lib, *.so* -> ./../build/lib
+
+# import testing libraries
+# include, *.h -> ./../tests/Google_tests/include/ @ root_package=gtest
+# lib, *.so* -> ./../build/tests/Google_tests/lib @ root_package=gtest
+
+# lib, *.so* -> ./../build/lib
