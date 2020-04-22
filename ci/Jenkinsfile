@@ -61,7 +61,7 @@ node {
 
         stage("Test project") {
             node (label: 'slave-rpi') {
-                ...
+
             }
         }
     }
