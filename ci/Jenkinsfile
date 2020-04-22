@@ -40,7 +40,7 @@ node {
 
         stage("Build/Test project"){
             dir ('build') {
-              sh "cmake ../ && cmake --build ."
+              sh "cmake -DCMAKE_BUILD_TYPE=Release ../ && cmake --build ."
             }
         }
     }
