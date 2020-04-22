@@ -53,7 +53,7 @@ node {
                 // Artifactory server ID from Jenkins configuration, or from configuration in the pipeline script
                 serverId: artifactory_name,
                 // Name of target repository in Artifactory
-                targetRepo: 'artifactory_repo',
+                targetRepo: artifactory_repo,
 
 
             )
