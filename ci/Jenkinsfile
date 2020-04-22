@@ -38,12 +38,33 @@ node {
             }
         }
 
-        stage("Build/Test project"){
+        stage("Build project"){
             dir ('build') {
               sh "cmake -DCMAKE_BUILD_TYPE=Release ../ && cmake --build ."
             }
         }
+
+        stage("Upload binaries"){
+            rtPromote (
+                // Mandatory parameter
+
+                buildName: 'RC_Car',
+                buildNumber: '77',
+                // Artifactory server ID from Jenkins configuration, or from configuration in the pipeline script
+                serverId: artifactory_name,
+                // Name of target repository in Artifactory
+                targetRepo: 'artifactory_repo',
+
+
+            )
+        }
+
+        stage("Test project") {
+            node (label: 'slave-rpi') {
+                ...
+            }
+        }
     }
 
-
 }
+
