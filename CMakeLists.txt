@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16.5)
+cmake_minimum_required(VERSION 3.16.4)
 project(RC_Car CXX)
 add_definitions("-std=c++11")
 
