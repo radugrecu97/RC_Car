@@ -45,18 +45,15 @@ node {
         }
 
         stage("Upload binaries"){
-            rtPromote (
-                // Mandatory parameter
-
-                buildName: 'RC_Car',
-                buildNumber: '77',
-                // Artifactory server ID from Jenkins configuration, or from configuration in the pipeline script
-                serverId: artifactory_name,
-                // Name of target repository in Artifactory
-                targetRepo: artifactory_repo,
-
-
-            )
+            def uploadSpec = """{
+              "files": [
+                {
+                  "pattern": "../build/bin/*",
+                  "target": "conan-local/binaries/"
+                }
+             ]
+            }"""
+            server.upload(uploadSpec)
         }
 
         stage("Test project") {

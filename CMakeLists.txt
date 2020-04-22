@@ -25,7 +25,7 @@ include(${CMAKE_BINARY_DIR}/conan.cmake)
 # The function bellow runs conan_basic_setup as well.
 conan_cmake_run(CONANFILE ci/conanfile.txt
                 BASIC_SETUP CMAKE_TARGETS
-                BUILD missing)
+                )
 
 
 #####------------------------------------------------SUB-DIRS------------------------------------------------------#####
