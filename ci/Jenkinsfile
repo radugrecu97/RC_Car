@@ -1,34 +1,17 @@
-//Adjust your artifactory instance name/repository and your source code repository
-def artifactory_name = "art-01"
-def artifactory_repo = "conan-local"
-def repo_url = 'https://github.com/radugrecu97/RC_Car.git'
-def repo_branch = 'master'
-
 node {
    checkout scm
-   env.WORKSPACE = pwd()
    def server
    def client
    def buildInfo
+   def uploadSpec
    String serverName
 
     stage("Get project"){
         git branch: repo_branch, url: repo_url
     }
 
-
     def buildImage = docker.image("conanio/gcc6")
     buildImage.inside("--network rt_cont_int") {
-
-        stage("Configure Artifactory/Conan"){
-            server = Artifactory.server artifactory_name
-
-             // Create a local build-info instance:
-            buildInfo = Artifactory.newBuildInfo()
-            buildInfo.name = "Conan-pipeline"
-            client = Artifactory.newConanClient()
-            serverName = client.remote.add server: server, repo: "conan-local"
-        }
 
         stage("Build project"){
             sh "mkdir -p build"
@@ -37,16 +20,15 @@ node {
             }
         }
 
-/*         stage("Get dependencies and publish build info"){
-            sh "mkdir -p build"
-            dir ('build') {
-              def b = client.run(command: "install .")
-              server.publishBuildInfo b
-            }
-        } */
+        stage("Configure Artifactory/Conan"){
+            server = Artifactory.server ${env.ARTIFACTORY_NAME}
+            client = Artifactory.newConanClient()
+            serverName = client.remote.add server: server, ${env.ARTIFACTORY_REPO}
+            echo serverName
+        }
 
         stage("Upload binaries"){
-            def uploadSpec = """{
+            uploadSpec = """{
               "files": [
                 {
                   "pattern": "build/bin/*",
@@ -55,6 +37,16 @@ node {
              ]
             }"""
             server.upload(uploadSpec)
+        }
+
+         stage("Get dependencies and publish build info"){
+            dir ('build') {
+                buildInfo = server.upload uploadSpec
+                buildInfo.number = 'v0.${BUILD_NUMBER}' // BUILD_NUMBER is a Jenkins environment variable
+                buildInfo.retention maxBuilds: ${env.MAX_BUILDS}
+                buildInfo.retention maxDays: ${env.MAX_DAYS}
+                server.publishBuildInfo buildInfo
+            }
         }
 
         stage("Test project") {
