@@ -14,10 +14,11 @@ node {
     def buildImage = docker.image("conanio/gcc6")
     buildImage.inside("--network rt_cont_int") {
 
-        //echo "AAA ${CONAN_CMAKE_FIND_ROOT_PATH} AND ${CONAN_USER_HOME}"
+       // echo "AAA ${CONAN_CMAKE_FIND_ROOT_PATH} AND ${CONAN_USER_HOME}"
 
         stage("Build project"){
             sh "mkdir -p build"
+            sh "ls -la ${pwd()}"
             dir ('build') {
               sh "cmake -DCMAKE_BUILD_TYPE=Release ../ && cmake --build ."
             }
@@ -30,7 +31,7 @@ node {
             echo serverName
         }
 
-        stage("Upload binaries"){
+        stage("Upload binaries and publish build info"){
             uploadSpec = """{
               "files": [
                 {
@@ -46,12 +47,6 @@ node {
             //buildInfo.retention maxBuilds: "${env.MAX_BUILDS}".toString()
             //buildInfo.retention maxDays: "${env.MAX_DAYS}".toString()
             server.publishBuildInfo buildInfo
-        }
-
-         stage("Get dependencies and publish build info"){
-            dir ('build') {
-
-            }
         }
 
         stage("Test project") {
