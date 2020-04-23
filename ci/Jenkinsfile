@@ -37,13 +37,13 @@ node {
                 }
              ]
             }"""
-            server.upload(uploadSpec)
         }
 
          stage("Get dependencies and publish build info"){
             dir ('build') {
                 buildInfo = server.upload uploadSpec
                 buildInfo.number = "v0.${BUILD_NUMBER}" // BUILD_NUMBER is a Jenkins environment variable
+                // Build retention not available with Artifactory Community Edition
                 //buildInfo.retention maxBuilds: "${env.MAX_BUILDS}".toString()
                 //buildInfo.retention maxDays: "${env.MAX_DAYS}".toString()
                 server.publishBuildInfo buildInfo
