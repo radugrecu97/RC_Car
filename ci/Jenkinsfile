@@ -24,7 +24,7 @@ node {
         stage("Configure Artifactory/Conan"){
             server = Artifactory.server "${env.ARTIFACTORY_NAME}"
             client = Artifactory.newConanClient()
-            serverName = client.remote.add server: server, "${env.ARTIFACTORY_REPO}"
+            serverName = client.remote.add server: server, repo: "${env.ARTIFACTORY_REPO}"
             echo serverName
         }
 
