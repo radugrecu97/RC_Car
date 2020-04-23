@@ -30,25 +30,26 @@ node {
             serverName = client.remote.add server: server, repo: "conan-local"
         }
 
-        stage("Get dependencies and publish build info"){
-            sh "mkdir -p build"
-            dir ('build') {
-              def b = client.run(command: "install .")
-              server.publishBuildInfo b
-            }
-        }
-
         stage("Build project"){
+            sh "mkdir -p build"
             dir ('build') {
               sh "cmake -DCMAKE_BUILD_TYPE=Release ../ && cmake --build ."
             }
         }
 
+/*         stage("Get dependencies and publish build info"){
+            sh "mkdir -p build"
+            dir ('build') {
+              def b = client.run(command: "install .")
+              server.publishBuildInfo b
+            }
+        } */
+
         stage("Upload binaries"){
             def uploadSpec = """{
               "files": [
                 {
-                  "pattern": "../build/bin/*",
+                  "pattern": "build/bin/*",
                   "target": "conan-local/binaries/"
                 }
              ]
