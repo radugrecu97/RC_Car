@@ -22,9 +22,9 @@ node {
         }
 
         stage("Configure Artifactory/Conan"){
-            server = Artifactory.server ${env.ARTIFACTORY_NAME}
+            server = Artifactory.server "${env.ARTIFACTORY_NAME}"
             client = Artifactory.newConanClient()
-            serverName = client.remote.add server: server, ${env.ARTIFACTORY_REPO}
+            serverName = client.remote.add server: server, "${env.ARTIFACTORY_REPO}"
             echo serverName
         }
 
@@ -44,8 +44,8 @@ node {
             dir ('build') {
                 buildInfo = server.upload uploadSpec
                 buildInfo.number = 'v0.${BUILD_NUMBER}' // BUILD_NUMBER is a Jenkins environment variable
-                buildInfo.retention maxBuilds: ${env.MAX_BUILDS}
-                buildInfo.retention maxDays: ${env.MAX_DAYS}
+                buildInfo.retention maxBuilds: "${env.MAX_BUILDS}"
+                buildInfo.retention maxDays: "${env.MAX_DAYS}"
                 server.publishBuildInfo buildInfo
             }
         }
