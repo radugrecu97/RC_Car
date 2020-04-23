@@ -14,7 +14,10 @@ node {
     def buildImage = docker.image("conanio/gcc6")
     buildImage.inside("--network rt_cont_int") {
 
-       // echo "AAA ${CONAN_CMAKE_FIND_ROOT_PATH} AND ${CONAN_USER_HOME}"
+        echo "AAA ${CONAN_USER_HOME}"
+        env.CONAN_USER_HOME =  "./conan-cache"
+        echo "AAA ${CONAN_USER_HOME}"
+        echo "AAA ${env.CONAN_USER_HOME}".toString()
 
         stage("Build project"){
             sh "mkdir -p build"
@@ -28,7 +31,6 @@ node {
             server = Artifactory.server "${env.ARTIFACTORY_NAME}"
             client = Artifactory.newConanClient()
             serverName = client.remote.add server: server, repo: "${env.ARTIFACTORY_REPO}".toString()
-            echo serverName
         }
 
         stage("Upload binaries and publish build info"){
@@ -40,6 +42,7 @@ node {
                 }
              ]
             }"""
+            buildInfo = client.run(command: "install . -e CONAN_USER_HOME=../build/packages")
             buildInfo = server.upload uploadSpec
             buildInfo.number = "v0.${BUILD_NUMBER}" // BUILD_NUMBER is a Jenkins environment variable
             buildInfo.env.capture = true

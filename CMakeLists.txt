@@ -9,7 +9,7 @@ set( DIR_SRC ${PROJECT_SOURCE_DIR}/src)
 set( DIR_CI ${PROJECT_SOURCE_DIR}/ci)
 set( DIR_DOCK ${DIR_CI}/Dockerfiles)
 set( DIR_CONF ${DIR_CI}/configurations)
-
+set( CONAN_USER_HOME ./build/packages)
 #####-------------------------------------------------CONAN--------------------------------------------------------#####
 
 # Download automatically, you can also just copy the conan.cmake file
@@ -24,6 +24,14 @@ include(${CMAKE_BINARY_DIR}/conan.cmake)
 # Install dependencies according to the conanfile. It's also possible to explicitly specify packages.
 # The function bellow runs conan_basic_setup as well.
 conan_cmake_run(CONANFILE ci/conanfile.txt
+
+                # Conan profile settings
+                SETTINGS os=Linux
+                SETTINGS os_build=Linux
+                SETTINGS arch=armv8
+                SETTINGS arch_build=x86_64
+
+
                 BASIC_SETUP CMAKE_TARGETS
                 BUILD missing)
 
