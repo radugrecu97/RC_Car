@@ -14,7 +14,7 @@ node {
     def buildImage = docker.image("conanio/gcc6")
     buildImage.inside("--network rt_cont_int") {
 
-        echo "AAA ${CONAN_CMAKE_FIND_ROOT_PATH} AND ${CONAN_USER_HOME}"
+        //echo "AAA ${CONAN_CMAKE_FIND_ROOT_PATH} AND ${CONAN_USER_HOME}"
 
         stage("Build project"){
             sh "mkdir -p build"
