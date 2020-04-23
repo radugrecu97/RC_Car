@@ -14,6 +14,8 @@ node {
     def buildImage = docker.image("conanio/gcc6")
     buildImage.inside("--network rt_cont_int") {
 
+        echo "AAA ${CONAN_CMAKE_FIND_ROOT_PATH} AND ${CONAN_USER_HOME}"
+
         stage("Build project"){
             sh "mkdir -p build"
             dir ('build') {
@@ -37,16 +39,18 @@ node {
                 }
              ]
             }"""
+            buildInfo = server.upload uploadSpec
+            buildInfo.number = "v0.${BUILD_NUMBER}" // BUILD_NUMBER is a Jenkins environment variable
+            buildInfo.env.capture = true
+            // Build retention not available with Artifactory Community Edition
+            //buildInfo.retention maxBuilds: "${env.MAX_BUILDS}".toString()
+            //buildInfo.retention maxDays: "${env.MAX_DAYS}".toString()
+            server.publishBuildInfo buildInfo
         }
 
          stage("Get dependencies and publish build info"){
             dir ('build') {
-                buildInfo = server.upload uploadSpec
-                buildInfo.number = "v0.${BUILD_NUMBER}" // BUILD_NUMBER is a Jenkins environment variable
-                // Build retention not available with Artifactory Community Edition
-                //buildInfo.retention maxBuilds: "${env.MAX_BUILDS}".toString()
-                //buildInfo.retention maxDays: "${env.MAX_DAYS}".toString()
-                server.publishBuildInfo buildInfo
+
             }
         }
 
