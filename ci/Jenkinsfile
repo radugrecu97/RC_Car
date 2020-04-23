@@ -5,6 +5,7 @@ node {
    def buildInfo
    def uploadSpec
    String serverName
+   load "$JENKINS_HOME/ci/variables.groovy"
 
     stage("Get project"){
         git branch: repo_branch, url: repo_url
