@@ -1,3 +1,5 @@
+
+
 node {
 
    def server
@@ -5,14 +7,16 @@ node {
    def buildInfo
    def uploadSpec
    String serverName
-   load "$JENKINS_HOME/workspace/RC_Car/ci/variables.groovy"
+
 
     def buildImage = docker.image("conanio/gcc8-armv7")
     buildImage.inside("--network rt_cont_int") {
 
 
         stage("Get project"){
-            git branch: repo_branch, url: repo_url
+            //git branch: repo_branch, url: repo_url
+            checkout scm
+            load "$JENKINS_HOME/workspace/RC_Car/ci/variables.groovy"
         }
 
         stage("Build project"){
