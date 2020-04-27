@@ -12,7 +12,7 @@ node {
 
 
         stage("Get project"){
-            checkout scm
+            git branch: repo_branch, url: repo_url
         }
 
         stage("Build project"){
