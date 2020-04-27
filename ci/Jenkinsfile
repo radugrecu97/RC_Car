@@ -9,7 +9,7 @@ node {
    String serverName
 
 
-    def buildImage = docker.image("conanio/gcc8-armv7hf")
+    def buildImage = docker.image("conanio/gcc8-armv7")
     buildImage.inside("--network rt_cont_int") {
 
 
