@@ -21,7 +21,7 @@ CXXFLAGS=-I"$standalone_toolchain/$target_host/lib/include"
 
 [settings]
 os=Linux
-arch=armv7hf
+arch=armv7
 compiler=gcc
 compiler.version=8
 compiler.libcxx=libstdc++11
