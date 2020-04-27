@@ -1,5 +1,5 @@
 node {
-   checkout scm
+
    def server
    def client
    def buildInfo
@@ -7,17 +7,13 @@ node {
    String serverName
    load "$JENKINS_HOME/workspace/RC_Car/ci/variables.groovy"
 
-    stage("Get project"){
-        git branch: repo_branch, url: repo_url
-    }
-
-    def buildImage = docker.image("conanio/gcc6")
+    def buildImage = docker.image("conanio/gcc8-armv7")
     buildImage.inside("--network rt_cont_int") {
 
-        echo "AAA ${CONAN_USER_HOME}"
-        env.CONAN_USER_HOME =  "./conan-cache"
-        echo "AAA ${CONAN_USER_HOME}"
-        echo "AAA ${env.CONAN_USER_HOME}".toString()
+
+        stage("Get project"){
+            checkout scm
+        }
 
         stage("Build project"){
             sh "mkdir -p build"
@@ -33,11 +29,24 @@ node {
             serverName = client.remote.add server: server, repo: "${env.ARTIFACTORY_REPO}".toString()
         }
 
-        stage("Upload binaries and publish build info"){
+        stage("Get dependencies and create app") {
+            //client.run(command: "remote remove conan-center" )
+            String strCommand = "create . radugrecu97/experimental -pr rpi_gcc8"
+            client.run(command: strCommand)
+        }
+
+        stage("Upload packages") {
+            String command = "upload RC_Car* --all -r ${serverName} --confirm"
+            def b = client.run(command: command)
+            b.env.collect()
+            server.publishBuildInfo b
+        }
+
+        /*  stage("Upload binaries and publish build info"){
             uploadSpec = """{
               "files": [
                 {
-                  "pattern": "build/bin/*",
+                  "pattern": "build/bin *//*",
                   "target": "conan-local/binaries/"
                 }
              ]
@@ -50,13 +59,14 @@ node {
             //buildInfo.retention maxBuilds: "${env.MAX_BUILDS}".toString()
             //buildInfo.retention maxDays: "${env.MAX_DAYS}".toString()
             server.publishBuildInfo buildInfo
-        }
+        } */
 
         stage("Test project") {
             node (label: 'slave-rpi') {
 
             }
         }
+
     }
 
 }

@@ -1,15 +1,15 @@
-cmake_minimum_required(VERSION 3.16.4)
 project(RC_Car CXX)
+cmake_minimum_required(VERSION 3.16.4)
 add_definitions("-std=c++11")
-
 
 #####------------------------------------------------CONSTANTS-----------------------------------------------------#####
 
-set( DIR_SRC ${PROJECT_SOURCE_DIR}/src)
-set( DIR_CI ${PROJECT_SOURCE_DIR}/ci)
+set( DIR_SRC src)
+set( DIR_CI ci)
 set( DIR_DOCK ${DIR_CI}/Dockerfiles)
 set( DIR_CONF ${DIR_CI}/configurations)
-set( CONAN_USER_HOME ./build/packages)
+
+
 #####-------------------------------------------------CONAN--------------------------------------------------------#####
 
 # Download automatically, you can also just copy the conan.cmake file
@@ -23,23 +23,16 @@ include(${CMAKE_BINARY_DIR}/conan.cmake)
 
 # Install dependencies according to the conanfile. It's also possible to explicitly specify packages.
 # The function bellow runs conan_basic_setup as well.
-conan_cmake_run(CONANFILE ci/conanfile.txt
-
-                # Conan profile settings
-                SETTINGS os=Linux
-                SETTINGS os_build=Linux
-                SETTINGS arch=armv8
-                SETTINGS arch_build=x86_64
-
-
+conan_cmake_run(CONANFILE conanfile.py
+                PROFILE  ../ci/rpi_gcc8
+                PROFILE_AUTO build_type
                 BASIC_SETUP CMAKE_TARGETS
                 BUILD missing)
-
 
 #####------------------------------------------------SUB-DIRS------------------------------------------------------#####
 
 
-add_subdirectory( tests/Google_tests )
+#add_subdirectory( tests/Google_tests )
 add_executable( RC_Car ${DIR_SRC}/main.cpp )
 
 
@@ -48,6 +41,5 @@ add_executable( RC_Car ${DIR_SRC}/main.cpp )
 # More info here:
 # https://stackoverflow.com/questions/58997230/cmake-project-fails-to-find-shared-library#answer-60126535
 # https://github.com/conan-io/conan/issues/2660
-target_link_libraries( RC_Car CONAN_PKG::spdlog "-Wl,--disable-new-dtags")
-
+target_link_libraries( RC_Car  CONAN_PKG::spdlog "-Wl,--disable-new-dtags")
 

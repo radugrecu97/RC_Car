@@ -1,3 +1,3 @@
 project( Google_tests )
 
-add_subdirectory( motors )
+add_subdirectory(motors)

@@ -1,6 +1,6 @@
 project( Motor_test )
 
-add_executable(Motor_test motor_tests.cpp )
+add_executable(Motor_test motor_tests.cpp)
 
 # The optional parameter is to force the linker to emit RPATH because without it, the executable cannot locate the
 # shared libraries. Apparently it's platform issue.
