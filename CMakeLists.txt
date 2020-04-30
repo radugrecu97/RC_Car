@@ -13,21 +13,24 @@ set( DIR_CONF ${DIR_CI}/configurations)
 #####-------------------------------------------------CONAN--------------------------------------------------------#####
 
 # Download automatically, you can also just copy the conan.cmake file
-if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
-    message(STATUS "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
-    file(DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.15/conan.cmake"
-            "${CMAKE_BINARY_DIR}/conan.cmake")
-endif()
-
-include(${CMAKE_BINARY_DIR}/conan.cmake)
+#if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
+#    message(STATUS "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
+#    file(DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.15/conan.cmake"
+#            "${CMAKE_BINARY_DIR}/conan.cmake")
+#endif()
+#
+#include(${CMAKE_BINARY_DIR}/conan.cmake)
 
 # Install dependencies according to the conanfile. It's also possible to explicitly specify packages.
 # The function bellow runs conan_basic_setup as well.
-conan_cmake_run(CONANFILE conanfile.py
-                PROFILE  ../ci/rpi_gcc8
-                PROFILE_AUTO build_type
-                BASIC_SETUP CMAKE_TARGETS
-                BUILD missing)
+#conan_cmake_run(CONANFILE conanfile.py
+#                PROFILE  ../ci/rpi_gcc8
+#                PROFILE_AUTO build_type
+#                BASIC_SETUP CMAKE_TARGETS
+#                BUILD missing)
+
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup(TARGETS)
 
 #####------------------------------------------------SUB-DIRS------------------------------------------------------#####
 
