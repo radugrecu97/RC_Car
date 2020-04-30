@@ -28,11 +28,11 @@ node {
             }
         }
 
-//         stage("Configure Artifactory/Conan"){
-//             server = Artifactory.server "${env.ARTIFACTORY_NAME}"
-//             client = Artifactory.newConanClient()
-//             serverName = client.remote.add server: server, repo: "${env.ARTIFACTORY_REPO}".toString()
-//         }
+        stage("Configure Artifactory/Conan"){
+            server = Artifactory.server "${env.ARTIFACTORY_NAME}"
+            client = Artifactory.newConanClient()
+            serverName = client.remote.add server: server, repo: "${env.ARTIFACTORY_REPO}".toString()
+        }
 //
 //         stage("Get dependencies and create app") {
 //             //client.run(command: "remote remove conan-center" )
