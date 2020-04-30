@@ -14,11 +14,7 @@ node {
     buildImage.inside("--network rt_cont_int") {
 
 
-//         stage("Get project"){
-//             git branch: repo_branch, url: repo_url
-//             //checkout scm
-//
-//         }
+
 
 //         stage("Build project"){
 //             sh "mkdir -p build"
@@ -27,6 +23,12 @@ node {
 //               sh "cmake -DCMAKE_BUILD_TYPE=Release ../ && cmake --build ."
 //             }
 //         }
+
+        stage("Get project"){
+            //git branch: repo_branch, url: repo_url
+            checkout scm
+
+        }
 
         stage("Configure Artifactory/Conan"){
             load "$JENKINS_HOME/workspace/RC_Car/ci/variables.groovy"
