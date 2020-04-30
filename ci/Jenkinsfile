@@ -14,8 +14,8 @@ node {
 
 
         stage("Get project"){
-            //git branch: repo_branch, url: repo_url
-            checkout scm
+            git branch: repo_branch, url: repo_url
+            //checkout scm
             load "$JENKINS_HOME/workspace/RC_Car/ci/variables.groovy"
         }
 
