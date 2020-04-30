@@ -67,11 +67,11 @@ node {
             server.publishBuildInfo buildInfo
         } */
 
-        stage("Test project") {
-            node (label: 'slave-rpi') {
-
-            }
-        }
+//         stage("Test project") {
+//             node (label: 'slave-rpi') {
+//
+//             }
+//         }
 
     }
 
