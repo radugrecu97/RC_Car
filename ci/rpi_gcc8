@@ -1,10 +1,29 @@
+toolchain=/home/radugrecu97/rpi/cross-pi-gcc-8.3.0-2 # Adjust this path
+target_host=arm-linux-gnueabihf
+#toolchain=/usr/bin
+#target_host=x86_64-linux-gnu
+cc_compiler=gcc
+cxx_compiler=g++
 
+[env]
+# Toolchain downloaded from https://github.com/abhiTronix/raspberry-pi-cross-compilers#b-toolchain-binaries-description-table
+CONAN_CMAKE_FIND_ROOT_PATH=$standalone_toolchain/$target_host/sysroot
+PATH=[$standalone_toolchain/bin]
+CHOST=$target_host
+AR=$target_host-ar
+AS=$target_host-as
+RANLIB=$target_host-ranlib
+LD=$target_host-ld
+STRIP=$target_host-strip
+CC=$target_host-$cc_compiler
+CXX=$target_host-$cxx_compiler
+CXXFLAGS=-I"$standalone_toolchain/$target_host/lib/include"
 
 [settings]
 os=Linux
 arch=armv7hf
 compiler=gcc
-compiler.version=7
+compiler.version=8
 compiler.libcxx=libstdc++11
 build_type=Release
 

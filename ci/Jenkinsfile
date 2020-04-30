@@ -9,7 +9,7 @@ node {
    String serverName
 
 
-    def buildImage = docker.image("conanio/gcc7-armv7hf")
+    def buildImage = docker.image("conanio/gcc8-armv7hf")
     buildImage.inside("--network rt_cont_int") {
 
 
@@ -27,17 +27,17 @@ node {
             }
         }
 
-        stage("Configure Artifactory/Conan"){
-            server = Artifactory.server "${env.ARTIFACTORY_NAME}"
-            client = Artifactory.newConanClient()
-            serverName = client.remote.add server: server, repo: "${env.ARTIFACTORY_REPO}".toString()
-        }
-
-        stage("Get dependencies and create app") {
-            //client.run(command: "remote remove conan-center" )
-            String strCommand = "create . radugrecu97/experimental -pr rpi_gcc8"
-            client.run(command: strCommand)
-        }
+//         stage("Configure Artifactory/Conan"){
+//             server = Artifactory.server "${env.ARTIFACTORY_NAME}"
+//             client = Artifactory.newConanClient()
+//             serverName = client.remote.add server: server, repo: "${env.ARTIFACTORY_REPO}".toString()
+//         }
+//
+//         stage("Get dependencies and create app") {
+//             //client.run(command: "remote remove conan-center" )
+//             String strCommand = "create . radugrecu97/experimental -pr rpi_gcc8"
+//             client.run(command: strCommand)
+//         }
 
         stage("Upload packages") {
             String command = "upload RC_Car* --all -r ${serverName} --confirm"

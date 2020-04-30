@@ -77,6 +77,7 @@ services:
     volumes:
       # enable persistent volume (warning: make sure that the local jenkins_home folder is created)
       - ${ROOT_DATA_DIR}/../configurations/jenkins_home:/var/jenkins_home
+      - /home/danimtb/:/home/conan/danimtb/
       # mount docker sock and binary for docker in docker (only works on linux)
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/local/bin/docker:/usr/local/bin/docker
