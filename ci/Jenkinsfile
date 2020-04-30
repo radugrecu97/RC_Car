@@ -1,44 +1,18 @@
-def repo_url = 'https://github.com/radugrecu97/RC_Car.git'
-def repo_branch = 'master'
-
 node {
-
-   def server
-   def client
-   def buildInfo
-   def uploadSpec
-   String serverName
-
 
     def buildImage = docker.image("conanio/gcc8-armv7hf")
     buildImage.inside("--network rt_cont_int") {
 
-
-
-
-//         stage("Build project"){
-//             sh "mkdir -p build"
-//             sh "ls -la ${pwd()}"
-//             dir ('build') {
-//               sh "cmake -DCMAKE_BUILD_TYPE=Release ../ && cmake --build ."
-//             }
-//         }
+        load "$JENKINS_HOME/workspace/RC_Car/ci/variables.groovy"
+        def server = Artifactory.server "${env.ARTIFACTORY_NAME}".toString()
+        def client = Artifactory.newConanClient()
+        def serverName = client.remote.add server: server, repo: "${env.ARTIFACTORY_REPO}".toString()
 
         stage("Get project"){
-            //git branch: repo_branch, url: repo_url
             checkout scm
-
-        }
-
-        stage("Configure Artifactory/Conan"){
-            load "$JENKINS_HOME/workspace/RC_Car/ci/variables.groovy"
-            server = Artifactory.server "${env.ARTIFACTORY_NAME}"
-            client = Artifactory.newConanClient()
-            serverName = client.remote.add server: server, repo: "${env.ARTIFACTORY_REPO}".toString()
         }
 
         stage("Get dependencies and create app") {
-            //client.run(command: "remote remove conan-center" )
             String strCommand = "create . radugrecu97/experimental -pr ./ci/rpi_gcc8 --build missing"
             client.run(command: strCommand)
         }
@@ -49,25 +23,6 @@ node {
             b.env.collect()
             server.publishBuildInfo b
         }
-
-        /*  stage("Upload binaries and publish build info"){
-            uploadSpec = """{
-              "files": [
-                {
-                  "pattern": "build/bin *//*",
-                  "target": "conan-local/binaries/"
-                }
-             ]
-            }"""
-            buildInfo = client.run(command: "install . -e CONAN_USER_HOME=../build/packages")
-            buildInfo = server.upload uploadSpec
-            buildInfo.number = "v0.${BUILD_NUMBER}" // BUILD_NUMBER is a Jenkins environment variable
-            buildInfo.env.capture = true
-            // Build retention not available with Artifactory Community Edition
-            //buildInfo.retention maxBuilds: "${env.MAX_BUILDS}".toString()
-            //buildInfo.retention maxDays: "${env.MAX_DAYS}".toString()
-            server.publishBuildInfo buildInfo
-        } */
 
 //         stage("Test project") {
 //             node (label: 'slave-rpi') {
