@@ -2,6 +2,7 @@ from conans import ConanFile, CMake
 
 class RC_CarConan(ConanFile):
     name = "RC_Car"
+    version = "0.1"
     license="MIT"
     description = "Remote controlled Raspberry Pi Car"
     #build_folder="/home/radugrecu97/CLionProjects/RC_Car/build_debug"
