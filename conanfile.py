@@ -11,8 +11,7 @@ class RC_CarConan(ConanFile):
     url = "https://github.com/radugrecu97/RC_Car.git"
     exports_sources = "CMakeLists.txt", "src/main.cpp", "LICENSE"
     generators = "cmake"
-    options = {"shared": [True, False]}
-    default_options = {"shared": True}
+    default_options = {"spdlog:shared": True, "gtest:shared": True}
 
 
     def requirements(self):
@@ -26,7 +25,7 @@ class RC_CarConan(ConanFile):
         cmake.build()
 
     def package(self):
-        self.copy("rc_car", src="bin", dst="bin")
+        self.copy("RC_Car", src="bin", dst="bin")
 
     def deploy(self):
-        self.copy("rc_car", src="bin", dst="bin")
+        self.copy("RC_Car", src="bin", dst="bin")
