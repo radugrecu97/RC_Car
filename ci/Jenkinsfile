@@ -24,7 +24,7 @@ def pipeline(){
 
         stage("Get dependencies and create app") {
             //client.run(command: "remote remove conan-center" )
-            String strCommand = "create . radugrecu97/experimental -pr ./ci/rpi_gcc8 --build missing"
+            String strCommand = "create . -pr ./ci/conan/profiles/rpi_gcc8 --build missing"
             client.run(command: strCommand)
         }
 
