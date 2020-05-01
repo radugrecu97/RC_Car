@@ -33,5 +33,12 @@ node {
 
     }
 
+    post {
+            always {
+                cleanWs()
+            }
+        }
+    }
+
 }
 
