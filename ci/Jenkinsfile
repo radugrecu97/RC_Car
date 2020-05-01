@@ -9,44 +9,48 @@ node{
 }
 
 def pipeline(){
+
     def buildImage = docker.image("conanio/gcc8-armv7hf")
-        buildImage.inside("-v /tmp/:/tmp/ -v /home/radugrecu97/:/home/conan/radugrecu97/ --network host") {
+    buildImage.inside("-v /tmp/:/tmp/ -v /home/radugrecu97/:/home/conan/radugrecu97/ --network host") {
 
-            load "$JENKINS_HOME/workspace/RC_Car/ci/variables.groovy"
-            def server = Artifactory.server "${env.ARTIFACTORY_NAME}"
-            def client = Artifactory.newConanClient()
-            def serverName = client.remote.add server: server, repo: "${env.ARTIFACTORY_REPO}".toString()
+        load "$JENKINS_HOME/workspace/RC_Car/ci/variables.groovy"
+        def server = Artifactory.server "${env.ARTIFACTORY_NAME}"
+        def client = Artifactory.newConanClient()
+        def serverName = client.remote.add server: server, repo: "${env.ARTIFACTORY_REPO}".toString()
 
-            stage("Get project"){
-                checkout scm
-            }
+        stage("Get project"){
+            checkout scm
+        }
 
-            stage("Get dependencies and create app") {
-                client.run(command: "remote remove conan-center" )
-                String strCommand = "create . radugrecu97/experimental -pr ./ci/rpi_gcc8 --build missing"
-                client.run(command: strCommand)
-            }
+        stage("Get dependencies and create app") {
+            client.run(command: "remote remove conan-center" )
+            String strCommand = "create . radugrecu97/experimental -pr ./ci/rpi_gcc8 --build missing"
+            client.run(command: strCommand)
+        }
 
-            stage("Upload packages") {
-                String command = "upload rc_car* --all -r ${serverName} --confirm"
-                def b = client.run(command: command)
-                b.env.collect()
-                server.publishBuildInfo b
-            }
+        stage("Upload packages") {
+            String command = "upload rc_car* --all -r ${serverName} --confirm"
+            def b = client.run(command: command)
+            b.env.collect()
+            server.publishBuildInfo b
+        }
 
-    //         stage("Test project") {
-    //             node (label: 'slave-rpi') {
-    //
-    //             }
-    //         }
 
-        println 'This will run only if successful'
-    }
+//         stage("Test project") {
+//             node (label: 'slave-rpi') {
+//
+//             }
+//         }
+
+     }
+
+    println 'This will run only if successful'
+}
+
 
 def postFailure(e) {
     println "Failed because of $e"
     println 'This will run only if failed'
-
 }
 
 def postAlways() {
