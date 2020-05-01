@@ -56,6 +56,6 @@ def postFailure(e) {
 
 def postAlways() {
     println 'This will always run'
-    sleep(time:15,unit:"SECONDS")
-    cleanWs()
+//     sleep(time:15,unit:"SECONDS")
+//     cleanWs()
 }
