@@ -16,7 +16,7 @@ def pipeline(){
         stage("Get project"){
             checkout scm
         }
-
+        sleep(time:15,unit:"SECONDS")
         load "$JENKINS_HOME/workspace/RC_Car/ci/variables.groovy"
         def server = Artifactory.server "${env.ARTIFACTORY_NAME}"
         def client = Artifactory.newConanClient()
