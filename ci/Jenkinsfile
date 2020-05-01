@@ -11,7 +11,7 @@ node{
 def pipeline(){
 
     def buildImage = docker.image("conanio/gcc8-armv7hf")
-    buildImage.inside("-v /tmp/:/tmp/ -v /home/radugrecu97/:/home/conan/radugrecu97/ --network host") {
+    buildImage.inside("-v /tmp/:/tmp/ -v /home/radugrecu97/:/home/conan/radugrecu97/ --network ci_cont_int") {
 
         stage("Get project"){
             checkout scm
