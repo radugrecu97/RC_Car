@@ -8,7 +8,6 @@ cxx_compiler=g++
 CC=$target_host-$cc_compiler
 CXX=$target_host-$cxx_compiler
 #CXXFLAGS=-I"$standalone_toolchain/$target_host/lib/include
-CONAN_V2_MODE=1
 
 [settings]
 os=Linux
