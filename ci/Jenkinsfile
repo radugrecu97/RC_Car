@@ -4,7 +4,7 @@ node {
     buildImage.inside("-v /tmp/:/tmp/ -v /home/radugrecu97/:/home/conan/radugrecu97/ --network host") {
 
         load "$JENKINS_HOME/workspace/RC_Car/ci/variables.groovy"
-        def server = Artifactory.server "${env.ARTIFACTORY_NAME}".toString()
+        def server = Artifactory.server "${env.ARTIFACTORY_NAME}"
         def client = Artifactory.newConanClient()
         def serverName = client.remote.add server: server, repo: "${env.ARTIFACTORY_REPO}".toString()
 
