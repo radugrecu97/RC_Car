@@ -1,7 +1,7 @@
 node {
 
     def buildImage = docker.image("conanio/gcc8-armv7hf")
-    buildImage.inside("-v /tmp/:/tmp/ -v /home/radugrecu97/:/home/conan/radugrecu97/ --network rt_cont_int") {
+    buildImage.inside("-v /tmp/:/tmp/ -v /home/radugrecu97/:/home/conan/radugrecu97/ --network host") {
 
         load "$JENKINS_HOME/workspace/RC_Car/ci/variables.groovy"
         def server = Artifactory.server "${env.ARTIFACTORY_NAME}".toString()
