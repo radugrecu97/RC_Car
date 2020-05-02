@@ -35,15 +35,13 @@ def pipeline(){
             b.number = "v0.${BUILD_NUMBER}" // BUILD_NUMBER is a Jenkins environment variable
             server.publishBuildInfo b
         }
+    }
 
-
-        stage("Test project") {
-            node (label: 'slave-rpi') {
-                sh "bin/Motor_test --gtest_output=xml:gtestresults.xml"
-            }
+    stage("Test project") {
+        node (label: 'slave-rpi') {
+            sh "bin/Motor_test --gtest_output=xml:gtestresults.xml"
         }
-
-     }
+    }
 
     println 'This will run only if successful'
 }
