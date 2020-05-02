@@ -9,7 +9,7 @@ class RC_CarConan(ConanFile):
     #package_folder="/home/radugrecu97/CLionProjects/RC_Car/build_debug"
     settings = "os", "compiler", "build_type", "arch"
     url = "https://github.com/radugrecu97/RC_Car.git"
-    exports_sources = "CMakeLists.txt", "src/*", "LICENSE"
+    exports_sources = "CMakeLists.txt", "src/*", "tests/*", "LICENSE"
     generators = "cmake"
     default_options = {"spdlog:shared": True, "gtest:shared": True}
 

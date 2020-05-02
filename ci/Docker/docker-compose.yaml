@@ -16,7 +16,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ${ROOT_DATA_DIR}/../configurations/postgres:/var/lib/postgresql/data
+      - ${ROOT_DATA_DIR}/ci/configurations/postgres:/var/lib/postgresql/data
       - /etc/localtime:/etc/localtime:ro
     logging:
       driver: json-file
@@ -38,7 +38,7 @@ services:
     container_name: artifactory
     hostname: jfrog-art
     volumes:
-      - ${ROOT_DATA_DIR}/../configurations/artifactory:/var/opt/jfrog/artifactory
+      - ${ROOT_DATA_DIR}/ci/configurations/artifactory:/var/opt/jfrog/artifactory
       - /etc/localtime:/etc/localtime:ro
     depends_on:
       - postgres
@@ -76,7 +76,7 @@ services:
     privileged: true
     volumes:
       # enable persistent volume (warning: make sure that the local jenkins_home folder is created)
-      - ${ROOT_DATA_DIR}/../configurations/jenkins_home:/var/jenkins_home
+      - ${ROOT_DATA_DIR}/ci/configurations/jenkins_home:/var/jenkins_home
       - /home/danimtb/:/home/conan/danimtb/
       # mount docker sock and binary for docker in docker (only works on linux)
       - /var/run/docker.sock:/var/run/docker.sock
