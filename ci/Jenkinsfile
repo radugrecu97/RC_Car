@@ -39,7 +39,7 @@ def pipeline(){
 
         stage("Test project") {
             node (label: 'slave-rpi') {
-                bash 'bin/Motor_test --gtest_output=xml:gtestresults.xml'
+                sh "bin/Motor_test --gtest_output=xml:gtestresults.xml"
             }
         }
 
