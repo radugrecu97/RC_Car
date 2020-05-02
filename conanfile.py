@@ -12,7 +12,7 @@ class RC_CarConan(ConanFile):
     exports_sources = "CMakeLists.txt", "src/*", "tests/*", "LICENSE"
     generators = "cmake"
     default_options = {"spdlog:shared": True, "gtest:shared": True}
-    build_folder = "./build_rpi_release"
+    build_folder = "build_rpi_release"
 
 
     def requirements(self):
