@@ -42,8 +42,8 @@ def pipeline(){
                     continueOnError: false, failOnError: true,
                     publishers: [
                         sshPublisherDesc(
-                        configName: "${env.SSH_CONFIG_NAME}",
-                        verbose: true,
+                            configName: "RPi_Testing",
+                            verbose: true,
                             transfers: [
                                 sshTransfer(
                                     sourceFiles: "../build_rpi_release",
