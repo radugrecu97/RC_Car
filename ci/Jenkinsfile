@@ -46,10 +46,10 @@ def pipeline(){
                         verbose: true,
                             transfers: [
                                 sshTransfer(
-                                    sourceFiles: "${path_to_file}/${file_name}, ${path_to_file}/${file_name}",
-                                    removePrefix: "${path_to_file}",
-                                    remoteDirectory: "${remote_dir_path}",
-                                    execCommand: "run commands after copy?"
+                                    sourceFiles: "../build_rpi_release",
+                                    removePrefix: "../build_rpi_release",
+                                    remoteDirectory: "/home/radu/Remote_Projects/RC_Car/test_binaries",
+                                    execCommand: "/home/radu/Remote_Projects/RC_Car/test_binaries/.Motor_test"
                                 )
                             ]
                         )
