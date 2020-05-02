@@ -20,6 +20,7 @@ class RC_CarConan(ConanFile):
 
     def build(self):
         cmake = CMake(self)
+        cmake.verbose = True
         cmake.configure(build_folder="build_rpi_release")
         cmake.build()
 
