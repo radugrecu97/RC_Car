@@ -35,7 +35,7 @@ conan_basic_setup(TARGETS)
 #####------------------------------------------------SUB-DIRS------------------------------------------------------#####
 
 
-#add_subdirectory( tests/Google_tests )
+add_subdirectory( tests/Google_tests )
 add_executable( RC_Car ${DIR_SRC}/main.cpp )
 
 

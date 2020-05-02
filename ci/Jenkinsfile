@@ -37,11 +37,11 @@ def pipeline(){
         }
 
 
-//         stage("Test project") {
-//             node (label: 'slave-rpi') {
-//
-//             }
-//         }
+        stage("Test project") {
+            node (label: 'slave-rpi') {
+                bash 'bin/Motor_test --gtest_output=xml:gtestresults.xml'
+            }
+        }
 
      }
 
@@ -57,5 +57,5 @@ def postFailure(e) {
 def postAlways() {
     println 'This will always run'
 //     sleep(time:15,unit:"SECONDS")
-    cleanWs()
+    //cleanWs()
 }
