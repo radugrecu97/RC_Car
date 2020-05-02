@@ -3,7 +3,7 @@ services:
   postgres:
     user: "1000"
     networks:
-      cont_int:
+      ci_network:
         aliases:
           - postgres
     image: ${DOCKER_REGISTRY}/postgres:9.6.11
@@ -31,7 +31,7 @@ services:
   artifactory:
     user: "1000"
     networks:
-      cont_int:
+      ci_network:
         aliases:
           - jfrog-art
     image: ${DOCKER_REGISTRY}/jfrog/artifactory-cpp-ce:${ARTIFACTORY_VERSION}
@@ -61,7 +61,7 @@ services:
     user: "0"
     build: Dockerfiles/jenkins
     networks:
-      cont_int:
+      ci_network:
         aliases:
           - jenkins
     image: jenkins/jenkins:lts
@@ -83,7 +83,7 @@ services:
       - /usr/local/bin/docker:/usr/local/bin/docker
   dns-proxy-server:
     networks:
-      cont_int:
+      ci_network:
         aliases:
           - dns.mageddo
     image: defreitas/dns-proxy-server
@@ -96,4 +96,4 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /etc/resolv.conf:/etc/resolv.conf
 networks:
-  cont_int:
+  ci_network:
