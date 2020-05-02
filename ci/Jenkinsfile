@@ -36,6 +36,13 @@ def pipeline(){
             server.publishBuildInfo b
         }
 
+        stage("Build/Test project"){
+            dir ('build_rpi_release') {
+              sh "cmake ../ && cmake --build ."
+            }
+        }
+
+
         stage('SSH transfer') {
             script {
                 sshPublisher(
@@ -79,5 +86,5 @@ def postFailure(e) {
 def postAlways() {
     println 'This will always run'
 //     sleep(time:15,unit:"SECONDS")
-    cleanWs()
+    //cleanWs()
 }
