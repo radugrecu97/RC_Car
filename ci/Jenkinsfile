@@ -24,8 +24,8 @@ def pipeline(){
 
         stage("Get dependencies and create app") {
             //client.run(command: "remote remove conan-center" )
-            String strCommand = "create . radugrecu97/experimental -pr ./ci/conan/profiles/rpi_gcc8 --build missing"
-            client.run(command: strCommand)
+            String command = "create . radugrecu97/experimental -pr ./ci/conan/profiles/rpi_gcc8 --build missing"
+            client.run(command: command)
         }
 
         stage("Upload packages") {
@@ -36,12 +36,10 @@ def pipeline(){
             server.publishBuildInfo b
         }
 
-        stage("Build/Test project"){
-            dir ('build_rpi_release') {
-              sh "cmake ../ && cmake --build ."
-            }
+        stage("Import binaries") {
+            String command = "imports ."
+            client.run(command: command)
         }
-
 
         stage('SSH transfer') {
             script {

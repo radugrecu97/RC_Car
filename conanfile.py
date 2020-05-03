@@ -1,3 +1,4 @@
+import os
 from conans import ConanFile, CMake
 
 class RC_CarConan(ConanFile):
@@ -20,12 +21,16 @@ class RC_CarConan(ConanFile):
 
     def build(self):
         cmake = CMake(self)
-        cmake.verbose = True
-        cmake.configure(build_folder="build_rpi_release")
+        cmake.configure()
         cmake.build()
 
     def package(self):
-        self.copy("RC_Car", src="bin", dst="bin")
+        self.copy("*", src="bin", dst="bin")
 
     def deploy(self):
-        self.copy("RC_Car", src="bin", dst="bin")
+        self.copy("*", src="bin", dst="bin")
+
+    def imports(self):
+        dest = os.getenv("CONAN_IMPORT_PATH", "bin")
+        self.copy("*", dst=dest, src="bin")
+        self.copy("*.so*", dst=dest, src="lib")
