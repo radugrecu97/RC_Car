@@ -19,7 +19,7 @@ def pipeline(){
 
         load "$JENKINS_HOME/workspace/RC_Car/ci/variables.groovy"
         def server = Artifactory.server "${env.ARTIFACTORY_NAME}"
-        def client = Artifactory.newConanClient()
+        def client = Artifactory.newConanClient(userHome: "${env.WORKSPACE}/conan_home".toString())
         def serverName = client.remote.add server: server, repo: "${env.ARTIFACTORY_REPO}".toString()
 
         stage("Get dependencies and create app") {
