@@ -34,6 +34,8 @@ def pipeline(){
             b.env.collect()
             b.number = "v0.${BUILD_NUMBER}" // BUILD_NUMBER is a Jenkins environment variable
             server.publishBuildInfo b
+            command = "imports . -if /lib"
+            client.run(command: command)
         }
 
 //         stage("Build application") {
