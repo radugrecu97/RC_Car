@@ -10,7 +10,7 @@ class RC_CarConan(ConanFile):
     url = "https://github.com/radugrecu97/RC_Car.git"
     exports_sources = "CMakeLists.txt", "src/*", "tests/*", "LICENSE"
     generators = "cmake"
-    default_options = {"spdlog:shared": True, "gtest:shared": True}
+    default_options = {"*:shared": True}
     install_folder = "./build_rpi_release"
     build_folder = "./build_rpi_release"
 
@@ -30,6 +30,6 @@ class RC_CarConan(ConanFile):
     def deploy(self):
         self.copy("*", dst="bin", src="bin")
 
-    def imports(self):
-        self.copy("*", dst="bin", src="bin")
-        self.copy("*.so*", dst="bin", src="lib")
+    # def imports(self):
+    #     self.copy("*", dst="bin", src="bin")
+    #     self.copy("*.so*", dst="bin", src="lib")
