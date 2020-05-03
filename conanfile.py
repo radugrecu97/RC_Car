@@ -6,13 +6,12 @@ class RC_CarConan(ConanFile):
     version = "0.1"
     license="MIT"
     description = "Remote controlled Raspberry Pi Car"
-    #build_folder="/home/radugrecu97/CLionProjects/RC_Car/build_debug"
-    #package_folder="/home/radugrecu97/CLionProjects/RC_Car/build_debug"
     settings = "os", "compiler", "build_type", "arch"
     url = "https://github.com/radugrecu97/RC_Car.git"
     exports_sources = "CMakeLists.txt", "src/*", "tests/*", "LICENSE"
     generators = "cmake"
     default_options = {"spdlog:shared": True, "gtest:shared": True}
+    install_folder = "build_rpi_release"
 
     def requirements(self):
         #self.requires("wiringpi/2.46@conan/stable")
@@ -28,8 +27,7 @@ class RC_CarConan(ConanFile):
         self.copy("*", dst="bin", src="bin")
 
     def deploy(self):
-        dest = os.getenv("CONAN_IMPORT_PATH")
-        self.copy("*", dst=dest, src="bin")
+        self.copy("*", dst="bin", src="bin")
 
     # def imports(self):
     #     dest = os.getenv("CONAN_IMPORT_PATH", "bin")
