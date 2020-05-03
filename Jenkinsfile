@@ -4,6 +4,9 @@ pipeline {
       image 'conanio/gcc8-armv7hf'
       args '-v /var/jenkins_home/RC_Car/conan/profiles/:/home/conan/profiles/ --network docker_ci_network'
     }
+    options {
+        skipDefaultCheckout true
+     }
 
   }
   stages {
