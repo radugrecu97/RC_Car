@@ -55,6 +55,9 @@ def pipeline(){
                             verbose: true,
                             transfers: [
                                 sshTransfer(
+                                    execCommand: "ls -la"
+                                ),
+                                sshTransfer(
                                     execCommand: "rm *"
                                 ),
                                 sshTransfer(
