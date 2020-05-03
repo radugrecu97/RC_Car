@@ -29,5 +29,11 @@ pipeline {
       }
     }
 
+    stage('Test') {
+      steps {
+        node(label: 'rpi-slave')
+      }
+    }
+
   }
 }
