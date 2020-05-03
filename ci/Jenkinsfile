@@ -55,10 +55,10 @@ def pipeline(){
                             verbose: true,
                             transfers: [
                                 sshTransfer(
-                                    sourceFiles: "conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin",
+                                    sourceFiles: "conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin/*",
                                     removePrefix: "conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin",
                                     remoteDirectory: "/home/radu/Remote_Projects/RC_Car/test_binaries",
-                                    execCommand: "/home/radu/Remote_Projects/RC_Car/test_binaries/Motor_test"
+                                    execCommand: "/home/radu/Remote_Projects/RC_Car/test_binaries/Motor_test --gtest_output=xml:gtestresults.xml"
                                 )
                             ]
                         )
@@ -68,11 +68,11 @@ def pipeline(){
         }
     }
 
-    stage("Test project") {
-        node (label: 'slave-rpi') {
-            sh "bin/Motor_test --gtest_output=xml:gtestresults.xml"
-        }
-    }
+//     stage("Test project") {
+//         node (label: 'slave-rpi') {
+//             sh "bin/Motor_test --gtest_output=xml:gtestresults.xml"
+//         }
+//     }
 
     println 'This will run only if successful'
 }
