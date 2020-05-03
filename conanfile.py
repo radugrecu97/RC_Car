@@ -11,8 +11,8 @@ class RC_CarConan(ConanFile):
     exports_sources = "CMakeLists.txt", "src/*", "tests/*", "LICENSE"
     generators = "cmake"
     default_options = {"*:shared": True}
-    install_folder = "./build_rpi_release"
-    build_folder = "./build_rpi_release"
+    # install_folder = "./build_rpi_release"
+    # build_folder = "./build_rpi_release"
 
     def requirements(self):
         #self.requires("wiringpi/2.46@conan/stable")

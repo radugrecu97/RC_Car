@@ -24,9 +24,8 @@ def pipeline(){
 
         stage("Get dependencies and create app") {
             //client.run(command: "remote remove conan-center" )
-            String command = "export . radugrecu97/experimental"
             client.run(command: command)
-            command = "install . radugrecu97/experimental \
+            String command = "create . radugrecu97/experimental \
                                         -pr ./ci/conan/profiles/rpi_gcc8 \
                                         --build=missing"
             client.run(command: command)
@@ -59,8 +58,8 @@ def pipeline(){
                             verbose: true,
                             transfers: [
                                 sshTransfer(
-                                    sourceFiles: "../build_rpi_release",
-                                    removePrefix: "../build_rpi_release",
+                                    sourceFiles: "conan_home/.conan/data/RC_Car/*/radugrecu97/experimental/package/bin",
+                                    removePrefix: "conan_home/.conan/data/RC_Car/*/radugrecu97/experimental/package/bin",
                                     remoteDirectory: "/home/radu/Remote_Projects/RC_Car/test_binaries",
                                     execCommand: "/home/radu/Remote_Projects/RC_Car/test_binaries/Motor_test"
                                 )
