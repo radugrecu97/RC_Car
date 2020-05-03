@@ -55,7 +55,7 @@ def pipeline(){
                             verbose: true,
                             transfers: [
                                 sshTransfer(
-                                    execCommand: "ls -la Remote_Projects/RC_Car/"
+                                    execCommand: "ls -la /"
                                 ),
                                 sshTransfer(
                                     execCommand: "rm *"
