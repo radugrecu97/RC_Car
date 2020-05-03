@@ -34,8 +34,6 @@ def pipeline(){
             b.env.collect()
             b.number = "v0.${BUILD_NUMBER}" // BUILD_NUMBER is a Jenkins environment variable
             server.publishBuildInfo b
-            command = "imports . -imf /lib"
-            client.run(command: command)
         }
 
 //         stage("Build application") {
@@ -61,6 +59,11 @@ def pipeline(){
                                 ),
                                 sshTransfer(
                                     sourceFiles: "conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin/",
+                                    flatten: true,
+                                    remoteDirectory: "/RC_Car/test_binaries"
+                                ),
+                                sshTransfer(
+                                    sourceFiles: "conan_home/.conan/data/**/lib",
                                     flatten: true,
                                     remoteDirectory: "/RC_Car/test_binaries"
                                 ),
