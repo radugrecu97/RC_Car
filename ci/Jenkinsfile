@@ -37,7 +37,9 @@ def pipeline(){
         }
 
         stage("Build application") {
-            String command = "install ."
+            String command = "install . -if build_rpi_release/bin"
+            client.run(command: command)
+            String command = "import . -if build_rpi_release/bin"
             client.run(command: command)
         }
 

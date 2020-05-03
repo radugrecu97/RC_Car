@@ -28,7 +28,7 @@ class RC_CarConan(ConanFile):
         self.copy("*", dst="bin", src="bin")
 
     def deploy(self):
-        dest = os.getenv("CONAN_IMPORT_PATH", "bin")
+        dest = os.getenv("CONAN_IMPORT_PATH")
         self.copy("*", dst=dest, src="bin")
 
     # def imports(self):
