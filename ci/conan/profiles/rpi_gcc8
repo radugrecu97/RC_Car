@@ -7,7 +7,6 @@ cxx_compiler=g++
 # Toolchain downloaded from https://github.com/abhiTronix/raspberry-pi-cross-compilers#b-toolchain-binaries-description-table
 CC=$target_host-$cc_compiler
 CXX=$target_host-$cxx_compiler
-#CXXFLAGS=-I"$standalone_toolchain/$target_host/lib/include
 
 [settings]
 os=Linux

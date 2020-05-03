@@ -41,8 +41,8 @@ def pipeline(){
             client.run(command: command)
             command = "build . -bf build_rpi_release"
             client.run(command: command)
-            command = "imports ."
-            client.run(command: command)
+//             command = "imports ."
+//             client.run(command: command)
         }
 
         stage('SSH transfer') {
