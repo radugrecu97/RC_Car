@@ -74,7 +74,7 @@ def pipeline(){
                                     execCommand: "chmod u+x Remote_Projects/RC_Car/test_binaries/*"
                                 ),
                                 sshTransfer(
-                                    execCommand: "Remote_Projects/RC_Car/test_binaries/Motor_test --gtest_output=xml:gtestresults.xml"
+                                    execCommand: "Remote_Projects/RC_Car/test_binaries/Motor_test --gtest_output=xml:Remote_Projects/RC_Car/reports/gtestresults.xml"
                                 ),
                             ]
                         )
