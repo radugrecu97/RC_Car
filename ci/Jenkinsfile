@@ -24,12 +24,16 @@ def pipeline(){
 
         stage("Get dependencies and create app") {
             //client.run(command: "remote remove conan-center" )
-            String command = "install . RC_Car/0.1@radugrecu97/experimental -pr ./ci/conan/profiles/rpi_gcc8 --build"
+            String command = "export . radugrecu97/experimental"
+            client.run(command: command)
+            command = "install . radugrecu97/experimental
+                                        -pr ./ci/conan/profiles/rpi_gcc8
+                                        --build=missing"
             client.run(command: command)
         }
 
         stage("Upload packages") {
-            String command = "upload RC_Car/0.1@radugrecu97/experimental --all -r ${serverName} --confirm"
+            String command = "upload RC_Car/*@radugrecu97/experimental --all -r ${serverName} --confirm"
             def b = client.run(command: command)
             b.env.collect()
             b.number = "v0.${BUILD_NUMBER}" // BUILD_NUMBER is a Jenkins environment variable
