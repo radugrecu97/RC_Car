@@ -53,19 +53,22 @@ def pipeline(){
                         sshPublisherDesc(
                             configName: "RPi_Testing",
                             verbose: true,
-                            remoteDirectory: "/RC_Car/test_binaries",
                             transfers: [
                                 sshTransfer(
-                                    execCommand: "rm *",
+                                    remoteDirectory: "/RC_Car/test_binaries",
+                                    execCommand: "rm *"
                                 ),
                                 sshTransfer(
+                                    remoteDirectory: "/RC_Car/test_binaries",
                                     sourceFiles: "conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin/",
-                                    flatten: true,
+                                    flatten: true
                                 ),
                                 sshTransfer(
-                                    execCommand: "chmod u+x *",
+                                    remoteDirectory: "/RC_Car/test_binaries",
+                                    execCommand: "chmod u+x *"
                                 ),
                                 sshTransfer(
+                                    remoteDirectory: "/RC_Car/test_binaries",
                                     execCommand: "Motor_test --gtest_output=xml:gtestresults.xml"
                                 ),
                             ]
