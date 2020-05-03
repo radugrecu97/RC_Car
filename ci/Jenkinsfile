@@ -57,7 +57,6 @@ def pipeline(){
                                 sshTransfer(
                                     def dir = "conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin/"
                                     sourceFiles: "${dir}/*",
-                                    removePrefix: "${dir}",
                                     remoteDirectory: "RC_Car/test_binaries",
                                     execCommand: "/home/radu/Remote_Projects/RC_Car/test_binaries/Motor_test --gtest_output=xml:gtestresults.xml"
                                 )
