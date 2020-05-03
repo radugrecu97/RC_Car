@@ -25,12 +25,13 @@ class RC_CarConan(ConanFile):
         cmake.build()
 
     def package(self):
-        self.copy("*", src="bin", dst="bin")
+        self.copy("*", dst="bin", src="bin")
 
     def deploy(self):
-        self.copy("*", src="bin", dst="bin")
-
-    def imports(self):
         dest = os.getenv("CONAN_IMPORT_PATH", "bin")
         self.copy("*", dst=dest, src="bin")
-        self.copy("*.so*", dst=dest, src="lib")
+
+    # def imports(self):
+    #     dest = os.getenv("CONAN_IMPORT_PATH", "bin")
+    #     self.copy("*", dst=dest, src="bin")
+    #     self.copy("*.so*", dst=dest, src="lib")

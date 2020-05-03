@@ -36,8 +36,8 @@ def pipeline(){
             server.publishBuildInfo b
         }
 
-        stage("Import binaries") {
-            String command = "imports ."
+        stage("Build application") {
+            String command = "install ."
             client.run(command: command)
         }
 
