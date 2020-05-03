@@ -29,7 +29,6 @@ class RC_CarConan(ConanFile):
     def deploy(self):
         self.copy("*", dst="bin", src="bin")
 
-    # def imports(self):
-    #     dest = os.getenv("CONAN_IMPORT_PATH", "bin")
-    #     self.copy("*", dst=dest, src="bin")
-    #     self.copy("*.so*", dst=dest, src="lib")
+    def imports(self):
+        self.copy("*", dst="./build_rpi_release/bin", src="bin")
+        self.copy("*.so*", dst="./build_rpi_release/bin", src="lib")
