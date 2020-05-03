@@ -53,6 +53,7 @@ def pipeline(){
                         sshPublisherDesc(
                             configName: "RPi_Testing",
                             verbose: true,
+                            remoteDirectory: "Remote_Projects/RC_Car/",
                             transfers: [
                                 sshTransfer(
                                     execCommand: "ls -la"
