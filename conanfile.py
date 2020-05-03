@@ -30,5 +30,5 @@ class RC_CarConan(ConanFile):
         self.copy("*", dst="bin", src="bin")
 
     def imports(self):
-        self.copy("*", dst="./build_rpi_release/bin", src="bin")
-        self.copy("*.so*", dst="./build_rpi_release/bin", src="lib")
+        self.copy("*", dst="bin", src="bin")
+        self.copy("*.so*", dst="bin", src="lib")
