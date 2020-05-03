@@ -59,7 +59,7 @@ def pipeline(){
                                 ),
                                 sshTransfer(
                                     sourceFiles: "conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin/",
-                                    remoteDirectory: "Remote_Projects/RC_Car/test_binaries/"
+                                    remoteDirectory: "Remote_Projects/RC_Car/test_binaries/",
                                     flatten: true
                                 ),
                                 sshTransfer(
