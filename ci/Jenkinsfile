@@ -55,11 +55,17 @@ def pipeline(){
                             verbose: true,
                             transfers: [
                                 sshTransfer(
+                                    execCommand: "chmod u+x RC_Car/test_binaries/*"
+                                ),
+                                sshTransfer(
                                     sourceFiles: "conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin/",
                                     flatten: true,
                                     remoteDirectory: "RC_Car/test_binaries",
-                                    execCommand: "/home/radu/Remote_Projects/RC_Car/test_binaries/Motor_test --gtest_output=xml:gtestresults.xml"
-                                )
+                                    execCommand: "RC_Car/test_binaries/Motor_test --gtest_output=xml:gtestresults.xml"
+                                ),
+                                sshTransfer(
+                                    execCommand: "rm RC_Car/test_binaries/*"
+                                ),
                             ]
                         )
                     ]
