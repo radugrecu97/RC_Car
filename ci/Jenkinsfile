@@ -55,8 +55,7 @@ def pipeline(){
                             verbose: true,
                             transfers: [
                                 sshTransfer(
-                                    remoteDirectory: "/RC_Car/test_binaries",
-                                    execCommand: "rm *"
+                                    execCommand: "rm RC_Car/test_binaries/*"
                                 ),
                                 sshTransfer(
                                     remoteDirectory: "/RC_Car/test_binaries",
@@ -64,12 +63,10 @@ def pipeline(){
                                     flatten: true
                                 ),
                                 sshTransfer(
-                                    remoteDirectory: "/RC_Car/test_binaries",
-                                    execCommand: "chmod u+x *"
+                                    execCommand: "chmod u+x RC_Car/test_binaries/*"
                                 ),
                                 sshTransfer(
-                                    remoteDirectory: "/RC_Car/test_binaries",
-                                    execCommand: "Motor_test --gtest_output=xml:gtestresults.xml"
+                                    execCommand: "RC_Car/test_binaries/Motor_test --gtest_output=xml:gtestresults.xml"
                                 ),
                             ]
                         )
