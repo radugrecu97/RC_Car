@@ -8,6 +8,7 @@ pipeline {
   }
   stages {
     stage('Build') {
+      agent any
       steps {
         script {
           def ARTIFACTORY_NAME = "art-01"
@@ -17,7 +18,7 @@ pipeline {
           def MAX_DAYS = 7
 
           def server = Artifactory.server ARTIFACTORY_NAME
-          def client = Artifactory.newConanClient(userHome: conan_home)
+          def client = Artifactory.newConanClient(userHome: "conan_home")
           def serverName = client.remote.add server: server, repo: ARTIFACTORY_REPO
 
 
