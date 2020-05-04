@@ -35,8 +35,9 @@ pipeline {
           steps {
             sh '''pwd
 ls -l ..
-sh \'printenv\''''
+'''
             script {
+              sh 'printenv'
               script {
                 sshPublisher(
                   continueOnError: false, failOnError: true,
