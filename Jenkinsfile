@@ -51,6 +51,9 @@ pipeline {
                             remoteDirectory: "RC_Car_Pipeline_master/bin",
                           ),
                           sshTransfer(
+                            execCommand: "pwd && ls -l"
+                          ),
+                          sshTransfer(
                             execCommand: "chrpath -r RC_Car_Pipeline_master/lib RC_Car_Pipeline_master/bin/*"
                           ),
                           sshTransfer(
