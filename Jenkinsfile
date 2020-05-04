@@ -102,9 +102,14 @@ pipeline {
         stage('Visualize GTest') {
           agent none
           steps {
-            step([$class: 'XUnitBuilder', thresholds:
-              [[$class: 'FailedThreshold', unstableThreshold: '1']],
-              tools: [[$class: 'XUnitDotNetTestType', pattern: 'gtestresults.xml']]])
+            script {
+              dir('../RC_Car_Pipeline_master@2') {
+                step([$class: 'XUnitPublisher',
+                thresholds: [[$class: 'FailedThreshold', unstableThreshold: '1']],
+                tools: [[$class: 'XUnitDotNetTestType', pattern: 'gtestresults.xml']]
+                ])
+              }
+            }
           }
         }
 
