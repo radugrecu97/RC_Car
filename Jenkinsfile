@@ -33,7 +33,9 @@ pipeline {
       parallel {
         stage('Google Test') {
           steps {
-            sh 'pwd'
+            sh '''pwd
+ls -l ..
+ls -l ../..'''
             script {
               script {
                 sshPublisher(
