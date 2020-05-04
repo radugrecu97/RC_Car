@@ -34,8 +34,8 @@ pipeline {
         stage('Google Test') {
           steps {
             script {
-              script {
-                withEnv(["WORKSPACE=/var/jenkins_home/workspace/RC_Car_Pipeline_master@2"]) {
+              withEnv(["WORKSPACE=/var/jenkins_home/workspace/RC_Car_Pipeline_master@2"]) {
+                script {
                   sshPublisher(
                     continueOnError: false, failOnError: true,
                     publishers: [
