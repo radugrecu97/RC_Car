@@ -47,28 +47,28 @@ pipeline {
                             sourceFiles: "conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin/",
                             flatten: true,
                             cleanRemote: true,
-                            remoteDirectory: "jenkins_slave/workspace/RC_Car_Pipeline_master/bin",
+                            remoteDirectory: "RC_Car_Pipeline_master/bin",
                           ),
                           sshTransfer(
                             execCommand: "pwd && ls -l"
                           ),
                           sshTransfer(
-                            execCommand: "chrpath -r jenkins_slave/workspace/RC_Car_Pipeline_master/lib jenkins_slave/workspace/RC_Car_Pipeline_master/bin/*"
+                            execCommand: "chrpath -r RC_Car_Pipeline_master/lib RC_Car_Pipeline_master/bin/*"
                           ),
                           sshTransfer(
                             sourceFiles: "conan_home/.conan/data/*/*/_/_/package/*/lib/*",
                             flatten: true,
                             cleanRemote: true,
-                            remoteDirectory: "jenkins_slave/workspace/RC_Car_Pipeline_master/lib",
+                            remoteDirectory: "RC_Car_Pipeline_master/lib",
                           ),
                           sshTransfer(
-                            execCommand: "chmod u+x jenkins_slave/workspace/RC_Car_Pipeline_master/bin/*"
+                            execCommand: "chmod u+x RC_Car_Pipeline_master/bin/*"
                           ),
                           sshTransfer(
-                            execCommand: "rm -rf jenkins_slave/workspace/RC_Car_Pipeline_master/reports"
+                            execCommand: "rm -rf RC_Car_Pipeline_master/reports"
                           ),
                           sshTransfer(
-                            execCommand: "jenkins_slave/workspace/RC_Car_Pipeline_master/bin/Motor_test --gtest_output=xml:jenkins_slave/workspace/RC_Car_Pipeline_master/reports/gtestresults.xml"
+                            execCommand: "RC_Car_Pipeline_master/bin/Motor_test --gtest_output=xml:RC_Car_Pipeline_master/reports/gtestresults.xml"
                           ),
                         ]
                       )
