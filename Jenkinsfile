@@ -1,7 +1,11 @@
 pipeline {
-  agent any
+  agent {
+          label {
+              label "master"
+          }
+      }
   options {
-          skipDefaultCheckout true
+          skipDefaultCheckout ()
       }
   stages {
     stage('Build') {
