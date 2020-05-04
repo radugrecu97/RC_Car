@@ -43,11 +43,14 @@ pipeline {
               dir('../RC_Car_Pipeline_master@2') {
                 script {
                   sshPublisher(
-                    continueOnError: false, failOnError: true,
+                    continueOnError: false,
+                    failOnError: true,
                     publishers: [
                       sshPublisherDesc(
                         configName: "RPi_Testing",
                         verbose: true,
+                        continueOnError: false,
+                        failOnError: true,
                         transfers: [
                           // copy binaries
                           sshTransfer(
