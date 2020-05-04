@@ -1,12 +1,6 @@
 pipeline {
-  agent {
-          label {
-              label "master"
-          }
-      }
-  options {
-          skipDefaultCheckout()
-      }
+  agent any
+  options { skipDefaultCheckout() }
   stages {
     stage('Build') {
       agent {
@@ -14,10 +8,9 @@ pipeline {
           args '-v /var/jenkins_home/RC_Car/conan/profiles/:/home/conan/profiles/ --network docker_ci_network'
           image 'conanio/gcc8-armv7hf'
         }
-
+        options { skipDefaultCheckout() }
       }
       steps {
-        checkout scm
         script {
           def ARTIFACTORY_NAME = "art-01"
           def ARTIFACTORY_REPO = "conan-local"
