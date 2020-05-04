@@ -87,7 +87,9 @@ pipeline {
         stage('Visualize GTest') {
           steps {
             script {
-              load "ci/pipeline/copy_gtest_report.groovy"
+              dir('../RC_Car_Pipeline_master@2') {
+                load "ci/pipeline/copy_gtest_report.groovy"
+              }
             }
 
           }
