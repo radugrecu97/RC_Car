@@ -1,5 +1,19 @@
 import jenkins.plugins.publish_over_ssh.*
 
+@NonCPS
+def getSSHHost(name) {
+  def found = null
+  Jenkins.instance.getDescriptorByType(BapSshPublisherPlugin.Descriptor.class).each{
+    it.hostConfigurations.each{host ->
+      if (host.name == name) {
+        found = host
+      }
+    }
+  }
+
+  found
+}
+
 def sshHost = getSSHHost('RPi_Testing')
 def host = [host: sshHost.hostname, user: sshHost.username, password: sshHost.password]
 sshHost = null
