@@ -41,15 +41,16 @@ pipeline {
                     sshPublisherDesc(
                       configName: "RPi_Testing",
                       verbose: true,
-                      cleanRemote: true,
                       transfers: [
                         //sshTransfer(
                           //execCommand: "pwd && ls -l && rm -rf ${env.JOB_NAME}_master/"
                           //),
                           sshTransfer(
+                            cleanRemote: true,
                             sourceFiles: "conan_home/.conan/data/RC_Car/*/radugrecu97/experimental/package/*/bin/",
                             flatten: true,
-                            remoteDirectory: "${env.JOB_NAME}_master/bin"
+                            remoteDirectory: "${env.JOB_NAME}_master/bin",
+                            execCommand: "pwd"
                           ),
                           sshTransfer(
                             execCommand: "chrpath -r ${env.JOB_NAME}_master/lib ${env.JOB_NAME}_master/bin/*"
@@ -57,7 +58,8 @@ pipeline {
                           sshTransfer(
                             sourceFiles: "conan_home/.conan/data/*/*/_/_/package/*/lib/*",
                             flatten: true,
-                            remoteDirectory: "${env.JOB_NAME}_master/lib"
+                            remoteDirectory: "${env.JOB_NAME}_master/lib",
+                            execCommand: "pwd"
                           ),
                           sshTransfer(
                             execCommand: "chmod u+x ${env.JOB_NAME}_master/bin/*"
