@@ -17,7 +17,7 @@ class RC_CarConan(ConanFile):
     def requirements(self):
         #self.requires("wiringpi/2.46@conan/stable")
         self.requires("spdlog/1.5.0")
-        self.requires("gtest/1.8.0@bincrafters/stable")
+        self.requires("gtest/1.10.0")
 
     def build(self):
         cmake = CMake(self)
