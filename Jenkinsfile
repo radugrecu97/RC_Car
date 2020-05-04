@@ -42,31 +42,35 @@ pipeline {
                     sshPublisherDesc(
                       configName: "RPi_Testing",
                       verbose: true,
+                      useWorkspaceInPromotion: true,
                       transfers: [
-                        sshTransfer(
-                          sourceFiles: "../RC_Car_Pipeline_master@2/conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin/",
-                          flatten: true,
-                          cleanRemote: true,
-                          remoteDirectory: "RC_Car_Pipeline_master/bin",
-                        )
-                      ]
-                    )
-                  ]
-                )
+                        //sshTransfer(
+                          //execCommand: "rm -rf ../RC_Car_Pipeline_master@2/"
+                          //),
+                          sshTransfer(
+                            sourceFiles: "RC_Car_Pipeline_master@2/conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin/",
+                            flatten: true,
+                            cleanRemote: true,
+                            remoteDirectory: "RC_Car_Pipeline_master/bin",
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                }
               }
+
             }
-
           }
-        }
 
-        stage('Visualize GTest') {
-          steps {
-            echo 'Visualize'
+          stage('Visualize GTest') {
+            steps {
+              echo 'Visualize'
+            }
           }
-        }
 
+        }
       }
-    }
 
+    }
   }
-}
