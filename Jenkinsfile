@@ -43,32 +43,35 @@ pipeline {
                         configName: "RPi_Testing",
                         verbose: true,
                         transfers: [
+                          // copy binaries
                           sshTransfer(
                             sourceFiles: "conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin/",
-                            flatten: true,
-                            cleanRemote: true,
+                            flatten: true, // removes the directory prefix to file so only the file is copied and not the folders tree to it as well
+                            cleanRemote: true, // clean the remote directory below before copying
                             remoteDirectory: "RC_Car_Pipeline_master/bin",
                           ),
+                          // copy shared libraries
                           sshTransfer(
                             sourceFiles: "conan_home/.conan/data/*/*/_/_/package/*/lib/*",
                             flatten: true,
                             cleanRemote: true,
                             remoteDirectory: "RC_Car_Pipeline_master/lib",
                           ),
+                          // make binaries executable
                           sshTransfer(
-                            execCommand: "pwd && ls -l"
+                            execCommand: "chmod u+x /home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/bin/*"
                           ),
+                          // change library path for shared libraries
                           sshTransfer(
-                            execCommand: "chmod u+x RC_Car_Pipeline_master/bin/*"
+                            execCommand: "chrpath -r /home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/lib /home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/bin/*"
                           ),
+                          // clean reports folder
                           sshTransfer(
-                            execCommand: "chrpath -r RC_Car_Pipeline_master/lib RC_Car_Pipeline_master/bin/*"
+                            execCommand: "rm -rf /home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/reports"
                           ),
+                          // run Google Test and save xUnit report
                           sshTransfer(
-                            execCommand: "rm -rf RC_Car_Pipeline_master/reports"
-                          ),
-                          sshTransfer(
-                            execCommand: "RC_Car_Pipeline_master/bin/Motor_test --gtest_output=xml:RC_Car_Pipeline_master/reports/gtestresults.xml"
+                            execCommand: "/home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/bin/Motor_test --gtest_output=xml:/home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/reports/gtestresults.xml"
                           ),
                         ]
                       )
@@ -84,6 +87,7 @@ pipeline {
         stage('Visualize GTest') {
           steps {
             echo 'Visualize'
+            load 'ci/copy_gtest_report.groovy'
           }
         }
 
