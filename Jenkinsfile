@@ -57,7 +57,7 @@ pipeline {
                             execCommand: "chrpath -r jenkins_slave/workspace/RC_Car_Pipeline_master/lib jenkins_slave/workspace/RC_Car_Pipeline_master/bin/*"
                           ),
                           sshTransfer(
-                            sourceFiles: "../RC_Car_Pipeline_master@2/conan_home/.conan/data/*/*/_/_/package/*/lib/*",
+                            sourceFiles: "conan_home/.conan/data/*/*/_/_/package/*/lib/*",
                             flatten: true,
                             cleanRemote: true,
                             remoteDirectory: "jenkins_slave/workspace/RC_Car_Pipeline_master/lib",
