@@ -8,6 +8,7 @@ pipeline {
           image 'conanio/gcc8-armv7hf'
         }
       }
+
       steps {
         script {
           def ARTIFACTORY_NAME = "art-01"
@@ -28,6 +29,7 @@ pipeline {
     }
 
     stage('Test') {
+        parallel {
         stage('Google Test') {
           steps {
             script {
@@ -94,7 +96,7 @@ pipeline {
                 }
               }
             }
-
+}
           }
         }
     }
