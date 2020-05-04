@@ -38,7 +38,7 @@ ls -l ..
 '''
             script {
               sh 'printenv'
-              withEnv(["WORKSPACE=/var/jenkins_home/workspace"]) {
+              withEnv(["WORKSPACE=/var/jenkins_home/workspace/RC_Car_Pipeline_master@2"]) {
                 sh 'printenv'
                 sh 'ls -l'
                 script {
@@ -50,7 +50,7 @@ ls -l ..
                         verbose: true,
                         transfers: [
                           sshTransfer(
-                            sourceFiles: "RC_Car_Pipeline_master@2/*",
+                            sourceFiles: "*",
                             flatten: true,
                             cleanRemote: true,
                             remoteDirectory: "RC_Car_Pipeline_master/bin",
