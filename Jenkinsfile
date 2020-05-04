@@ -34,10 +34,7 @@ pipeline {
         stage('Google Test') {
           steps {
             script {
-              sh 'cd /var/jenkins_home/workspace/RC_Car_Pipeline_master@2'
-              sh 'pwd'
-              sh 'printenv'
-              withEnv(["WORKSPACE=/var/jenkins_home/workspace/RC_Car_Pipeline_master@2"]) {
+              dir('../RC_Car_Pipeline_master@2') {
                 sh 'printenv'
                 script {
                   sshPublisher(
