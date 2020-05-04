@@ -106,7 +106,7 @@ pipeline {
               dir('../RC_Car_Pipeline_master@2') {
                 xunit (
                   thresholds: [ skipped(failureThreshold: '0'), failed(failureThreshold: '0') ],
-                  tools: [ GoogleTest(pattern: 'gtestresults.xml') ])
+                  tools: [ GoogleTest(pattern: 'gtestresults.xml') ]
                 )
               }
             }
