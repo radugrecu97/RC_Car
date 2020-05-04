@@ -31,7 +31,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        node(label: 'rpi-slave') {
+        node(label: 'slave-rpi') {
           sh 'ls -la'
         }
 
