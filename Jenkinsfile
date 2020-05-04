@@ -37,7 +37,7 @@ pipeline {
               sh 'cd /var/jenkins_home/workspace/RC_Car_Pipeline_master@2'
               sh 'pwd'
               sh 'printenv'
-              withEnv(["PWD=/var/jenkins_home/workspace/RC_Car_Pipeline_master@2"]) {
+              withEnv(["WORKSPACE=/var/jenkins_home/workspace/RC_Car_Pipeline_master@2"]) {
                 sh 'printenv'
                 script {
                   sshPublisher(
