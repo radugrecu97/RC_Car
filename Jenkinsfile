@@ -39,8 +39,8 @@ ls -l ..
             script {
               sh 'printenv'
               withEnv(["WORKSPACE=/var/jenkins_home/workspace"]) {
-
-
+                sh 'printenv'
+                sh 'ls -l'
                 script {
                   sshPublisher(
                     continueOnError: false, failOnError: true,
