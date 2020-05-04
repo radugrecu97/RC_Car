@@ -30,11 +30,23 @@ pipeline {
     }
 
     stage('Test') {
-      steps {
-        node(label: 'slave-rpi') {
-          sh '''ls -la
-ls -la ..
-ls -la ../..'''
+      parallel {
+        stage('Google Test') {
+          steps {
+            node(label: 'slave-rpi') {
+              sh '''ls -la ..
+cd ../RC_Car_Pipeline_master@2/conan_home/.conan/data/RC_Car/*/radugrecu97/experimental/package/*/bin/
+./Motor_test --gtest_output=xml:/gtestresults.xml
+ls -l /'''
+            }
+
+          }
+        }
+
+        stage('Visualize GTest') {
+          steps {
+            echo 'Visualize'
+          }
         }
 
       }
