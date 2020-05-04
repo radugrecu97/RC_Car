@@ -106,7 +106,7 @@ pipeline {
               dir('../RC_Car_Pipeline_master@2') {
                 step([$class: 'XUnitPublisher',
                 thresholds: [[$class: 'FailedThreshold', unstableThreshold: '1']],
-                tools: [[$class: 'XUnitDotNetTestType', pattern: 'gtestresults.xml']]
+                tools: [[$class: 'GoogleTest', pattern: 'gtestresults.xml']]
                 ])
               }
             }
