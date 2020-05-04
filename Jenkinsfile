@@ -36,7 +36,9 @@ pipeline {
             script {
               sh 'cd /var/jenkins_home/workspace/RC_Car_Pipeline_master@2'
               sh 'pwd'
-              withEnv(["WORKSPACE=/var/jenkins_home/workspace/RC_Car_Pipeline_master@2"]) {
+              sh 'printenv'
+              withEnv(["PWD=/var/jenkins_home/workspace/RC_Car_Pipeline_master@2"]) {
+                sh 'printenv'
                 script {
                   sshPublisher(
                     continueOnError: false, failOnError: true,
@@ -46,7 +48,7 @@ pipeline {
                         verbose: true,
                         transfers: [
                           sshTransfer(
-                            sourceFiles: "./conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin/",
+                            sourceFiles: "conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin/",
                             flatten: true,
                             cleanRemote: true,
                             remoteDirectory: "RC_Car_Pipeline_master/bin",
