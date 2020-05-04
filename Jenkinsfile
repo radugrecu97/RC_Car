@@ -17,6 +17,7 @@ pipeline {
 
       }
       steps {
+        checkout scm
         script {
           def ARTIFACTORY_NAME = "art-01"
           def ARTIFACTORY_REPO = "conan-local"
