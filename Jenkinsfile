@@ -36,13 +36,13 @@ pipeline {
             sh 'pwd'
             script {
               script {
+                sh 'pwd'
                 sshPublisher(
                   continueOnError: false, failOnError: true,
                   publishers: [
                     sshPublisherDesc(
                       configName: "RPi_Testing",
                       verbose: true,
-                      useWorkspaceInPromotion: true,
                       transfers: [
                         //sshTransfer(
                           //execCommand: "rm -rf ../RC_Car_Pipeline_master@2/"
