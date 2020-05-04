@@ -35,7 +35,7 @@ pipeline {
           steps {
             sh '''pwd
 ls -l ..
-echo sh(returnStdout: true, script: \'env\')'''
+sh \'printenv\''''
             script {
               script {
                 sshPublisher(
