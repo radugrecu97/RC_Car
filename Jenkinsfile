@@ -105,8 +105,10 @@ pipeline {
             script {
               dir('../RC_Car_Pipeline_master@2') {
                 step([$class: 'XUnitPublisher',
-                thresholds: [[$class: 'FailedThreshold', unstableThreshold: '1']],
-                tools: [[$class: 'GoogleTestType', pattern: 'gtestresults.xml']]
+                thresholds: [
+                    [$class: 'FailedThreshold', unstableThreshold: '1']],
+                tools:
+                    [[$class: 'GoogleTestType', pattern: 'reports/*results.xml']]
                 ])
               }
             }

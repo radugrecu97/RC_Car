@@ -19,6 +19,6 @@ def host = [host: sshHost.hostname, user: sshHost.username, password: sshHost.pa
 sshHost = null
 sh("""
     set +x
-    sshpass -p "${host.password}" scp -o StrictHostKeyChecking=no ${host.user}@${host.host}:/home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/reports/gtestresults.xml .
+    sshpass -p "${host.password}" scp -o StrictHostKeyChecking=no ${host.user}@${host.host}:/home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/reports/gtestresults.xml ./reports
     set -x
 """)
