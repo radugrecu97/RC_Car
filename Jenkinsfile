@@ -33,44 +33,42 @@ pipeline {
       parallel {
         stage('Google Test') {
           steps {
-            sh '''pwd
-ls -l ..
-'''
             script {
               script {
-                sh 'pwd'
-                sshPublisher(
-                  continueOnError: false, failOnError: true,
-                  publishers: [
-                    sshPublisherDesc(
-                      configName: "RPi_Testing",
-                      verbose: true,
-                      transfers: [
-                        sshTransfer(
-                          sourceFiles: "conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin/",
-                          flatten: true,
-                          cleanRemote: true,
-                          remoteDirectory: "RC_Car_Pipeline_master/bin",
-                        ),
-                        sshTransfer(
-                          execCommand: "chrpath -r RC_Car_Pipeline_master/lib RC_Car_Pipeline_master/bin/*"
-                        ),
-                        sshTransfer(
-                          sourceFiles: "../RC_Car_Pipeline_master@2/conan_home/.conan/data/*/*/_/_/package/*/lib/*",
-                          flatten: true,
-                          cleanRemote: true,
-                          remoteDirectory: "RC_Car_Pipeline_master/lib",
-                        ),
-                        sshTransfer(
-                          execCommand: "chmod u+x RC_Car_Pipeline_master/bin/*"
-                        ),
-                        sshTransfer(
-                          execCommand: "RC_Car_Pipeline_master/bin/Motor_test --gtest_output=xml:RC_Car_Pipeline_master/reports/gtestresults.xml"
-                        ),
-                      ]
-                    )
-                  ]
-                )
+                withEnv(["WORKSPACE=/var/jenkins_home/workspace/RC_Car_Pipeline_master@2"]) {
+                  sshPublisher(
+                    continueOnError: false, failOnError: true,
+                    publishers: [
+                      sshPublisherDesc(
+                        configName: "RPi_Testing",
+                        verbose: true,
+                        transfers: [
+                          sshTransfer(
+                            sourceFiles: "conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin/",
+                            flatten: true,
+                            cleanRemote: true,
+                            remoteDirectory: "RC_Car_Pipeline_master/bin",
+                          ),
+                          sshTransfer(
+                            execCommand: "chrpath -r RC_Car_Pipeline_master/lib RC_Car_Pipeline_master/bin/*"
+                          ),
+                          sshTransfer(
+                            sourceFiles: "../RC_Car_Pipeline_master@2/conan_home/.conan/data/*/*/_/_/package/*/lib/*",
+                            flatten: true,
+                            cleanRemote: true,
+                            remoteDirectory: "RC_Car_Pipeline_master/lib",
+                          ),
+                          sshTransfer(
+                            execCommand: "chmod u+x RC_Car_Pipeline_master/bin/*"
+                          ),
+                          sshTransfer(
+                            execCommand: "RC_Car_Pipeline_master/bin/Motor_test --gtest_output=xml:RC_Car_Pipeline_master/reports/gtestresults.xml"
+                          ),
+                        ]
+                      )
+                    ]
+                  )
+                }
               }
             }
 
