@@ -29,7 +29,7 @@ pipeline {
     }
 
     stage('Test') {
-        parallel {
+      parallel {
         stage('Google Test') {
           steps {
             script {
@@ -86,7 +86,7 @@ pipeline {
           }
         }
 
-        stage('Visualize GTest') {
+        stage('Transfer GTest') {
           agent none
           steps {
             script {
@@ -96,9 +96,19 @@ pipeline {
                 }
               }
             }
-}
           }
         }
+
+        stage('Visualize GTest') {
+          agent none
+          steps {
+            step([$class: 'XUnitBuilder', thresholds:
+              [[$class: 'FailedThreshold', unstableThreshold: '1']],
+              tools: [[$class: 'XUnitDotNetTestType', pattern: 'gtestresults.xml']]])
+          }
+        }
+
+      }
     }
   }
 }
