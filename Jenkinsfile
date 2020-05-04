@@ -33,6 +33,7 @@ pipeline {
       parallel {
         stage('Google Test') {
           steps {
+            sh 'pwd'
             script {
               script {
                 sshPublisher(
@@ -43,29 +44,29 @@ pipeline {
                       verbose: true,
                       transfers: [
                         //sshTransfer(
-                          //execCommand: "pwd && ls -l && rm -rf ${env.JOB_NAME}_master/"
+                          //execCommand: "pwd && ls -l && rm -rf RC_Car_Pipeline_master/"
                           //),
                           sshTransfer(
                             cleanRemote: true,
-                            sourceFiles: "conan_home/.conan/data/RC_Car/*/radugrecu97/experimental/package/*/bin/",
-                            flatten: true,
-                            remoteDirectory: "${env.JOB_NAME}_master/bin",
-                            execCommand: "pwd"
                           ),
                           sshTransfer(
-                            execCommand: "chrpath -r ${env.JOB_NAME}_master/lib ${env.JOB_NAME}_master/bin/*"
+                            sourceFiles: "conan_home/.conan/data/RC_Car/*/radugrecu97/experimental/package/*/bin/",
+                            flatten: true,
+                            remoteDirectory: "RC_Car_Pipeline_master/bin",
+                          ),
+                          sshTransfer(
+                            execCommand: "chrpath -r RC_Car_Pipeline_master/lib RC_Car_Pipeline_master/bin/*"
                           ),
                           sshTransfer(
                             sourceFiles: "conan_home/.conan/data/*/*/_/_/package/*/lib/*",
                             flatten: true,
-                            remoteDirectory: "${env.JOB_NAME}_master/lib",
-                            execCommand: "pwd"
+                            remoteDirectory: "RC_Car_Pipeline_master/lib",
                           ),
                           sshTransfer(
-                            execCommand: "chmod u+x ${env.JOB_NAME}_master/bin/*"
+                            execCommand: "chmod u+x RC_Car_Pipeline_master/bin/*"
                           ),
                           sshTransfer(
-                            execCommand: "${env.JOB_NAME}_master/bin/Motor_test --gtest_output=xml:${env.JOB_NAME}_master/reports/gtestresults.xml"
+                            execCommand: "RC_Car_Pipeline_master/bin/Motor_test --gtest_output=xml:RC_Car_Pipeline_master/reports/gtestresults.xml"
                           ),
                         ]
                       )
