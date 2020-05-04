@@ -108,7 +108,7 @@ pipeline {
                 thresholds: [
                     [$class: 'FailedThreshold', unstableThreshold: '1']],
                 tools:
-                    [[$class: 'GoogleTestType', pattern: 'reports/*results.xml']]
+                    [[$class: 'GoogleTestType', pattern: '*results.xml']]
                 ])
               }
             }
