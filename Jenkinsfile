@@ -59,16 +59,16 @@ pipeline {
                             execCommand: "pwd && ls -l"
                           ),
                           sshTransfer(
-                            execCommand: "chmod u+x ~/jenskins_slave/workspace/RC_Car_Pipeline_master/bin/*"
+                            execCommand: "chmod u+x /home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/bin/*"
                           ),
                           sshTransfer(
-                            execCommand: "chrpath -r ~/jenskins_slave/workspace/RC_Car_Pipeline_master/lib ~/jenskins_slave/workspace/RC_Car_Pipeline_master/bin/*"
+                            execCommand: "chrpath -r /home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/lib /home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/bin/*"
                           ),
                           sshTransfer(
-                            execCommand: "rm -rf ~/jenskins_slave/workspace/RC_Car_Pipeline_master/reports"
+                            execCommand: "rm -rf /home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/reports"
                           ),
                           sshTransfer(
-                            execCommand: "~/jenskins_slave/workspace/RC_Car_Pipeline_master/bin/Motor_test --gtest_output=xml:~/jenskins_slave/workspace/RC_Car_Pipeline_master/reports/gtestresults.xml"
+                            execCommand: "/home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/bin/Motor_test --gtest_output=xml:/home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/reports/gtestresults.xml"
                           ),
                         ]
                       )
