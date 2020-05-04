@@ -86,8 +86,22 @@ pipeline {
 
         stage('Visualize GTest') {
           steps {
-            echo 'Visualize'
-            load 'ci/copy_gtest_report.groovy'
+            script {
+
+              script{
+
+                def jenkins =jenkins.plugins.publish_over_ssh
+                def sshHost = jenkins.getSSHHost('RPi_Testing')
+                def host = [host: jenkins.sshHost.hostname, user: jenkins.sshHost.username, password: jenkins.sshHost.password]
+                sshHost = null
+                sh("""
+                set +x
+                sshpass -p "${host.password}" scp -o StrictHostKeyChecking=no ${host.user}@${host.host}:/home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/reports/gtestresults.xml .
+                set -x
+                """)
+              }
+            }
+
           }
         }
 
