@@ -32,7 +32,9 @@ pipeline {
     stage('Test') {
       steps {
         node(label: 'slave-rpi') {
-          sh 'ls -la'
+          sh '''ls -la
+ls -la ..
+ls -la ../..'''
         }
 
       }
