@@ -35,8 +35,8 @@ pipeline {
           steps {
             node(label: 'slave-rpi') {
               sh '''pwd
-ls -l ..
-ls -l ../*/*
+cat ../*/*/script.sh
+cat ../*/*/jenkins-log.txt
 cd ../RC_Car_Pipeline_master@2/conan_home/.conan/data/RC_Car/*/radugrecu97/experimental/package/*/bin/
 ./Motor_test --gtest_output=xml:/gtestresults.xml
 ls -l /'''
