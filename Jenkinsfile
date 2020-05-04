@@ -44,7 +44,7 @@ pipeline {
                         verbose: true,
                         transfers: [
                           sshTransfer(
-                            sourceFiles: "*",
+                            sourceFiles: "conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin/*",
                             flatten: true,
                             cleanRemote: true,
                             remoteDirectory: "RC_Car_Pipeline_master/bin",
