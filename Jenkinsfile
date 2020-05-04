@@ -87,7 +87,7 @@ pipeline {
         stage('Visualize GTest') {
           steps {
             script {
-              load "ci/copy_gtest_report.groovy"
+              load "ci/pipeline/copy_gtest_report.groovy"
             }
 
           }
