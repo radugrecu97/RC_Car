@@ -29,9 +29,7 @@ pipeline {
     }
 
     stage('Test') {
-        agent none
         stage('Google Test') {
-          agent none
           steps {
             script {
               dir('../RC_Car_Pipeline_master@2') {
