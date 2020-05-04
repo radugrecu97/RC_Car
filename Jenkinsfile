@@ -38,24 +38,28 @@ ls -l ..
 '''
             script {
               sh 'printenv'
-              script {
-                sshPublisher(
-                  continueOnError: false, failOnError: true,
-                  publishers: [
-                    sshPublisherDesc(
-                      configName: "RPi_Testing",
-                      verbose: true,
-                      transfers: [
-                        sshTransfer(
-                          sourceFiles: "../RC_Car_Pipeline_master@2/*",
-                          flatten: true,
-                          cleanRemote: true,
-                          remoteDirectory: "RC_Car_Pipeline_master/bin",
-                        )
-                      ]
-                    )
-                  ]
-                )
+              withEnv(["WORKSPACE=/var/jenkins_home/workspace"]) {
+
+
+                script {
+                  sshPublisher(
+                    continueOnError: false, failOnError: true,
+                    publishers: [
+                      sshPublisherDesc(
+                        configName: "RPi_Testing",
+                        verbose: true,
+                        transfers: [
+                          sshTransfer(
+                            sourceFiles: "RC_Car_Pipeline_master@2/*",
+                            flatten: true,
+                            cleanRemote: true,
+                            remoteDirectory: "RC_Car_Pipeline_master/bin",
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                }
               }
             }
 
