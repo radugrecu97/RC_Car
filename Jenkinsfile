@@ -1,14 +1,14 @@
 pipeline {
-  agent {
-    docker {
-      image 'conanio/gcc8-armv7hf'
-      args '-v /var/jenkins_home/RC_Car/conan/profiles/:/home/conan/profiles/ --network docker_ci_network'
-    }
-
-  }
+  agent any
   stages {
     stage('Build') {
-      agent any
+      agent {
+        docker {
+          args '-v /var/jenkins_home/RC_Car/conan/profiles/:/home/conan/profiles/ --network docker_ci_network'
+          image 'conanio/gcc8-armv7hf'
+        }
+
+      }
       steps {
         script {
           def ARTIFACTORY_NAME = "art-01"
