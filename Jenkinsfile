@@ -5,7 +5,7 @@ pipeline {
           }
       }
   options {
-          skipDefaultCheckout ()
+          skipDefaultCheckout()
       }
   stages {
     stage('Build') {
