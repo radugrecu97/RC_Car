@@ -35,7 +35,7 @@ pipeline {
           steps {
             sh '''pwd
 ls -l ..
-ls -l ../..'''
+echo "${env.WORKSPACE}.toString()"'''
             script {
               script {
                 sshPublisher(
