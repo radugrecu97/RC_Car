@@ -30,7 +30,6 @@ pipeline {
     }
 
     stage('Test') {
-      parallel {
         stage('Google Test') {
           steps {
             script {
@@ -96,8 +95,6 @@ pipeline {
 
           }
         }
-
-      }
     }
 
   }
