@@ -43,47 +43,47 @@ pipeline {
                       configName: "RPi_Testing",
                       verbose: true,
                       transfers: [
-                        //sshTransfer(
-                          //execCommand: "pwd && ls -l && rm -rf RC_Car_Pipeline_master/"
-                          //),
-                          sshTransfer(
-                            sourceFiles: "../RC_Car_Pipeline_master@2/conan_home/.conan/data/RC_Car/*/radugrecu97/experimental/package/*/bin/",
-                            flatten: true,
-                            cleanRemote: true,
-                            remoteDirectory: "RC_Car_Pipeline_master/bin",
-                          ),
-                          sshTransfer(
-                            execCommand: "chrpath -r RC_Car_Pipeline_master/lib RC_Car_Pipeline_master/bin/*"
-                          ),
-                          sshTransfer(
-                            sourceFiles: "../RC_Car_Pipeline_master@2/conan_home/.conan/data/*/*/_/_/package/*/lib/*",
-                            flatten: true,
-                            remoteDirectory: "RC_Car_Pipeline_master/lib",
-                          ),
-                          sshTransfer(
-                            execCommand: "chmod u+x RC_Car_Pipeline_master/bin/*"
-                          ),
-                          sshTransfer(
-                            execCommand: "RC_Car_Pipeline_master/bin/Motor_test --gtest_output=xml:RC_Car_Pipeline_master/reports/gtestresults.xml"
-                          ),
-                        ]
-                      )
-                    ]
-                  )
-                }
+                        sshTransfer(
+                          execCommand: "rm -rf ../RC_Car_Pipeline_master@2/"
+                        ),
+                        sshTransfer(
+                          sourceFiles: "../RC_Car_Pipeline_master@2/conan_home/.conan/data/RC_Car/*/radugrecu97/experimental/package/*/bin/",
+                          flatten: true,
+                          cleanRemote: true,
+                          remoteDirectory: "RC_Car_Pipeline_master/bin",
+                        ),
+                        sshTransfer(
+                          execCommand: "chrpath -r RC_Car_Pipeline_master/lib RC_Car_Pipeline_master/bin/*"
+                        ),
+                        sshTransfer(
+                          sourceFiles: "../RC_Car_Pipeline_master@2/conan_home/.conan/data/*/*/_/_/package/*/lib/*",
+                          flatten: true,
+                          remoteDirectory: "RC_Car_Pipeline_master/lib",
+                        ),
+                        sshTransfer(
+                          execCommand: "chmod u+x RC_Car_Pipeline_master/bin/*"
+                        ),
+                        sshTransfer(
+                          execCommand: "RC_Car_Pipeline_master/bin/Motor_test --gtest_output=xml:RC_Car_Pipeline_master/reports/gtestresults.xml"
+                        ),
+                      ]
+                    )
+                  ]
+                )
               }
-
             }
-          }
 
-          stage('Visualize GTest') {
-            steps {
-              echo 'Visualize'
-            }
           }
-
         }
-      }
 
+        stage('Visualize GTest') {
+          steps {
+            echo 'Visualize'
+          }
+        }
+
+      }
     }
+
   }
+}
