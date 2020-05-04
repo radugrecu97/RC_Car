@@ -50,19 +50,19 @@ pipeline {
                             remoteDirectory: "RC_Car_Pipeline_master/bin",
                           ),
                           sshTransfer(
-                            execCommand: "pwd && ls -l"
-                          ),
-                          sshTransfer(
-                            execCommand: "chrpath -r jenskins_slave/workspace/RC_Car_Pipeline_master/lib jenskins_slave/workspace/RC_Car_Pipeline_master/bin/*"
-                          ),
-                          sshTransfer(
                             sourceFiles: "conan_home/.conan/data/*/*/_/_/package/*/lib/*",
                             flatten: true,
                             cleanRemote: true,
                             remoteDirectory: "RC_Car_Pipeline_master/lib",
                           ),
                           sshTransfer(
+                            execCommand: "pwd && ls -l"
+                          ),
+                          sshTransfer(
                             execCommand: "chmod u+x jenskins_slave/workspace/RC_Car_Pipeline_master/bin/*"
+                          ),
+                          sshTransfer(
+                            execCommand: "chrpath -r jenskins_slave/workspace/RC_Car_Pipeline_master/lib jenskins_slave/workspace/RC_Car_Pipeline_master/bin/*"
                           ),
                           sshTransfer(
                             execCommand: "rm -rf jenskins_slave/workspace/RC_Car_Pipeline_master/reports"
