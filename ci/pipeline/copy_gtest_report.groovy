@@ -1,3 +1,12 @@
+import groovy.transform.SourceURI
+import java.nio.file.Path
+import java.nio.file.Paths
+
+@SourceURI
+URI sourceUri
+
+Path scriptLocation = Paths.get(sourceUri)
+print scriptLocation
 print System.getProperty("user.dir");
 evaluate(new File("./ci/variables.groovy"))
 
