@@ -5,7 +5,7 @@ pipeline {
   agent {
     dockerfile {
       dir 'ci/Docker/Dockerfiles/conan'
-      args '--network docker_ci_network'
+      args '-v /var/jenkins_home/RC_Car/conan/profiles/:/home/conan/profiles/ --network docker_ci_network'
     }
   }
 
