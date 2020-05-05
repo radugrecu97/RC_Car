@@ -6,18 +6,16 @@
   def serverName
 
 pipeline {
-  agent any
+  agent {
+    docker {
+      args '-v /var/jenkins_home/RC_Car/conan/profiles/:/home/conan/profiles/ --network docker_ci_network'
+      image 'conanio/gcc8-armv7hf'
+    }
+  }
 
   stages {
 
       stage('Get dependencies & Build') {
-        agent {
-          docker {
-            args '-v /var/jenkins_home/RC_Car/conan/profiles/:/home/conan/profiles/ --network docker_ci_network'
-            image 'conanio/gcc8-armv7hf'
-          }
-        }
-
         steps {
           script {
             client = Artifactory.newConanClient(userHome: "${env.WORKSPACE}/conan_home".toString())
@@ -101,13 +99,6 @@ pipeline {
       }
 
       stage("Upload artifacts") {
-        agent {
-          docker {
-            args '-v /var/jenkins_home/RC_Car/conan/profiles/:/home/conan/profiles/ --network docker_ci_network'
-            image 'conanio/gcc8-armv7hf'
-          }
-        }
-
         steps {
           script {
             client = Artifactory.newConanClient(userHome: "${env.WORKSPACE}/conan_home".toString())
