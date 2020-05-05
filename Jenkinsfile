@@ -3,7 +3,7 @@
 
   def server = Artifactory.server ARTIFACTORY_NAME
   def client
-  def serverName = client.remote.add server: server, repo: ARTIFACTORY_REPO
+  def serverName
 
 pipeline {
   agent any
@@ -104,6 +104,7 @@ pipeline {
         steps {
           script {
             client = Artifactory.newConanClient(userHome: "${env.WORKSPACE}/conan_home".toString())
+            serverName = client.remote.add server: server, repo: ARTIFACTORY_REPO
             String command = "upload RC_Car/*@radugrecu97/experimental --all -r ${serverName} --confirm"
             def b = client.run(command: command)
             b.env.collect()
