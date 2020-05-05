@@ -6,8 +6,8 @@ conf.REPO_BRANCH = "master"
 conf.PROJECT_NAME = "RC_Car"
 
 // ARTIFACTORY
-conf.ARTIFACTORY_NAME = "art-01"
-conf.ARTIFACTORY_REPO = "conan-local"
+env.ARTIFACTORY_NAME = "art-01"
+env.ARTIFACTORY_REPO = "conan-local"
 
 // CONAN
 conf.CONAN_USER_CHANNEL = "radugrecu97/experimental"

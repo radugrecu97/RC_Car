@@ -14,12 +14,14 @@ pipeline {
       stage('Environment') {
         steps {
           script {
+            sh 'printenv'
+            sh 'pwd'
             load "${env.WORKSPACE}/ci/variables.groovy"
-            def server = Artifactory.server "${conf.ARTIFACTORY_NAME}"
+            def server = Artifactory.server "${env.ARTIFACTORY_NAME}"
             // userHome param is passed in order to have a stable path because otherwise, each  new client will generate
             // a folder in the default home directory under a random string
             def client = Artifactory.newConanClient(userHome: "${env.WORKSPACE}/conan_home".toString())
-            def serverName = client.remote.add server: server, repo: "${conf.ARTIFACTORY_REPO}".toString()
+            def serverName = client.remote.add server: server, repo: "${env.ARTIFACTORY_REPO}".toString()
           }
         }
       }
@@ -28,8 +30,6 @@ pipeline {
       stage('Build') {
         steps {
           script {
-            sh 'printenv'
-            sh 'pwd'
             String command = "create . ${conf.CONAN_USER_CHANNEL} -pr ${conf.CONAN_DIR_PROFILE} --build=missing"
             client.run(command: command)
             echo "RESULT: ${currentBuild.result}"
