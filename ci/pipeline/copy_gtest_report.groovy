@@ -1,3 +1,4 @@
+System.getProperty("user.dir");
 evaluate(new File("./ci/variables.groovy"))
 
 import jenkins.plugins.publish_over_ssh.*

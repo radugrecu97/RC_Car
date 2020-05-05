@@ -18,11 +18,11 @@ pipeline {
           script {
             sh 'printenv'
             sh 'pwd'
-            load "${env.WORKSPACE}/ci/variables.groovy"
+            load "${WORKSPACE}/ci/variables.groovy"
             server = Artifactory.server "${env.ARTIFACTORY_NAME}"
             // userHome param is passed in order to have a stable path because otherwise, each  new client will generate
             // a folder in the default home directory under a random string
-            client = Artifactory.newConanClient(userHome: "${env.WORKSPACE}/conan_home".toString())
+            client = Artifactory.newConanClient(userHome: "${WORKSPACE}/conan_home".toString())
             serverName = client.remote.add server: server, repo: "${env.ARTIFACTORY_REPO}".toString()
           }
         }
