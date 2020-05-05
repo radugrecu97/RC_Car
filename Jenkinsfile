@@ -19,6 +19,7 @@ pipeline {
       stage('Get dependencies & Build') {
         steps {
           script {
+            sh 'printenv'
             client = Artifactory.newConanClient(userHome: "${env.WORKSPACE}/conan_home".toString())
             String command = "create . radugrecu97/experimental -pr ./ci/conan/profiles/rpi_gcc8 --build=missing"
             client.run(command: command)
