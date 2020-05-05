@@ -20,6 +20,7 @@ pipeline {
         steps {
           script {
             sh 'printenv'
+            sh 'pwd'
             client = Artifactory.newConanClient(userHome: "${env.WORKSPACE}/conan_home".toString())
             String command = "create . radugrecu97/experimental -pr ./ci/conan/profiles/rpi_gcc8 --build=missing"
             client.run(command: command)
@@ -109,7 +110,9 @@ pipeline {
             b.env.collect()
             b.number = "v0.${BUILD_NUMBER}" // BUILD_NUMBER is a Jenkins environment variable
             server.publishBuildInfo b
+            echo "RESULT: ${currentBuild.result}"
             currentBuild.result = "SUCCESS"
+            echo "RESULT: ${currentBuild.result}"
           }
         }
       }
@@ -118,9 +121,11 @@ pipeline {
 
   post {
     success {
+        echo "RESULT: ${currentBuild.result}"
         echo "Success"
     }
     failure {
+        echo "RESULT: ${currentBuild.result}"
         echo "Failure"
     }
   }
