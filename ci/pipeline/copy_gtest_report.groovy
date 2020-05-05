@@ -1,4 +1,4 @@
-evaluate(new File("ci/variables.groovy"))
+evaluate(new File("./ci/variables.groovy"))
 
 import jenkins.plugins.publish_over_ssh.*
 
