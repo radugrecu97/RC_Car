@@ -28,8 +28,8 @@ pipeline {
 
       stage('Google Test') {
         steps {
-          dir('../RC_Car_Pipeline_master@2') {
-            script {
+          script {
+            dir('../RC_Car_Pipeline_master@2') {
               sshPublisher(
                 continueOnError: false,
                 failOnError: true,
