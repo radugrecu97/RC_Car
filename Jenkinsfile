@@ -90,7 +90,6 @@ pipeline {
       }
 
       stage('Visualize GTest') {
-        agent none
         steps {
           script {
             xunit (
@@ -110,6 +109,7 @@ pipeline {
             b.env.collect()
             b.number = "v0.${BUILD_NUMBER}" // BUILD_NUMBER is a Jenkins environment variable
             server.publishBuildInfo b
+            currentBuild.result = "SUCCESS"
           }
         }
       }
