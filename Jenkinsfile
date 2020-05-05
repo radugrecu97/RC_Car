@@ -1,9 +1,9 @@
-ARTIFACTORY_NAME = "art-01"
-ARTIFACTORY_REPO = "conan-local"
+  def ARTIFACTORY_NAME = "art-01"
+  def ARTIFACTORY_REPO = "conan-local"
 
-server = Artifactory.server ARTIFACTORY_NAME
-client = Artifactory.newConanClient(userHome: "${env.WORKSPACE}/conan_home".toString())
-serverName = client.remote.add server: server, repo: ARTIFACTORY_REPO
+  def server = Artifactory.server ARTIFACTORY_NAME
+  def client
+  def serverName = client.remote.add server: server, repo: ARTIFACTORY_REPO
 
 pipeline {
   agent any
@@ -20,6 +20,7 @@ pipeline {
 
         steps {
           script {
+            client = Artifactory.newConanClient(userHome: "${env.WORKSPACE}/conan_home".toString())
             String command = "create . radugrecu97/experimental -pr ./ci/conan/profiles/rpi_gcc8 --build=missing"
             client.run(command: command)
           }
@@ -102,6 +103,7 @@ pipeline {
       stage("Upload artifacts") {
         steps {
           script {
+            client = Artifactory.newConanClient(userHome: "${env.WORKSPACE}/conan_home".toString())
             String command = "upload RC_Car/*@radugrecu97/experimental --all -r ${serverName} --confirm"
             def b = client.run(command: command)
             b.env.collect()
