@@ -15,9 +15,9 @@ pipeline {
         steps {
           script {
             def util = load "${env.WORKSPACE}/ci/variables.groovy"
-            def server = Artifactory.server "${util.env.ARTIFACTORY_NAME}"
+            def server = Artifactory.server util.env.ARTIFACTORY_NAME
             def client = Artifactory.newConanClient(userHome: "${env.WORKSPACE}/conan_home".toString())
-            def serverName = client.remote.add server: server, repo: "${util.env.ARTIFACTORY_REPO}".toString()
+            def serverName = client.remote.add server: server, repo: util.env.ARTIFACTORY_REPO
           }
         }
       }
