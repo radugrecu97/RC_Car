@@ -1,8 +1,3 @@
-def scriptLocation = new File(getClass().protectionDomain.codeSource.location.path).parent
-print scriptLocation
-print System.getProperty("user.dir");
-evaluate(new File("./ci/variables.groovy"))
-
 import jenkins.plugins.publish_over_ssh.*
 
 @NonCPS
