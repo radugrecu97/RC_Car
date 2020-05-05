@@ -67,24 +67,24 @@ pipeline {
                       cleanRemote: true,
                       remoteDirectory: "${env.PROJECT_NAME}/lib",
                     ),
-                     sshTransfer(
-                        execCommand: "pwd" // run command in remote host
-                      ),
+                    sshTransfer(
+                       execCommand: "cd jenkins_slave/workspace/${env.PROJECT_NAME} && pwd" // run command in remote host
+                     ),
                     // make binaries executable
                     sshTransfer(
-                      execCommand: "chmod u+x /home/jenkins/jenkins_slave/workspace/${env.PROJECT_NAME}/bin/*" // run command in remote host
+                      execCommand: "chmod u+x jenkins_slave/workspace/${env.PROJECT_NAME}/bin/*" // run command in remote host
                     ),
                     // change library path for shared libraries
                     sshTransfer(
-                      execCommand: "chrpath -r /home/jenkins/jenkins_slave/workspace/${env.PROJECT_NAME}/lib /home/jenkins/jenkins_slave/workspace/${env.PROJECT_NAME}/bin/*"
+                      execCommand: "chrpath -r jenkins_slave/workspace/${env.PROJECT_NAME}/lib jenkins_slave/workspace/${env.PROJECT_NAME}/bin/*"
                     ),
                     // clean reports folder in remote host
                     sshTransfer(
-                      execCommand: "rm -rf /home/jenkins/jenkins_slave/workspace/${env.PROJECT_NAME}/reports"
+                      execCommand: "rm -rf jenkins_slave/workspace/${env.PROJECT_NAME}/reports"
                     ),
                     // run Google Test and save xUnit report
                     sshTransfer(
-                      execCommand: "/home/jenkins/jenkins_slave/workspace/${env.PROJECT_NAME}/bin/Motor_test --gtest_output=xml:/home/jenkins/jenkins_slave/workspace/${env.PROJECT_NAME}/reports/gtestresults.xml"
+                      execCommand: "jenkins_slave/workspace/${env.PROJECT_NAME}/bin/Motor_test --gtest_output=xml:jenkins_slave/workspace/${env.PROJECT_NAME}/reports/gtestresults.xml"
                     ),
                   ]
                 )
@@ -117,7 +117,7 @@ pipeline {
           script {
             String command = "upload ${env.CONAN_PACKAGE_NAME}/*@${env.CONAN_USER_CHANNEL} --all -r ${serverName} --confirm"
             def b = client.run(command: command)
-            b.util.env.collect()
+            b.env.collect()
             b.number = "v0.${BUILD_NUMBER}" // BUILD_NUMBER is a Jenkins environment variable
             server.publishBuildInfo b
             echo "RESULT: ${currentBuild.result}"
