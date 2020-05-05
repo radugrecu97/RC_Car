@@ -1,4 +1,9 @@
+ARTIFACTORY_NAME = "art-01"
+ARTIFACTORY_REPO = "conan-local"
 
+server = Artifactory.server ARTIFACTORY_NAME
+client = Artifactory.newConanClient(userHome: "${env.WORKSPACE}/conan_home".toString())
+serverName = client.remote.add server: server, repo: ARTIFACTORY_REPO
 
 pipeline {
   agent any
@@ -15,14 +20,6 @@ pipeline {
 
         steps {
           script {
-            sh "printenv"
-            def ARTIFACTORY_NAME = "art-01"
-            def ARTIFACTORY_REPO = "conan-local"
-
-            def server = Artifactory.server ARTIFACTORY_NAME
-            def client = Artifactory.newConanClient(userHome: "${env.WORKSPACE}/conan_home".toString())
-            def serverName = client.remote.add server: server, repo: ARTIFACTORY_REPO
-
             String command = "create . radugrecu97/experimental -pr ./ci/conan/profiles/rpi_gcc8 --build=missing"
             client.run(command: command)
           }
