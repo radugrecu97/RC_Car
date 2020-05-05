@@ -67,24 +67,21 @@ pipeline {
                       cleanRemote: true,
                       remoteDirectory: "${env.PROJECT_NAME}/lib",
                     ),
-                    sshTransfer(
-                       execCommand: "cd jenkins_slave/workspace/${env.PROJECT_NAME} && pwd" // run command in remote host
-                     ),
                     // make binaries executable
                     sshTransfer(
-                      execCommand: "chmod u+x bin/*" // run command in remote host
+                      execCommand: "chmod u+x ${env.REMOTE_PATH}/bin/*" // run command in remote host
                     ),
                     // change library path for shared libraries
                     sshTransfer(
-                      execCommand: "chrpath -r lib bin/*"
+                      execCommand: "chrpath -r ${env.REMOTE_PATH}/lib ${env.REMOTE_PATH}/bin/*"
                     ),
                     // clean reports folder in remote host
                     sshTransfer(
-                      execCommand: "rm -rf reports"
+                      execCommand: "rm -rf ${env.REMOTE_PATH}/reports"
                     ),
                     // run Google Test and save xUnit report
                     sshTransfer(
-                      execCommand: "bin/Motor_test --gtest_output=xml:reports/gtestresults.xml"
+                      execCommand: "${env.REMOTE_PATH}/bin/Motor_test --gtest_output=xml:${env.REMOTE_PATH}/reports/gtestresults.xml"
                     ),
                   ]
                 )

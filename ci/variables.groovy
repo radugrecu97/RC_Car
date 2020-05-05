@@ -17,7 +17,7 @@ env.CONAN_PACKAGE_VER = "0.1"
 
 // JENKINS
 env.PUB_OVER_SSH_CONF_NAME = "RPi_Testing"
-
+env.REMOTE_PATH =  "jenkins_slave/workspace/${env.PROJECT_NAME}/" // relative from /home/jenkins
 
 env.MAX_BUILDS = 10
 env.MAX_DAYS = 7
