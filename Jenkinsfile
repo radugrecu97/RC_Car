@@ -1,4 +1,6 @@
-
+def server
+def client
+def serverName
 
 pipeline {
   // run Docker agent from Dockerfile because sshpass is required
@@ -17,11 +19,11 @@ pipeline {
             sh 'printenv'
             sh 'pwd'
             load "${env.WORKSPACE}/ci/variables.groovy"
-            def server = Artifactory.server "${env.ARTIFACTORY_NAME}"
+            server = Artifactory.server "${env.ARTIFACTORY_NAME}"
             // userHome param is passed in order to have a stable path because otherwise, each  new client will generate
             // a folder in the default home directory under a random string
-            def client = Artifactory.newConanClient(userHome: "${env.WORKSPACE}/conan_home".toString())
-            def serverName = client.remote.add server: server, repo: "${env.ARTIFACTORY_REPO}".toString()
+            client = Artifactory.newConanClient(userHome: "${env.WORKSPACE}/conan_home".toString())
+            serverName = client.remote.add server: server, repo: "${env.ARTIFACTORY_REPO}".toString()
           }
         }
       }
