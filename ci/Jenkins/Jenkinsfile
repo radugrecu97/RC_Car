@@ -6,7 +6,7 @@ pipeline {
   // run Docker agent from Dockerfile because sshpass is required
   agent {
     dockerfile {
-      dir '../Docker/Dockerfiles/conan'
+      dir 'ci/Docker/Dockerfiles/conan'
       args '--network docker_ci_network'
     }
   }
