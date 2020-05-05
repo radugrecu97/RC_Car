@@ -9,7 +9,6 @@ pipeline {
   agent any
 
   stages {
-    dir('../RC_Car_Pipeline_master@2') {
 
       stage('Get dependencies & Build') {
         agent {
@@ -29,52 +28,54 @@ pipeline {
 
       stage('Google Test') {
         steps {
-          script {
-            sshPublisher(
-              continueOnError: false,
-              failOnError: true,
-              publishers: [
-                sshPublisherDesc(
-                  // configName is acquired from Manage Jenkins > Configure System > Publish over SSH
-                  configName: "RPi_Testing",
-                  verbose: true,
-                  continueOnError: false,
-                  failOnError: true,
-                  transfers: [
-                    // copy binaries
-                    sshTransfer(
-                      sourceFiles: "conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin/",
-                      flatten: true, // removes the directory prefix to file so only the file is copied and not the folders tree to it as well
-                      cleanRemote: true, // clean the remote directory below before copying
-                      remoteDirectory: "RC_Car_Pipeline_master/bin", // appends to the remote directory specified in the configuration
-                    ),
-                    // copy shared libraries
-                    sshTransfer(
-                      sourceFiles: "conan_home/.conan/data/*/*/_/_/package/*/lib/*",
-                      flatten: true,
-                      cleanRemote: true,
-                      remoteDirectory: "RC_Car_Pipeline_master/lib",
-                    ),
-                    // make binaries executable
-                    sshTransfer(
-                      execCommand: "chmod u+x /home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/bin/*" // run command in remote host
-                    ),
-                    // change library path for shared libraries
-                    sshTransfer(
-                      execCommand: "chrpath -r /home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/lib /home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/bin/*"
-                    ),
-                    // clean reports folder in remote host
-                    sshTransfer(
-                      execCommand: "rm -rf /home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/reports"
-                    ),
-                    // run Google Test and save xUnit report
-                    sshTransfer(
-                      execCommand: "/home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/bin/Motor_test --gtest_output=xml:/home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/reports/gtestresults.xml"
-                    ),
-                  ]
-                )
-              ]
-            )
+          dir('../RC_Car_Pipeline_master@2') {
+            script {
+              sshPublisher(
+                continueOnError: false,
+                failOnError: true,
+                publishers: [
+                  sshPublisherDesc(
+                    // configName is acquired from Manage Jenkins > Configure System > Publish over SSH
+                    configName: "RPi_Testing",
+                    verbose: true,
+                    continueOnError: false,
+                    failOnError: true,
+                    transfers: [
+                      // copy binaries
+                      sshTransfer(
+                        sourceFiles: "conan_home/.conan/data/RC_Car/0.1/radugrecu97/experimental/package/*/bin/",
+                        flatten: true, // removes the directory prefix to file so only the file is copied and not the folders tree to it as well
+                        cleanRemote: true, // clean the remote directory below before copying
+                        remoteDirectory: "RC_Car_Pipeline_master/bin", // appends to the remote directory specified in the configuration
+                      ),
+                      // copy shared libraries
+                      sshTransfer(
+                        sourceFiles: "conan_home/.conan/data/*/*/_/_/package/*/lib/*",
+                        flatten: true,
+                        cleanRemote: true,
+                        remoteDirectory: "RC_Car_Pipeline_master/lib",
+                      ),
+                      // make binaries executable
+                      sshTransfer(
+                        execCommand: "chmod u+x /home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/bin/*" // run command in remote host
+                      ),
+                      // change library path for shared libraries
+                      sshTransfer(
+                        execCommand: "chrpath -r /home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/lib /home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/bin/*"
+                      ),
+                      // clean reports folder in remote host
+                      sshTransfer(
+                        execCommand: "rm -rf /home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/reports"
+                      ),
+                      // run Google Test and save xUnit report
+                      sshTransfer(
+                        execCommand: "/home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/bin/Motor_test --gtest_output=xml:/home/jenkins/jenkins_slave/workspace/RC_Car_Pipeline_master/reports/gtestresults.xml"
+                      ),
+                    ]
+                  )
+                ]
+              )
+            }
           }
         }
       }
@@ -91,9 +92,11 @@ pipeline {
         agent none
         steps {
           script {
-            xunit (
-              tools: [ GoogleTest(pattern: 'gtestresults.xml') ]
-            )
+            dir('../RC_Car_Pipeline_master@2') {
+              xunit (
+                tools: [ GoogleTest(pattern: 'gtestresults.xml') ]
+              )
+            }
           }
         }
       }
@@ -110,6 +113,6 @@ pipeline {
         }
       }
 
-    }
+
   }
 }
