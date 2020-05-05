@@ -6,7 +6,7 @@ pipeline {
   // run Docker agent from Dockerfile because sshpass is required
   agent {
     dockerfile {
-      dir 'ci/Docker/Dockerfiles/conan'
+      dir '../Docker/Dockerfiles/conan'
       args '--network docker_ci_network'
     }
   }
@@ -18,7 +18,7 @@ pipeline {
           script {
             sh 'printenv'
             sh 'pwd'
-            load "${WORKSPACE}/ci/variables.groovy"
+            load "ci/Jenkins/variables.groovy"
             server = Artifactory.server "${env.ARTIFACTORY_NAME}"
             // userHome param is passed in order to have a stable path because otherwise, each  new client will generate
             // a folder in the default home directory under a random string
@@ -34,7 +34,6 @@ pipeline {
           script {
             String command = "create . ${env.CONAN_USER_CHANNEL} -pr ${env.CONAN_DIR_PROFILE} --build=missing"
             client.run(command: command)
-            echo "RESULT: ${currentBuild.result}"
           }
         }
       }
@@ -94,7 +93,7 @@ pipeline {
       stage('Transfer GTest') {
         steps {
           script {
-            load "ci/pipeline/copy_gtest_report.groovy"
+            load "ci/Jenkins/copy_gtest_report.groovy"
           }
         }
       }
@@ -117,9 +116,6 @@ pipeline {
             b.env.collect()
             b.number = "v0.${BUILD_NUMBER}" // BUILD_NUMBER is a Jenkins environment variable
             server.publishBuildInfo b
-            echo "RESULT: ${currentBuild.result}"
-            currentBuild.result = "SUCCESS"
-            echo "RESULT: ${currentBuild.result}"
           }
         }
       }
@@ -128,11 +124,9 @@ pipeline {
 
   post {
     success {
-        echo "RESULT: ${currentBuild.result}"
         echo "Success"
     }
     failure {
-        echo "RESULT: ${currentBuild.result}"
         echo "Failure"
     }
   }
