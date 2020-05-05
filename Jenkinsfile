@@ -103,7 +103,6 @@ pipeline {
         script {
           dir('../RC_Car_Pipeline_master@2') {
             xunit (
-              thresholds: [ skipped(failureThreshold: '5'), failed(failureThreshold: '5') ],
               tools: [ GoogleTest(pattern: 'gtestresults.xml') ]
             )
           }
