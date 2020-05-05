@@ -5,7 +5,7 @@ pipeline {
   agent {
     dockerfile {
       dir 'ci/Docker/Dockerfiles/conan'
-      args '-v /var/jenkins_home/RC_Car/conan/profiles/:/home/conan/profiles/ --network docker_ci_network'
+      args '--network docker_ci_network'
     }
   }
 
@@ -14,7 +14,7 @@ pipeline {
       stage('Environment') {
         steps {
           script {
-            def util = load "$JENKINS_HOME/workspace/RC_Car/ci/variables.groovy"
+            def util = load "${env.WORKSPACE}/ci/variables.groovy"
             def server = Artifactory.server "${util.env.ARTIFACTORY_NAME}"
             def client = Artifactory.newConanClient(userHome: "${env.WORKSPACE}/conan_home".toString())
             def serverName = client.remote.add server: server, repo: "${util.env.ARTIFACTORY_REPO}".toString()
